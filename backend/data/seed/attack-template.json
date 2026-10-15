@@ -1,0 +1,8 @@
+{
+  "customerId": "CUST-0001",
+  "accountId": "ACC-0001",
+  "amount": 50000000,
+  "currency": "IDR",
+  "channel": "MOBILE_APP",
+  "beneficiary": { "accountId": "ACC-BEN-7781", "bankName": "Bank Nusantara Digital", "name": "Rizky Pratama", "isNew": true, "accountAgeDays": 9 }
+}

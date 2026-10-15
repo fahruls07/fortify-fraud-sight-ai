@@ -1,0 +1,278 @@
+openapi: 3.0.3
+info:
+  title: Fortify Fraud API for Internet Banking
+  version: 1.0.0-mock
+  description: |
+    Real-time fraud scoring for internet / mobile banking transfers.
+
+    Flow:
+    1. Before moving money, the banking app calls **POST /api/transactions/score** with the transfer and the session ID.
+    2. `ALLOW` → the transfer is completed. `HOLD` → the transfer is held and an alert goes to the fraud analysts; show `message` to the customer.
+    3. While held, the app polls **GET /api/transactions/{transactionId}/status** (every 3–5 s) until the status is final
+       (`RELEASED`, `DECLINED`, or `CHALLENGE_SENT` → ask the customer to confirm).
+
+    **Mockup notes:** the API-key header is the planned contract and is *not enforced* by the current mock server.
+    Amounts are integers in IDR. All timestamps are ISO-8601 UTC.
+  contact: { name: Fortify Anti-Fraud Team }
+servers:
+  - url: http://localhost:3000
+    description: Local mock (Next.js dev server)
+security:
+  - ApiKey: []
+tags:
+  - name: Scoring
+    description: Score a transfer before money moves
+  - name: Status
+    description: Follow a held transfer until the analyst decides, and answer OTP challenges
+  - name: Events
+    description: Score logins and account changes
+  - name: Workflows
+    description: Published workflow endpoints that decide the flow
+
+paths:
+  /api/transactions/score:
+    post:
+      tags: [Scoring]
+      operationId: scoreTransfer
+      summary: Score a transfer before execution
+      parameters:
+        - $ref: "#/components/parameters/RequestId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/TransferRequest" }
+            examples:
+              normal:
+                summary: Low-risk transfer to a known beneficiary
+                value:
+                  customerId: CUST-0005
+                  sessionId: SES-A0001
+                  amount: 250000
+                  channel: MOBILE_APP
+                  beneficiary: { accountId: ACC-KB-0005-1, bankName: CIMB Niaga, name: Regular beneficiary, accountAgeDays: 1200 }
+              suspicious:
+                summary: Screen-sharing scam (held for review)
+                value:
+                  customerId: CUST-0001
+                  sessionId: SES-9001
+                  amount: 50000000
+                  channel: MOBILE_APP
+                  beneficiary: { accountId: ACC-BEN-7781, bankName: Bank Nusantara Digital, name: Rizky Pratama, accountAgeDays: 9 }
+      responses:
+        "200":
+          description: Scored. `ALLOW` = completed, `HOLD` = held for analyst review.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ScoreResponse" }
+              examples:
+                allow:
+                  value: { decision: ALLOW, transactionId: TX-L0001, message: Transaction processed successfully. }
+                hold:
+                  value: { decision: HOLD, transactionId: TX-L0002, message: Transaction is under review for your security }
+        "400": { $ref: "#/components/responses/BadRequest" }
+        "403":
+          description: The customer's account is frozen. Block the transfer and show `error`.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+              example: { error: Your account is temporarily secured. Please call 14041., code: ACCOUNT_FROZEN }
+
+  /api/transactions/{transactionId}/status:
+    get:
+      tags: [Status]
+      operationId: getTransferStatus
+      summary: Current status of a scored transfer
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema: { type: string, example: TX-L0002 }
+        - $ref: "#/components/parameters/RequestId"
+      responses:
+        "200":
+          description: Status and the customer-facing message to display.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/StatusResponse" }
+              examples:
+                held: { value: { transactionId: TX-L0002, status: HELD, accountStatus: ACTIVE, message: Transaction is under review for your security } }
+                released: { value: { transactionId: TX-L0002, status: RELEASED, accountStatus: ACTIVE, message: Transaction processed successfully. } }
+                frozen: { value: { transactionId: TX-L0002, status: DECLINED, accountStatus: FROZEN, message: Transaction cancelled. Your account has been temporarily secured. Please call 14041. } }
+        "404":
+          description: Unknown transaction
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+              example: { error: transaction not found }
+
+  /api/flows/{slug}:
+    post:
+      tags: [Workflows]
+      operationId: runWorkflow
+      summary: Run a published fraud workflow (the workflow decides)
+      description: |
+        Each workflow published in the console has its own endpoint. Its deployed version decides the outcome.
+        Transfer workflows take the TransferRequest body and answer ALLOW (completed), REVIEW (held for an analyst),
+        CHALLENGE (OTP sent; answer with /challenge) or BLOCK (declined). Login / account-update workflows take the
+        event body and answer ALLOW, CHALLENGE or DENY. Inactive endpoints answer 423; fall back to /api/transactions/score.
+      parameters:
+        - { name: slug, in: path, required: true, schema: { type: string, example: high-amount-check } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { oneOf: [{ $ref: "#/components/schemas/TransferRequest" }, { $ref: "#/components/schemas/LoginEvent" }, { $ref: "#/components/schemas/AccountUpdateEvent" }] }
+      responses:
+        "200":
+          description: Outcome decided by the workflow
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  workflowId: { type: string, example: wf_001 }
+                  version: { type: integer, example: 3 }
+                  decision: { type: string, enum: [ALLOW, REVIEW, CHALLENGE, BLOCK, DENY] }
+                  transactionId: { type: string }
+                  status: { type: string, enum: [COMPLETED, HELD, CHALLENGE_SENT, DECLINED] }
+                  eventId: { type: string }
+                  message: { type: string, description: Text to show the customer }
+                  ms: { type: number }
+        "400": { $ref: "#/components/responses/BadRequest" }
+        "404": { description: No workflow published at this slug (FLOW_NOT_FOUND), content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "423": { description: Endpoint inactive or not deployed (FLOW_INACTIVE / FLOW_NOT_DEPLOYED), content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+
+  /api/transactions/{transactionId}/challenge:
+    post:
+      tags: [Status]
+      operationId: verifyChallenge
+      summary: Customer answers the OTP challenge
+      description: When status is CHALLENGE_SENT the customer received an SMS / push OTP. Send it here. Correct → RELEASED. After the configured number of wrong codes (or expiry) the transfer stays held and goes back to an analyst (423).
+      parameters:
+        - { name: transactionId, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [otp], properties: { otp: { type: string, pattern: "^[0-9]{6}$", example: "482913" } } } } }
+      responses:
+        "200": { description: Verified and released, content: { application/json: { schema: { allOf: [{ $ref: "#/components/schemas/StatusResponse" }, { type: object, properties: { result: { type: string, enum: [VERIFIED] } } }] } } } }
+        "400": { description: "Wrong code (code OTP_WRONG, attemptsLeft)", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "409": { description: No challenge pending (NO_CHALLENGE), content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "423": { description: Locked or expired (OTP_LOCKED / OTP_EXPIRED); stays held, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+
+  /api/events/login:
+    post:
+      tags: [Events]
+      operationId: scoreLogin
+      summary: Score a login attempt
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/LoginEvent" } } }
+      responses:
+        "200": { description: Risk decision, content: { application/json: { schema: { $ref: "#/components/schemas/EventDecision" } } } }
+        "400": { $ref: "#/components/responses/BadRequest" }
+
+  /api/events/account-update:
+    post:
+      tags: [Events]
+      operationId: scoreAccountUpdate
+      summary: Score a sensitive account change before applying it
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/AccountUpdateEvent" } } }
+      responses:
+        "200": { description: Risk decision, content: { application/json: { schema: { $ref: "#/components/schemas/EventDecision" } } } }
+        "400": { $ref: "#/components/responses/BadRequest" }
+
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: Channel API key issued per banking channel (planned; not enforced by the mock).
+  parameters:
+    RequestId:
+      name: X-Request-Id
+      in: header
+      required: false
+      description: Correlation ID for tracing (recommended, UUID).
+      schema: { type: string, format: uuid }
+  responses:
+    BadRequest:
+      description: Invalid request body
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+          example: { error: "invalid transfer: need customerId, sessionId, amount > 0, beneficiary{accountId, bankName, name, accountAgeDays}" }
+  schemas:
+    TransferRequest:
+      type: object
+      required: [customerId, sessionId, amount, beneficiary]
+      properties:
+        customerId: { type: string, example: CUST-0001, description: Customer ID in core banking }
+        sessionId: { type: string, example: SES-9001, description: Current app session ID; device and behaviour signals are linked to it }
+        amount: { type: integer, minimum: 1, example: 50000000, description: Amount in IDR }
+        channel: { type: string, default: MOBILE_APP, example: MOBILE_APP, description: "Origin channel, e.g. MOBILE_APP or INTERNET_BANKING" }
+        beneficiary: { $ref: "#/components/schemas/Beneficiary" }
+    Beneficiary:
+      type: object
+      required: [accountId, bankName, name, accountAgeDays]
+      properties:
+        accountId: { type: string, example: ACC-BEN-7781 }
+        bankName: { type: string, example: Bank Nusantara Digital }
+        name: { type: string, example: Rizky Pratama }
+        accountAgeDays: { type: integer, minimum: 0, example: 9, description: Age of the beneficiary account in days }
+    ScoreResponse:
+      type: object
+      required: [decision, transactionId, message]
+      properties:
+        decision: { type: string, enum: [ALLOW, HOLD, CHALLENGE, DECLINE], description: "ALLOW = completed · HOLD = held for an analyst · CHALLENGE = OTP sent, answer with /challenge · DECLINE = cancelled" }
+        status: { type: string, enum: [COMPLETED, HELD, CHALLENGE_SENT, DECLINED] }
+        decidedBy: { type: string, example: "built-in", description: "built-in, or the workflow (id and version) set to serve this API" }
+        transactionId: { type: string, example: TX-L0002 }
+        message: { type: string, description: Text to show the customer }
+    StatusResponse:
+      type: object
+      required: [transactionId, status, accountStatus, message]
+      properties:
+        transactionId: { type: string }
+        challenge: { type: object, description: Present while status is CHALLENGE_SENT, properties: { expiresAt: { type: string, format: date-time }, attemptsLeft: { type: integer }, status: { type: string } } }
+        status:
+          type: string
+          enum: [COMPLETED, HELD, RELEASED, DECLINED, CHALLENGE_SENT]
+          description: "Final: COMPLETED, RELEASED, DECLINED. CHALLENGE_SENT = ask the customer to confirm. HELD = keep polling."
+        accountStatus: { type: string, enum: [ACTIVE, FROZEN] }
+        message: { type: string, description: Text to show the customer }
+    LoginEvent:
+      type: object
+      required: [customerId]
+      properties:
+        customerId: { type: string, example: CUST-0001 }
+        sessionId: { type: string }
+        deviceId: { type: string, example: iPhone 15, description: Device fingerprint / model; compared with the customer's usual device and the device blacklist }
+        ip: { type: string, example: 203.0.113.7, description: Compared with the IP blacklist (exact or CIDR) }
+        ipCountry: { type: string, example: RU, description: ISO 3166-1 alpha-2 }
+        success: { type: boolean, description: Whether the credentials were correct }
+        failedAttempts: { type: integer, minimum: 0, example: 2 }
+    AccountUpdateEvent:
+      allOf:
+        - $ref: "#/components/schemas/LoginEvent"
+        - type: object
+          required: [change]
+          properties:
+            change: { type: string, example: phone, description: "phone | email | password | pin | device | beneficiary_add | limit | address" }
+    EventDecision:
+      type: object
+      properties:
+        eventId: { type: string, example: EVT-000101 }
+        decision: { type: string, enum: [ALLOW, CHALLENGE, DENY], description: "CHALLENGE = ask for step-up verification; DENY = block" }
+        score: { type: integer, minimum: 0, maximum: 100 }
+        reasons: { type: array, items: { type: string } }
+        message: { type: string, description: Text to show the customer }
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+        code: { type: string, example: ACCOUNT_FROZEN }

@@ -1,0 +1,1317 @@
+[
+  {
+    "id": "CUST-0001",
+    "name": "Budi Santoso",
+    "age": 21,
+    "segment": "Student",
+    "city": "Jakarta",
+    "homeCountry": "ID",
+    "customerSince": "2023-08-15",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0001",
+    "maskedAccount": "•••2231",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 500000,
+    "usualDevice": "Samsung Galaxy A54",
+    "usualActiveHours": {
+      "from": "08:00",
+      "to": "22:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0001-1",
+      "ACC-KB-0001-2",
+      "ACC-KB-0001-3",
+      "ACC-KB-0001-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 800,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 180,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281297270728"
+  },
+  {
+    "id": "CUST-0002",
+    "name": "Bayu Setiawan",
+    "age": 26,
+    "segment": "Homemaker",
+    "city": "Jakarta",
+    "homeCountry": "ID",
+    "customerSince": "2016-11-09",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0002",
+    "maskedAccount": "•••1785",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1100000,
+    "usualDevice": "Xiaomi Redmi Note 12",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0002-1",
+      "ACC-KB-0002-2",
+      "ACC-KB-0002-3",
+      "ACC-KB-0002-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 685,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 161,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281276906304"
+  },
+  {
+    "id": "CUST-0003",
+    "name": "Sinta Saputra",
+    "age": 43,
+    "segment": "Salaried",
+    "city": "Medan",
+    "homeCountry": "ID",
+    "customerSince": "2023-04-09",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0003",
+    "maskedAccount": "•••4657",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1100000,
+    "usualDevice": "Realme C55",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0003-1",
+      "ACC-KB-0003-2",
+      "ACC-KB-0003-3",
+      "ACC-KB-0003-4",
+      "ACC-KB-0003-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 721,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 129,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281287089839"
+  },
+  {
+    "id": "CUST-0004",
+    "name": "Hendra Halim",
+    "age": 52,
+    "segment": "Salaried",
+    "city": "Medan",
+    "homeCountry": "ID",
+    "customerSince": "2023-09-04",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0004",
+    "maskedAccount": "•••5829",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1250000,
+    "usualDevice": "iPhone 13",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0004-1",
+      "ACC-KB-0004-2",
+      "ACC-KB-0004-3",
+      "ACC-KB-0004-4",
+      "ACC-KB-0004-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 749,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 179,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281216256556"
+  },
+  {
+    "id": "CUST-0005",
+    "name": "Citra Hartono",
+    "age": 28,
+    "segment": "Homemaker",
+    "city": "Semarang",
+    "homeCountry": "ID",
+    "customerSince": "2020-10-17",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0005",
+    "maskedAccount": "•••1866",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2700000,
+    "usualDevice": "Xiaomi Redmi Note 12",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0005-1",
+      "ACC-KB-0005-2",
+      "ACC-KB-0005-3",
+      "ACC-KB-0005-4",
+      "ACC-KB-0005-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 938,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 135,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281262284091"
+  },
+  {
+    "id": "CUST-0006",
+    "name": "Rudi Kusuma",
+    "age": 42,
+    "segment": "Homemaker",
+    "city": "Denpasar",
+    "homeCountry": "ID",
+    "customerSince": "2024-10-25",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0006",
+    "maskedAccount": "•••5117",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1300000,
+    "usualDevice": "Samsung Galaxy S23",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0006-1",
+      "ACC-KB-0006-2",
+      "ACC-KB-0006-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 692,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 173,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281243553673"
+  },
+  {
+    "id": "CUST-0007",
+    "name": "Putri Maharani",
+    "age": 35,
+    "segment": "Student",
+    "city": "Medan",
+    "homeCountry": "ID",
+    "customerSince": "2025-08-08",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0007",
+    "maskedAccount": "•••8010",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2950000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0007-1",
+      "ACC-KB-0007-2",
+      "ACC-KB-0007-3",
+      "ACC-KB-0007-4",
+      "ACC-KB-0007-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 620,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 226,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281270854422"
+  },
+  {
+    "id": "CUST-0008",
+    "name": "Eko Lubis",
+    "age": 30,
+    "segment": "Student",
+    "city": "Makassar",
+    "homeCountry": "ID",
+    "customerSince": "2016-06-17",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0008",
+    "maskedAccount": "•••0658",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 700000,
+    "usualDevice": "Samsung Galaxy S23",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0008-1",
+      "ACC-KB-0008-2",
+      "ACC-KB-0008-3",
+      "ACC-KB-0008-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 654,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 193,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281286041644"
+  },
+  {
+    "id": "CUST-0009",
+    "name": "Dewi Rahayu",
+    "age": 48,
+    "segment": "Salaried",
+    "city": "Jakarta",
+    "homeCountry": "ID",
+    "customerSince": "2017-04-05",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0009",
+    "maskedAccount": "•••5812",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2400000,
+    "usualDevice": "Samsung Galaxy S23",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0009-1",
+      "ACC-KB-0009-2",
+      "ACC-KB-0009-3",
+      "ACC-KB-0009-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 960,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 197,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281267069948"
+  },
+  {
+    "id": "CUST-0010",
+    "name": "Dimas Nugroho",
+    "age": 24,
+    "segment": "Student",
+    "city": "Yogyakarta",
+    "homeCountry": "ID",
+    "customerSince": "2020-05-26",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0010",
+    "maskedAccount": "•••1356",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 300000,
+    "usualDevice": "Realme C55",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0010-1",
+      "ACC-KB-0010-2",
+      "ACC-KB-0010-3",
+      "ACC-KB-0010-4",
+      "ACC-KB-0010-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 911,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 159,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281276966657"
+  },
+  {
+    "id": "CUST-0011",
+    "name": "Nadia Pangestu",
+    "age": 46,
+    "segment": "Salaried",
+    "city": "Medan",
+    "homeCountry": "ID",
+    "customerSince": "2021-10-12",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0011",
+    "maskedAccount": "•••8121",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2150000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0011-1",
+      "ACC-KB-0011-2",
+      "ACC-KB-0011-3",
+      "ACC-KB-0011-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 782,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 178,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281298445363"
+  },
+  {
+    "id": "CUST-0012",
+    "name": "Agus Wijaya",
+    "age": 29,
+    "segment": "Homemaker",
+    "city": "Makassar",
+    "homeCountry": "ID",
+    "customerSince": "2016-08-16",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0012",
+    "maskedAccount": "•••1623",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1550000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0012-1",
+      "ACC-KB-0012-2",
+      "ACC-KB-0012-3",
+      "ACC-KB-0012-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 884,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 129,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281258532315"
+  },
+  {
+    "id": "CUST-0013",
+    "name": "Rina Siregar",
+    "age": 24,
+    "segment": "Salaried",
+    "city": "Surabaya",
+    "homeCountry": "ID",
+    "customerSince": "2015-05-22",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0013",
+    "maskedAccount": "•••4893",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2500000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0013-1",
+      "ACC-KB-0013-2",
+      "ACC-KB-0013-3",
+      "ACC-KB-0013-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 872,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 182,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281279494782"
+  },
+  {
+    "id": "CUST-0014",
+    "name": "Galih Setiawan",
+    "age": 50,
+    "segment": "Entrepreneur",
+    "city": "Surabaya",
+    "homeCountry": "ID",
+    "customerSince": "2025-02-22",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0014",
+    "maskedAccount": "•••7552",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 800000,
+    "usualDevice": "Realme C55",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0014-1",
+      "ACC-KB-0014-2",
+      "ACC-KB-0014-3",
+      "ACC-KB-0014-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 755,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 147,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281295465470"
+  },
+  {
+    "id": "CUST-0015",
+    "name": "Maya Saputra",
+    "age": 50,
+    "segment": "Student",
+    "city": "Makassar",
+    "homeCountry": "ID",
+    "customerSince": "2025-05-13",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0015",
+    "maskedAccount": "•••7316",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 500000,
+    "usualDevice": "OPPO A78",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0015-1",
+      "ACC-KB-0015-2",
+      "ACC-KB-0015-3",
+      "ACC-KB-0015-4",
+      "ACC-KB-0015-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 752,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 191,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281209366580"
+  },
+  {
+    "id": "CUST-0016",
+    "name": "Yoga Halim",
+    "age": 37,
+    "segment": "Entrepreneur",
+    "city": "Surabaya",
+    "homeCountry": "ID",
+    "customerSince": "2020-07-03",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0016",
+    "maskedAccount": "•••6713",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 550000,
+    "usualDevice": "Xiaomi Redmi Note 12",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0016-1",
+      "ACC-KB-0016-2",
+      "ACC-KB-0016-3",
+      "ACC-KB-0016-4",
+      "ACC-KB-0016-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 732,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 134,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281247400949"
+  },
+  {
+    "id": "CUST-0017",
+    "name": "Intan Hartono",
+    "age": 34,
+    "segment": "Homemaker",
+    "city": "Semarang",
+    "homeCountry": "ID",
+    "customerSince": "2019-05-01",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0017",
+    "maskedAccount": "•••7680",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2400000,
+    "usualDevice": "iPhone 13",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0017-1",
+      "ACC-KB-0017-2",
+      "ACC-KB-0017-3",
+      "ACC-KB-0017-4",
+      "ACC-KB-0017-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 715,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 219,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281272043462"
+  },
+  {
+    "id": "CUST-0018",
+    "name": "Fajar Kusuma",
+    "age": 50,
+    "segment": "Entrepreneur",
+    "city": "Denpasar",
+    "homeCountry": "ID",
+    "customerSince": "2017-08-14",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0018",
+    "maskedAccount": "•••2683",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2250000,
+    "usualDevice": "Xiaomi Redmi Note 12",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0018-1",
+      "ACC-KB-0018-2",
+      "ACC-KB-0018-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 745,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 173,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281244257351"
+  },
+  {
+    "id": "CUST-0019",
+    "name": "Wulan Maharani",
+    "age": 31,
+    "segment": "Salaried",
+    "city": "Denpasar",
+    "homeCountry": "ID",
+    "customerSince": "2021-08-18",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0019",
+    "maskedAccount": "•••2414",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2350000,
+    "usualDevice": "Xiaomi Redmi Note 12",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0019-1",
+      "ACC-KB-0019-2",
+      "ACC-KB-0019-3",
+      "ACC-KB-0019-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 693,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 148,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281294335975"
+  },
+  {
+    "id": "CUST-0020",
+    "name": "Andi Lubis",
+    "age": 39,
+    "segment": "Salaried",
+    "city": "Bandung",
+    "homeCountry": "ID",
+    "customerSince": "2023-06-03",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0020",
+    "maskedAccount": "•••0852",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2600000,
+    "usualDevice": "iPhone 13",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0020-1",
+      "ACC-KB-0020-2",
+      "ACC-KB-0020-3",
+      "ACC-KB-0020-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 775,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 120,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281294364666"
+  },
+  {
+    "id": "CUST-0021",
+    "name": "Lestari Rahayu",
+    "age": 41,
+    "segment": "Homemaker",
+    "city": "Surabaya",
+    "homeCountry": "ID",
+    "customerSince": "2019-08-21",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0021",
+    "maskedAccount": "•••7304",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1500000,
+    "usualDevice": "Samsung Galaxy A54",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0021-1",
+      "ACC-KB-0021-2",
+      "ACC-KB-0021-3",
+      "ACC-KB-0021-4",
+      "ACC-KB-0021-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 666,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 133,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281284843441"
+  },
+  {
+    "id": "CUST-0022",
+    "name": "Bayu Nugroho",
+    "age": 22,
+    "segment": "Homemaker",
+    "city": "Bandung",
+    "homeCountry": "ID",
+    "customerSince": "2019-08-16",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0022",
+    "maskedAccount": "•••5368",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 700000,
+    "usualDevice": "Samsung Galaxy A54",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0022-1",
+      "ACC-KB-0022-2",
+      "ACC-KB-0022-3",
+      "ACC-KB-0022-4",
+      "ACC-KB-0022-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 739,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 220,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281267571219"
+  },
+  {
+    "id": "CUST-0023",
+    "name": "Sinta Pangestu",
+    "age": 39,
+    "segment": "Salaried",
+    "city": "Makassar",
+    "homeCountry": "ID",
+    "customerSince": "2021-05-15",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0023",
+    "maskedAccount": "•••3624",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 550000,
+    "usualDevice": "Realme C55",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0023-1",
+      "ACC-KB-0023-2",
+      "ACC-KB-0023-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 839,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 178,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281232779457"
+  },
+  {
+    "id": "CUST-0024",
+    "name": "Hendra Wijaya",
+    "age": 35,
+    "segment": "Salaried",
+    "city": "Yogyakarta",
+    "homeCountry": "ID",
+    "customerSince": "2021-03-02",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0024",
+    "maskedAccount": "•••4427",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 350000,
+    "usualDevice": "Samsung Galaxy S23",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0024-1",
+      "ACC-KB-0024-2",
+      "ACC-KB-0024-3",
+      "ACC-KB-0024-4",
+      "ACC-KB-0024-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 960,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 158,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281216224305"
+  },
+  {
+    "id": "CUST-0025",
+    "name": "Citra Siregar",
+    "age": 39,
+    "segment": "Salaried",
+    "city": "Jakarta",
+    "homeCountry": "ID",
+    "customerSince": "2023-11-13",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0025",
+    "maskedAccount": "•••8345",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1800000,
+    "usualDevice": "OPPO A78",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0025-1",
+      "ACC-KB-0025-2",
+      "ACC-KB-0025-3",
+      "ACC-KB-0025-4",
+      "ACC-KB-0025-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 787,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 207,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281269483744"
+  },
+  {
+    "id": "CUST-0026",
+    "name": "Rudi Setiawan",
+    "age": 22,
+    "segment": "Student",
+    "city": "Semarang",
+    "homeCountry": "ID",
+    "customerSince": "2023-02-09",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0026",
+    "maskedAccount": "•••4908",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2850000,
+    "usualDevice": "Samsung Galaxy A54",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0026-1",
+      "ACC-KB-0026-2",
+      "ACC-KB-0026-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 720,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 140,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281244447402"
+  },
+  {
+    "id": "CUST-0027",
+    "name": "Putri Saputra",
+    "age": 28,
+    "segment": "Entrepreneur",
+    "city": "Bandung",
+    "homeCountry": "ID",
+    "customerSince": "2021-09-11",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0027",
+    "maskedAccount": "•••1081",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 900000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0027-1",
+      "ACC-KB-0027-2",
+      "ACC-KB-0027-3",
+      "ACC-KB-0027-4",
+      "ACC-KB-0027-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 618,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 240,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281223184193"
+  },
+  {
+    "id": "CUST-0028",
+    "name": "Eko Halim",
+    "age": 47,
+    "segment": "Salaried",
+    "city": "Makassar",
+    "homeCountry": "ID",
+    "customerSince": "2015-01-25",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0028",
+    "maskedAccount": "•••5256",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1700000,
+    "usualDevice": "Samsung Galaxy A54",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0028-1",
+      "ACC-KB-0028-2",
+      "ACC-KB-0028-3",
+      "ACC-KB-0028-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 897,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 216,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281254123175"
+  },
+  {
+    "id": "CUST-0029",
+    "name": "Dewi Hartono",
+    "age": 40,
+    "segment": "Salaried",
+    "city": "Semarang",
+    "homeCountry": "ID",
+    "customerSince": "2017-01-22",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0029",
+    "maskedAccount": "•••4695",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1650000,
+    "usualDevice": "OPPO A78",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0029-1",
+      "ACC-KB-0029-2",
+      "ACC-KB-0029-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 678,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 224,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281230642489"
+  },
+  {
+    "id": "CUST-0030",
+    "name": "Dimas Kusuma",
+    "age": 20,
+    "segment": "Salaried",
+    "city": "Surabaya",
+    "homeCountry": "ID",
+    "customerSince": "2016-06-22",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0030",
+    "maskedAccount": "•••7845",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1800000,
+    "usualDevice": "Realme C55",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0030-1",
+      "ACC-KB-0030-2",
+      "ACC-KB-0030-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 895,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 133,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281231144845"
+  },
+  {
+    "id": "CUST-0031",
+    "name": "Nadia Maharani",
+    "age": 24,
+    "segment": "Salaried",
+    "city": "Medan",
+    "homeCountry": "ID",
+    "customerSince": "2021-08-11",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0031",
+    "maskedAccount": "•••0460",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 750000,
+    "usualDevice": "Samsung Galaxy A54",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0031-1",
+      "ACC-KB-0031-2",
+      "ACC-KB-0031-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 838,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 221,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281231996799"
+  },
+  {
+    "id": "CUST-0032",
+    "name": "Agus Lubis",
+    "age": 29,
+    "segment": "Salaried",
+    "city": "Yogyakarta",
+    "homeCountry": "ID",
+    "customerSince": "2016-10-17",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0032",
+    "maskedAccount": "•••4880",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 650000,
+    "usualDevice": "Samsung Galaxy A54",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0032-1",
+      "ACC-KB-0032-2",
+      "ACC-KB-0032-3",
+      "ACC-KB-0032-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 779,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 152,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281292690381"
+  },
+  {
+    "id": "CUST-0033",
+    "name": "Rina Rahayu",
+    "age": 27,
+    "segment": "Salaried",
+    "city": "Surabaya",
+    "homeCountry": "ID",
+    "customerSince": "2023-05-08",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0033",
+    "maskedAccount": "•••0462",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1100000,
+    "usualDevice": "iPhone 13",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0033-1",
+      "ACC-KB-0033-2",
+      "ACC-KB-0033-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 739,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 135,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281263175015"
+  },
+  {
+    "id": "CUST-0034",
+    "name": "Galih Nugroho",
+    "age": 26,
+    "segment": "Salaried",
+    "city": "Bandung",
+    "homeCountry": "ID",
+    "customerSince": "2020-11-12",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0034",
+    "maskedAccount": "•••9484",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1200000,
+    "usualDevice": "Samsung Galaxy A54",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0034-1",
+      "ACC-KB-0034-2",
+      "ACC-KB-0034-3",
+      "ACC-KB-0034-4",
+      "ACC-KB-0034-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 690,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 152,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281264907046"
+  },
+  {
+    "id": "CUST-0035",
+    "name": "Maya Pangestu",
+    "age": 22,
+    "segment": "Homemaker",
+    "city": "Jakarta",
+    "homeCountry": "ID",
+    "customerSince": "2019-06-22",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0035",
+    "maskedAccount": "•••4144",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 750000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0035-1",
+      "ACC-KB-0035-2",
+      "ACC-KB-0035-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 930,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 219,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281252575474"
+  },
+  {
+    "id": "CUST-0036",
+    "name": "Yoga Wijaya",
+    "age": 55,
+    "segment": "Homemaker",
+    "city": "Semarang",
+    "homeCountry": "ID",
+    "customerSince": "2017-06-27",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0036",
+    "maskedAccount": "•••0079",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 650000,
+    "usualDevice": "Xiaomi Redmi Note 12",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0036-1",
+      "ACC-KB-0036-2",
+      "ACC-KB-0036-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 957,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 174,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281247800623"
+  },
+  {
+    "id": "CUST-0037",
+    "name": "Intan Siregar",
+    "age": 53,
+    "segment": "Entrepreneur",
+    "city": "Denpasar",
+    "homeCountry": "ID",
+    "customerSince": "2021-09-17",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0037",
+    "maskedAccount": "•••4042",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1950000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0037-1",
+      "ACC-KB-0037-2",
+      "ACC-KB-0037-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 695,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 207,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281243148323"
+  },
+  {
+    "id": "CUST-0038",
+    "name": "Fajar Setiawan",
+    "age": 33,
+    "segment": "Homemaker",
+    "city": "Medan",
+    "homeCountry": "ID",
+    "customerSince": "2024-07-16",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0038",
+    "maskedAccount": "•••3007",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 400000,
+    "usualDevice": "Samsung Galaxy S23",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0038-1",
+      "ACC-KB-0038-2",
+      "ACC-KB-0038-3",
+      "ACC-KB-0038-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 801,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 171,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281223069935"
+  },
+  {
+    "id": "CUST-0039",
+    "name": "Wulan Saputra",
+    "age": 39,
+    "segment": "Homemaker",
+    "city": "Makassar",
+    "homeCountry": "ID",
+    "customerSince": "2019-07-14",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0039",
+    "maskedAccount": "•••3861",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2600000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0039-1",
+      "ACC-KB-0039-2",
+      "ACC-KB-0039-3",
+      "ACC-KB-0039-4",
+      "ACC-KB-0039-5"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 723,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 125,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281223797674"
+  },
+  {
+    "id": "CUST-0040",
+    "name": "Andi Halim",
+    "age": 28,
+    "segment": "Homemaker",
+    "city": "Jakarta",
+    "homeCountry": "ID",
+    "customerSince": "2018-10-21",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0040",
+    "maskedAccount": "•••8632",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 1500000,
+    "usualDevice": "Vivo Y27",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0040-1",
+      "ACC-KB-0040-2",
+      "ACC-KB-0040-3",
+      "ACC-KB-0040-4"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 781,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 129,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281277826480"
+  },
+  {
+    "id": "CUST-0041",
+    "name": "Lestari Hartono",
+    "age": 44,
+    "segment": "Student",
+    "city": "Surabaya",
+    "homeCountry": "ID",
+    "customerSince": "2021-06-15",
+    "riskProfile": "LOW",
+    "accountId": "ACC-0041",
+    "maskedAccount": "•••5972",
+    "accountStatus": "ACTIVE",
+    "avgDailySpend": 2400000,
+    "usualDevice": "iPhone 13",
+    "usualActiveHours": {
+      "from": "07:00",
+      "to": "23:00"
+    },
+    "knownBeneficiaries": [
+      "ACC-KB-0041-1",
+      "ACC-KB-0041-2",
+      "ACC-KB-0041-3"
+    ],
+    "sessionBaseline": {
+      "hesitationTimeMs": 735,
+      "typingCadenceDeviation": 0.15,
+      "sessionDurationSec": 124,
+      "navigationPattern": "browse-then-transfer"
+    },
+    "phone": "+6281247686893"
+  }
+]

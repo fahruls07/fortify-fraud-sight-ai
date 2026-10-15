@@ -1,0 +1,78 @@
+{
+  "riskLevel": "CRITICAL",
+  "confidence": 0.96,
+  "typology": "SOCIAL_ENGINEERING_SCREEN_SHARING",
+  "headline": "Budi's Rp 50 million transfer controlled via AnyDesk to an account linked to a mule network",
+  "summary": "Budi Santoso (21, student) usually transacts about Rp 500,000 per day, but this session transferred Rp 50,000,000 to a new beneficiary at another bank with a 9-day-old account. Device and PIN were valid, but AnyDesk was active, a VPN with a Russian IP was detected, and the account number was pasted 7 times. The beneficiary account shares a device with 3 accounts flagged as fraud in the last 7 days. This pattern matches the screen sharing scam playbook.",
+  "reasonCodes": [
+    {
+      "code": "RC_SCREEN_SHARING",
+      "severity": "CRITICAL",
+      "evidence": "screenSharingAppDetected = AnyDesk",
+      "explanation": "Remote access app active; the transaction is likely controlled by a third party."
+    },
+    {
+      "code": "RC_COPY_PASTE_BENEFICIARY",
+      "severity": "HIGH",
+      "evidence": "copyPasteEventsOnBeneficiaryField = 7",
+      "explanation": "Beneficiary account number pasted 7 times; the customer is following instructions."
+    },
+    {
+      "code": "RC_VPN_FOREIGN_IP",
+      "severity": "HIGH",
+      "evidence": "isVpnDetected = true, ipCountry = RU",
+      "explanation": "Customer is based in Jakarta, but the session comes from a Russian IP via VPN."
+    },
+    {
+      "code": "RC_AMOUNT_SPIKE",
+      "severity": "HIGH",
+      "evidence": "amount = 50000000 (100× avgDailySpend 500000)",
+      "explanation": "Amount is 100 times the customer's average daily spend."
+    },
+    {
+      "code": "RC_NEW_BENEFICIARY",
+      "severity": "MEDIUM",
+      "evidence": "beneficiary.isNew = true",
+      "explanation": "Beneficiary is not among the customer's 4 known beneficiaries."
+    },
+    {
+      "code": "RC_YOUNG_BENEFICIARY_ACCOUNT",
+      "severity": "MEDIUM",
+      "evidence": "beneficiary.accountAgeDays = 9",
+      "explanation": "Beneficiary account was opened only 9 days ago."
+    },
+    {
+      "code": "RC_HESITATION",
+      "severity": "MEDIUM",
+      "evidence": "hesitationTimeMs = 4500",
+      "explanation": "Hesitation of 4500 ms, far above the baseline of about 800 ms."
+    },
+    {
+      "code": "RC_MULE_NETWORK",
+      "severity": "CRITICAL",
+      "evidence": "sharedDeviceWith = 3",
+      "explanation": "Beneficiary account shares a device with 3 accounts flagged as fraud in the last 7 days."
+    }
+  ],
+  "baselineComparison": "Baseline rated MEDIUM (score 35) because it only looks at the transaction: amount 100× average (+25), new beneficiary (+15), young account (+10), minus known device (−10) and correct PIN (−5). Baseline does not see AnyDesk, VPN/foreign IP, copy-paste, or the mule network.",
+  "recommendedAction": "DECLINE_AND_FREEZE",
+  "nextSteps": [
+    "Decline the transfer and temporarily freeze Budi's account.",
+    "Contact Budi via the official channel (14041) and ask him to uninstall AnyDesk.",
+    "Report account ACC-BEN-7781 to the mule investigation team."
+  ],
+  "citations": [
+    {
+      "docId": "PB-SCAM-01",
+      "title": "Playbook — Social Engineering / Screen-Sharing Scam"
+    },
+    {
+      "docId": "PB-MULE-01",
+      "title": "Playbook — Mule Account"
+    },
+    {
+      "docId": "POL-FRAUD-01",
+      "title": "Bank Fraud Policy — Thresholds and Required Actions"
+    }
+  ]
+}

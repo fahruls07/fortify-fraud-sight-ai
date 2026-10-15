@@ -1,0 +1,1412 @@
+[
+  {
+    "id": "ALT-0141",
+    "transactionId": "TX-A0141",
+    "customerId": "CUST-0025",
+    "createdAt": "2026-10-14T11:59:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0140",
+    "transactionId": "TX-A0140",
+    "customerId": "CUST-0022",
+    "createdAt": "2026-10-14T11:48:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0139",
+    "transactionId": "TX-A0139",
+    "customerId": "CUST-0019",
+    "createdAt": "2026-10-14T11:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0138",
+    "transactionId": "TX-A0138",
+    "customerId": "CUST-0016",
+    "createdAt": "2026-10-14T11:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0137",
+    "transactionId": "TX-A0137",
+    "customerId": "CUST-0013",
+    "createdAt": "2026-10-14T11:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0136",
+    "transactionId": "TX-A0136",
+    "customerId": "CUST-0010",
+    "createdAt": "2026-10-14T10:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0135",
+    "transactionId": "TX-A0135",
+    "customerId": "CUST-0007",
+    "createdAt": "2026-10-14T10:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0134",
+    "transactionId": "TX-A0134",
+    "customerId": "CUST-0004",
+    "createdAt": "2026-10-14T10:18:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0133",
+    "transactionId": "TX-A0133",
+    "customerId": "CUST-0041",
+    "createdAt": "2026-10-14T10:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0132",
+    "transactionId": "TX-A0132",
+    "customerId": "CUST-0038",
+    "createdAt": "2026-10-14T09:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0131",
+    "transactionId": "TX-A0131",
+    "customerId": "CUST-0035",
+    "createdAt": "2026-10-14T09:33:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0130",
+    "transactionId": "TX-A0130",
+    "customerId": "CUST-0032",
+    "createdAt": "2026-10-14T09:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0129",
+    "transactionId": "TX-A0129",
+    "customerId": "CUST-0029",
+    "createdAt": "2026-10-14T09:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0128",
+    "transactionId": "TX-A0128",
+    "customerId": "CUST-0026",
+    "createdAt": "2026-10-14T08:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0127",
+    "transactionId": "TX-A0127",
+    "customerId": "CUST-0023",
+    "createdAt": "2026-10-14T08:33:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0126",
+    "transactionId": "TX-A0126",
+    "customerId": "CUST-0020",
+    "createdAt": "2026-10-14T08:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0125",
+    "transactionId": "TX-A0125",
+    "customerId": "CUST-0017",
+    "createdAt": "2026-10-14T08:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0124",
+    "transactionId": "TX-A0124",
+    "customerId": "CUST-0014",
+    "createdAt": "2026-10-14T07:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0123",
+    "transactionId": "TX-A0123",
+    "customerId": "CUST-0011",
+    "createdAt": "2026-10-14T07:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0122",
+    "transactionId": "TX-A0122",
+    "customerId": "CUST-0008",
+    "createdAt": "2026-10-14T07:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0121",
+    "transactionId": "TX-A0121",
+    "customerId": "CUST-0005",
+    "createdAt": "2026-10-14T07:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0120",
+    "transactionId": "TX-A0120",
+    "customerId": "CUST-0002",
+    "createdAt": "2026-10-14T06:48:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0119",
+    "transactionId": "TX-A0119",
+    "customerId": "CUST-0039",
+    "createdAt": "2026-10-14T06:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0118",
+    "transactionId": "TX-A0118",
+    "customerId": "CUST-0036",
+    "createdAt": "2026-10-14T06:18:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0117",
+    "transactionId": "TX-A0117",
+    "customerId": "CUST-0033",
+    "createdAt": "2026-10-14T06:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0116",
+    "transactionId": "TX-A0116",
+    "customerId": "CUST-0030",
+    "createdAt": "2026-10-14T05:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0115",
+    "transactionId": "TX-A0115",
+    "customerId": "CUST-0027",
+    "createdAt": "2026-10-14T05:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0114",
+    "transactionId": "TX-A0114",
+    "customerId": "CUST-0024",
+    "createdAt": "2026-10-14T05:18:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0113",
+    "transactionId": "TX-A0113",
+    "customerId": "CUST-0021",
+    "createdAt": "2026-10-14T05:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0112",
+    "transactionId": "TX-A0112",
+    "customerId": "CUST-0018",
+    "createdAt": "2026-10-14T04:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0111",
+    "transactionId": "TX-A0111",
+    "customerId": "CUST-0015",
+    "createdAt": "2026-10-14T04:33:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0110",
+    "transactionId": "TX-A0110",
+    "customerId": "CUST-0012",
+    "createdAt": "2026-10-14T04:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0109",
+    "transactionId": "TX-A0109",
+    "customerId": "CUST-0009",
+    "createdAt": "2026-10-14T04:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0108",
+    "transactionId": "TX-A0108",
+    "customerId": "CUST-0006",
+    "createdAt": "2026-10-14T03:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0107",
+    "transactionId": "TX-A0107",
+    "customerId": "CUST-0003",
+    "createdAt": "2026-10-14T03:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0106",
+    "transactionId": "TX-A0106",
+    "customerId": "CUST-0040",
+    "createdAt": "2026-10-14T03:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0105",
+    "transactionId": "TX-A0105",
+    "customerId": "CUST-0037",
+    "createdAt": "2026-10-14T03:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0104",
+    "transactionId": "TX-A0104",
+    "customerId": "CUST-0034",
+    "createdAt": "2026-10-14T02:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0103",
+    "transactionId": "TX-A0103",
+    "customerId": "CUST-0031",
+    "createdAt": "2026-10-14T02:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0102",
+    "transactionId": "TX-A0102",
+    "customerId": "CUST-0028",
+    "createdAt": "2026-10-14T02:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0101",
+    "transactionId": "TX-A0101",
+    "customerId": "CUST-0025",
+    "createdAt": "2026-10-14T02:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0100",
+    "transactionId": "TX-A0100",
+    "customerId": "CUST-0022",
+    "createdAt": "2026-10-14T01:48:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0099",
+    "transactionId": "TX-A0099",
+    "customerId": "CUST-0019",
+    "createdAt": "2026-10-14T01:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0098",
+    "transactionId": "TX-A0098",
+    "customerId": "CUST-0016",
+    "createdAt": "2026-10-14T01:18:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0097",
+    "transactionId": "TX-A0097",
+    "customerId": "CUST-0013",
+    "createdAt": "2026-10-14T01:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0096",
+    "transactionId": "TX-A0096",
+    "customerId": "CUST-0010",
+    "createdAt": "2026-10-14T00:48:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0095",
+    "transactionId": "TX-A0095",
+    "customerId": "CUST-0007",
+    "createdAt": "2026-10-14T00:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0094",
+    "transactionId": "TX-A0094",
+    "customerId": "CUST-0004",
+    "createdAt": "2026-10-14T00:18:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0093",
+    "transactionId": "TX-A0093",
+    "customerId": "CUST-0041",
+    "createdAt": "2026-10-14T00:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0092",
+    "transactionId": "TX-A0092",
+    "customerId": "CUST-0038",
+    "createdAt": "2026-10-13T23:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0091",
+    "transactionId": "TX-A0091",
+    "customerId": "CUST-0035",
+    "createdAt": "2026-10-13T23:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0090",
+    "transactionId": "TX-A0090",
+    "customerId": "CUST-0032",
+    "createdAt": "2026-10-13T23:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0089",
+    "transactionId": "TX-A0089",
+    "customerId": "CUST-0029",
+    "createdAt": "2026-10-13T23:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0088",
+    "transactionId": "TX-A0088",
+    "customerId": "CUST-0026",
+    "createdAt": "2026-10-13T22:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0087",
+    "transactionId": "TX-A0087",
+    "customerId": "CUST-0023",
+    "createdAt": "2026-10-13T22:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0086",
+    "transactionId": "TX-A0086",
+    "customerId": "CUST-0020",
+    "createdAt": "2026-10-13T22:18:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0085",
+    "transactionId": "TX-A0085",
+    "customerId": "CUST-0017",
+    "createdAt": "2026-10-13T22:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0084",
+    "transactionId": "TX-A0084",
+    "customerId": "CUST-0014",
+    "createdAt": "2026-10-13T21:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0083",
+    "transactionId": "TX-A0083",
+    "customerId": "CUST-0011",
+    "createdAt": "2026-10-13T21:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0082",
+    "transactionId": "TX-A0082",
+    "customerId": "CUST-0008",
+    "createdAt": "2026-10-13T21:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0081",
+    "transactionId": "TX-A0081",
+    "customerId": "CUST-0005",
+    "createdAt": "2026-10-13T21:03:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0080",
+    "transactionId": "TX-A0080",
+    "customerId": "CUST-0002",
+    "createdAt": "2026-10-13T20:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0079",
+    "transactionId": "TX-A0079",
+    "customerId": "CUST-0039",
+    "createdAt": "2026-10-13T20:33:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0078",
+    "transactionId": "TX-A0078",
+    "customerId": "CUST-0036",
+    "createdAt": "2026-10-13T20:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0077",
+    "transactionId": "TX-A0077",
+    "customerId": "CUST-0033",
+    "createdAt": "2026-10-13T20:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0076",
+    "transactionId": "TX-A0076",
+    "customerId": "CUST-0030",
+    "createdAt": "2026-10-13T19:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0075",
+    "transactionId": "TX-A0075",
+    "customerId": "CUST-0027",
+    "createdAt": "2026-10-13T19:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0074",
+    "transactionId": "TX-A0074",
+    "customerId": "CUST-0024",
+    "createdAt": "2026-10-13T19:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0073",
+    "transactionId": "TX-A0073",
+    "customerId": "CUST-0021",
+    "createdAt": "2026-10-13T19:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0072",
+    "transactionId": "TX-A0072",
+    "customerId": "CUST-0018",
+    "createdAt": "2026-10-13T18:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0071",
+    "transactionId": "TX-A0071",
+    "customerId": "CUST-0015",
+    "createdAt": "2026-10-13T18:33:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0070",
+    "transactionId": "TX-A0070",
+    "customerId": "CUST-0012",
+    "createdAt": "2026-10-13T18:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0069",
+    "transactionId": "TX-A0069",
+    "customerId": "CUST-0009",
+    "createdAt": "2026-10-13T18:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0068",
+    "transactionId": "TX-A0068",
+    "customerId": "CUST-0006",
+    "createdAt": "2026-10-13T17:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0067",
+    "transactionId": "TX-A0067",
+    "customerId": "CUST-0003",
+    "createdAt": "2026-10-13T17:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0066",
+    "transactionId": "TX-A0066",
+    "customerId": "CUST-0040",
+    "createdAt": "2026-10-13T17:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0065",
+    "transactionId": "TX-A0065",
+    "customerId": "CUST-0037",
+    "createdAt": "2026-10-13T17:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0064",
+    "transactionId": "TX-A0064",
+    "customerId": "CUST-0034",
+    "createdAt": "2026-10-13T16:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0063",
+    "transactionId": "TX-A0063",
+    "customerId": "CUST-0031",
+    "createdAt": "2026-10-13T16:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0062",
+    "transactionId": "TX-A0062",
+    "customerId": "CUST-0028",
+    "createdAt": "2026-10-13T16:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0061",
+    "transactionId": "TX-A0061",
+    "customerId": "CUST-0025",
+    "createdAt": "2026-10-13T16:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0060",
+    "transactionId": "TX-A0060",
+    "customerId": "CUST-0022",
+    "createdAt": "2026-10-13T15:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0059",
+    "transactionId": "TX-A0059",
+    "customerId": "CUST-0019",
+    "createdAt": "2026-10-13T15:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0058",
+    "transactionId": "TX-A0058",
+    "customerId": "CUST-0016",
+    "createdAt": "2026-10-13T15:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0057",
+    "transactionId": "TX-A0057",
+    "customerId": "CUST-0013",
+    "createdAt": "2026-10-13T15:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0056",
+    "transactionId": "TX-A0056",
+    "customerId": "CUST-0010",
+    "createdAt": "2026-10-13T14:48:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0055",
+    "transactionId": "TX-A0055",
+    "customerId": "CUST-0007",
+    "createdAt": "2026-10-13T14:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0054",
+    "transactionId": "TX-A0054",
+    "customerId": "CUST-0004",
+    "createdAt": "2026-10-13T14:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0053",
+    "transactionId": "TX-A0053",
+    "customerId": "CUST-0041",
+    "createdAt": "2026-10-13T14:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0052",
+    "transactionId": "TX-A0052",
+    "customerId": "CUST-0038",
+    "createdAt": "2026-10-13T13:48:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0051",
+    "transactionId": "TX-A0051",
+    "customerId": "CUST-0035",
+    "createdAt": "2026-10-13T13:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0050",
+    "transactionId": "TX-A0050",
+    "customerId": "CUST-0032",
+    "createdAt": "2026-10-13T13:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0049",
+    "transactionId": "TX-A0049",
+    "customerId": "CUST-0029",
+    "createdAt": "2026-10-13T13:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0048",
+    "transactionId": "TX-A0048",
+    "customerId": "CUST-0026",
+    "createdAt": "2026-10-13T12:48:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0047",
+    "transactionId": "TX-A0047",
+    "customerId": "CUST-0023",
+    "createdAt": "2026-10-13T12:33:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0046",
+    "transactionId": "TX-A0046",
+    "customerId": "CUST-0020",
+    "createdAt": "2026-10-13T12:18:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0045",
+    "transactionId": "TX-A0045",
+    "customerId": "CUST-0017",
+    "createdAt": "2026-10-13T12:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0044",
+    "transactionId": "TX-A0044",
+    "customerId": "CUST-0014",
+    "createdAt": "2026-10-13T11:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0043",
+    "transactionId": "TX-A0043",
+    "customerId": "CUST-0011",
+    "createdAt": "2026-10-13T11:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0042",
+    "transactionId": "TX-A0042",
+    "customerId": "CUST-0008",
+    "createdAt": "2026-10-13T11:18:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0041",
+    "transactionId": "TX-A0041",
+    "customerId": "CUST-0005",
+    "createdAt": "2026-10-13T11:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0040",
+    "transactionId": "TX-A0040",
+    "customerId": "CUST-0002",
+    "createdAt": "2026-10-13T10:48:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0039",
+    "transactionId": "TX-A0039",
+    "customerId": "CUST-0039",
+    "createdAt": "2026-10-13T10:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0038",
+    "transactionId": "TX-A0038",
+    "customerId": "CUST-0036",
+    "createdAt": "2026-10-13T10:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0037",
+    "transactionId": "TX-A0037",
+    "customerId": "CUST-0033",
+    "createdAt": "2026-10-13T10:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0036",
+    "transactionId": "TX-A0036",
+    "customerId": "CUST-0030",
+    "createdAt": "2026-10-13T09:48:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0035",
+    "transactionId": "TX-A0035",
+    "customerId": "CUST-0027",
+    "createdAt": "2026-10-13T09:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0034",
+    "transactionId": "TX-A0034",
+    "customerId": "CUST-0024",
+    "createdAt": "2026-10-13T09:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0033",
+    "transactionId": "TX-A0033",
+    "customerId": "CUST-0021",
+    "createdAt": "2026-10-13T09:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0032",
+    "transactionId": "TX-A0032",
+    "customerId": "CUST-0018",
+    "createdAt": "2026-10-13T08:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0031",
+    "transactionId": "TX-A0031",
+    "customerId": "CUST-0015",
+    "createdAt": "2026-10-13T08:33:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0030",
+    "transactionId": "TX-A0030",
+    "customerId": "CUST-0012",
+    "createdAt": "2026-10-13T08:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0029",
+    "transactionId": "TX-A0029",
+    "customerId": "CUST-0009",
+    "createdAt": "2026-10-13T08:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0028",
+    "transactionId": "TX-A0028",
+    "customerId": "CUST-0006",
+    "createdAt": "2026-10-13T07:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0027",
+    "transactionId": "TX-A0027",
+    "customerId": "CUST-0003",
+    "createdAt": "2026-10-13T07:33:00.000Z",
+    "baselineScore": 65,
+    "baselineLevel": "HIGH",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0026",
+    "transactionId": "TX-A0026",
+    "customerId": "CUST-0040",
+    "createdAt": "2026-10-13T07:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0025",
+    "transactionId": "TX-A0025",
+    "customerId": "CUST-0037",
+    "createdAt": "2026-10-13T07:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0024",
+    "transactionId": "TX-A0024",
+    "customerId": "CUST-0034",
+    "createdAt": "2026-10-13T06:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0023",
+    "transactionId": "TX-A0023",
+    "customerId": "CUST-0031",
+    "createdAt": "2026-10-13T06:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0022",
+    "transactionId": "TX-A0022",
+    "customerId": "CUST-0028",
+    "createdAt": "2026-10-13T06:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0021",
+    "transactionId": "TX-A0021",
+    "customerId": "CUST-0025",
+    "createdAt": "2026-10-13T06:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0020",
+    "transactionId": "TX-A0020",
+    "customerId": "CUST-0022",
+    "createdAt": "2026-10-13T05:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0019",
+    "transactionId": "TX-A0019",
+    "customerId": "CUST-0019",
+    "createdAt": "2026-10-13T05:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0018",
+    "transactionId": "TX-A0018",
+    "customerId": "CUST-0016",
+    "createdAt": "2026-10-13T05:18:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0017",
+    "transactionId": "TX-A0017",
+    "customerId": "CUST-0013",
+    "createdAt": "2026-10-13T05:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0016",
+    "transactionId": "TX-A0016",
+    "customerId": "CUST-0010",
+    "createdAt": "2026-10-13T04:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0015",
+    "transactionId": "TX-A0015",
+    "customerId": "CUST-0007",
+    "createdAt": "2026-10-13T04:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0014",
+    "transactionId": "TX-A0014",
+    "customerId": "CUST-0004",
+    "createdAt": "2026-10-13T04:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0013",
+    "transactionId": "TX-A0013",
+    "customerId": "CUST-0041",
+    "createdAt": "2026-10-13T04:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0012",
+    "transactionId": "TX-A0012",
+    "customerId": "CUST-0038",
+    "createdAt": "2026-10-13T03:48:00.000Z",
+    "baselineScore": 0,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0011",
+    "transactionId": "TX-A0011",
+    "customerId": "CUST-0035",
+    "createdAt": "2026-10-13T03:33:00.000Z",
+    "baselineScore": 65,
+    "baselineLevel": "HIGH",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0010",
+    "transactionId": "TX-A0010",
+    "customerId": "CUST-0032",
+    "createdAt": "2026-10-13T03:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "Investigating",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0009",
+    "transactionId": "TX-A0009",
+    "customerId": "CUST-0029",
+    "createdAt": "2026-10-13T03:03:00.000Z",
+    "baselineScore": 10,
+    "baselineLevel": "LOW",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0008",
+    "transactionId": "TX-A0008",
+    "customerId": "CUST-0026",
+    "createdAt": "2026-10-13T02:48:00.000Z",
+    "baselineScore": 65,
+    "baselineLevel": "HIGH",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0007",
+    "transactionId": "TX-A0007",
+    "customerId": "CUST-0023",
+    "createdAt": "2026-10-13T02:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0006",
+    "transactionId": "TX-A0006",
+    "customerId": "CUST-0020",
+    "createdAt": "2026-10-13T02:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0005",
+    "transactionId": "TX-A0005",
+    "customerId": "CUST-0017",
+    "createdAt": "2026-10-13T02:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0004",
+    "transactionId": "TX-A0004",
+    "customerId": "CUST-0014",
+    "createdAt": "2026-10-13T01:48:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0003",
+    "transactionId": "TX-A0003",
+    "customerId": "CUST-0011",
+    "createdAt": "2026-10-13T01:33:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0002",
+    "transactionId": "TX-A0002",
+    "customerId": "CUST-0008",
+    "createdAt": "2026-10-13T01:18:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  },
+  {
+    "id": "ALT-0001",
+    "transactionId": "TX-A0001",
+    "customerId": "CUST-0005",
+    "createdAt": "2026-10-13T01:03:00.000Z",
+    "baselineScore": 35,
+    "baselineLevel": "MEDIUM",
+    "status": "New",
+    "assignedTo": "analyst-sari"
+  }
+]

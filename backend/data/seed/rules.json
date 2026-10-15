@@ -1,0 +1,176 @@
+[
+  {
+    "name": "Block screen sharing + large transfer",
+    "description": "Decline transfers above Rp 10 million while a screen sharing app is active on the customer's device.",
+    "condition": {
+      "all": [
+        {
+          "field": "screenSharingAppDetected",
+          "op": "isNotNull"
+        },
+        {
+          "field": "amount",
+          "op": ">",
+          "value": 10000000
+        }
+      ]
+    },
+    "action": "DECLINE",
+    "severity": "CRITICAL",
+    "status": "Active",
+    "createdBy": "analyst-sari",
+    "daysAgo": 21
+  },
+  {
+    "name": "Early-morning transfer to new account",
+    "description": "Hold large transfers between 02:00–04:59 WIB to beneficiaries never paid before.",
+    "condition": {
+      "all": [
+        {
+          "field": "amount",
+          "op": ">",
+          "value": 10000000
+        },
+        {
+          "field": "hourOfDay",
+          "op": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "field": "isNewBeneficiary",
+          "op": "==",
+          "value": true
+        }
+      ]
+    },
+    "action": "HOLD",
+    "severity": "HIGH",
+    "status": "Active",
+    "createdBy": "analyst-sari",
+    "daysAgo": 14
+  },
+  {
+    "name": "Risky device",
+    "description": "Require extra verification if the device is rooted, uses a VPN, or is shared with 3+ other customers.",
+    "condition": {
+      "any": [
+        {
+          "field": "deviceRooted",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "isVpnDetected",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "sharedDeviceWith",
+          "op": ">=",
+          "value": 3
+        }
+      ]
+    },
+    "action": "CHALLENGE",
+    "severity": "HIGH",
+    "status": "Active",
+    "createdBy": "lead-rahmat",
+    "daysAgo": 9
+  },
+  {
+    "name": "Foreign access, medium amount",
+    "description": "Challenge transfers above Rp 5 million from IPs outside Indonesia.",
+    "condition": {
+      "all": [
+        {
+          "field": "ipCountry",
+          "op": "!=",
+          "value": "ID"
+        },
+        {
+          "field": "amount",
+          "op": ">",
+          "value": 5000000
+        }
+      ]
+    },
+    "action": "CHALLENGE",
+    "severity": "MEDIUM",
+    "status": "Active",
+    "createdBy": "analyst-dewi",
+    "daysAgo": 5
+  },
+  {
+    "name": "Copy-pasted account number",
+    "description": "Hold transfers to new accounts when the account number is pasted 2 or more times (sign of scammer guidance).",
+    "condition": {
+      "all": [
+        {
+          "field": "copyPasteEventsOnBeneficiaryField",
+          "op": ">=",
+          "value": 2
+        },
+        {
+          "field": "isNewBeneficiary",
+          "op": "==",
+          "value": true
+        }
+      ]
+    },
+    "action": "HOLD",
+    "severity": "MEDIUM",
+    "status": "Active",
+    "createdBy": "analyst-dewi",
+    "daysAgo": 2
+  },
+  {
+    "name": "Routine small transfer",
+    "description": "Allow small transfers to existing beneficiaries without VPN to keep the queue clear.",
+    "condition": {
+      "all": [
+        {
+          "field": "amount",
+          "op": "<=",
+          "value": 500000
+        },
+        {
+          "field": "isNewBeneficiary",
+          "op": "==",
+          "value": false
+        },
+        {
+          "field": "isVpnDetected",
+          "op": "==",
+          "value": false
+        }
+      ]
+    },
+    "action": "ALLOW",
+    "severity": "LOW",
+    "status": "Draft",
+    "createdBy": "lead-rahmat",
+    "daysAgo": 1
+  },
+  {
+    "name": "Very large transfer",
+    "description": "Hold any transfer of Rp 1 billion or more for analyst review.",
+    "severity": "HIGH",
+    "action": "HOLD",
+    "condition": {
+      "all": [
+        {
+          "field": "amount",
+          "op": ">=",
+          "value": 1000000000
+        }
+      ]
+    },
+    "status": "Active",
+    "createdBy": "admin",
+    "daysAgo": 1
+  }
+]

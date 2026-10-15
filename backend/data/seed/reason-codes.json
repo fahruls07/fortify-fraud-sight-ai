@@ -1,0 +1,14 @@
+[
+  { "code": "RC_AMOUNT_SPIKE", "title": "Amount spike", "description": "Transfer amount far above the customer's average daily spend (> 10\u00d7).", "defaultSeverity": "HIGH" },
+  { "code": "RC_NEW_BENEFICIARY", "title": "New beneficiary", "description": "The beneficiary account has never received a transfer from this customer.", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_YOUNG_BENEFICIARY_ACCOUNT", "title": "Newly opened beneficiary account", "description": "Beneficiary account is less than 30 days old.", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_SCREEN_SHARING", "title": "Screen sharing app active", "description": "A remote access app (e.g. AnyDesk) was detected during the transaction.", "defaultSeverity": "CRITICAL" },
+  { "code": "RC_COPY_PASTE_BENEFICIARY", "title": "Copy-paste in beneficiary field", "description": "Beneficiary account number pasted repeatedly, suggesting a third party is directing the customer.", "defaultSeverity": "HIGH" },
+  { "code": "RC_VPN_FOREIGN_IP", "title": "VPN / foreign IP", "description": "Session uses a VPN or an IP from a country other than the customer's home country.", "defaultSeverity": "HIGH" },
+  { "code": "RC_HESITATION", "title": "Unusual hesitation", "description": "Pause before confirmation far above the customer's norm (> 3000 ms).", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_TYPING_ANOMALY", "title": "Abnormal typing pattern", "description": "Typing rhythm deviates from the customer's baseline by > 0.5.", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_LONG_SESSION", "title": "Session too long", "description": "Session duration more than 5\u00d7 the customer's baseline.", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_DEVICE_ROOTED", "title": "Rooted/jailbroken device", "description": "Device detected as rooted or jailbroken.", "defaultSeverity": "HIGH" },
+  { "code": "RC_UNUSUAL_HOUR", "title": "Unusual transaction hour", "description": "Transaction outside the customer's usual active hours.", "defaultSeverity": "LOW" },
+  { "code": "RC_MULE_NETWORK", "title": "Linked to mule account network", "description": "Beneficiary account shares a device with accounts recently flagged as fraud.", "defaultSeverity": "CRITICAL" }
+]

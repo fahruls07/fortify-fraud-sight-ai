@@ -1,0 +1,31 @@
+{
+  "name": "Block early-morning large transfers to new accounts",
+  "description": "Block transfers > Rp 10 million between 02:00-05:00 to new beneficiaries",
+  "condition": {
+    "all": [
+      {
+        "field": "amount",
+        "op": ">",
+        "value": 10000000
+      },
+      {
+        "field": "hourOfDay",
+        "op": ">=",
+        "value": 2
+      },
+      {
+        "field": "hourOfDay",
+        "op": "<",
+        "value": 5
+      },
+      {
+        "field": "isNewBeneficiary",
+        "op": "==",
+        "value": true
+      }
+    ]
+  },
+  "expression": "amount > 10000000 && hourOfDay >= 2 && hourOfDay < 5 && isNewBeneficiary == true",
+  "action": "DECLINE",
+  "severity": "HIGH"
+}

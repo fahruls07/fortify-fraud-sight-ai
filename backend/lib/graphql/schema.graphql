@@ -1,0 +1,49 @@
+"Fortify fraud alerts API. Endpoint: /api/graphql (POST for query/mutation; GET with Accept: text/event-stream for subscriptions over SSE)."
+schema { query: Query, mutation: Mutation, subscription: Subscription }
+
+"ACTIVE = new, unhandled · ACKNOWLEDGED = an analyst is on it · RESOLVED = decided (released, declined or frozen)"
+enum AlertStatus { ACTIVE ACKNOWLEDGED RESOLVED }
+"CRITICAL comes only from the AI Assistant; otherwise the baseline level."
+enum Severity { LOW MEDIUM HIGH CRITICAL }
+
+type Alert {
+  id: ID!
+  ruleName: String!
+  severity: Severity!
+  "ISO-8601 UTC"
+  timestamp: String!
+  status: AlertStatus!
+  score: Int!
+  "IDR"
+  amount: Float!
+  customerName: String!
+  maskedAccount: String!
+  beneficiary: String!
+  newBeneficiary: Boolean!
+  assignedTo: String
+  transactionId: ID!
+  "SLA due time (ISO); escalated once it passes without a decision"
+  slaDueAt: String
+  escalated: Boolean!
+  caseId: ID
+  "Blacklist / AML hits at scoring time"
+  hitCount: Int!
+}
+
+type Query {
+  "Newest first. from/to are YYYY-MM-DD (WIB, inclusive). limit max 1000."
+  alerts(status: AlertStatus, severity: Severity, from: String, to: String, limit: Int = 50, offset: Int = 0): [Alert!]!
+  alertCount(status: AlertStatus, severity: Severity, from: String, to: String): Int!
+  alert(id: ID!): Alert
+}
+
+type Mutation {
+  "Claim an ACTIVE alert (→ ACKNOWLEDGED). Requires alerts.investigate."
+  acknowledgeAlert(id: ID!): Alert!
+}
+
+type Subscription {
+  alertCreated: Alert!
+  "Status changes: acknowledge, challenge, decision."
+  alertUpdated: Alert!
+}

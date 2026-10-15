@@ -1,0 +1,5555 @@
+{
+ "version": 1,
+ "scenarios": [
+  {
+   "code": "S01",
+   "key": "NORMAL",
+   "title": "Routine transfer to a known beneficiary",
+   "endpoint": "/api/transactions/score",
+   "expected": "ALLOW"
+  },
+  {
+   "code": "S02",
+   "key": "SCREEN_SHARING",
+   "title": "Social engineering: remote-access app (screen sharing) active during a large transfer",
+   "endpoint": "/api/transactions/score",
+   "expected": "DECLINE"
+  },
+  {
+   "code": "S03",
+   "key": "MULE_NETWORK",
+   "title": "Transfer to a mule account that shares devices with confirmed fraud accounts",
+   "endpoint": "/api/transactions/score",
+   "expected": "CHALLENGE"
+  },
+  {
+   "code": "S04",
+   "key": "APP_INVESTMENT_SCAM",
+   "title": "Authorised push payment / investment scam: amount far above usual to a new, very young account",
+   "endpoint": "/api/transactions/score",
+   "expected": "HOLD"
+  },
+  {
+   "code": "S05",
+   "key": "ACCOUNT_TAKEOVER",
+   "title": "Account takeover: new rooted device, VPN, foreign IP and wrong PINs before the transfer",
+   "endpoint": "/api/transactions/score",
+   "expected": "CHALLENGE"
+  },
+  {
+   "code": "S06",
+   "key": "COPY_PASTE_PAYEE",
+   "title": "Account number pasted several times into the beneficiary field (coached by a scammer)",
+   "endpoint": "/api/transactions/score",
+   "expected": "HOLD"
+  },
+  {
+   "code": "S07",
+   "key": "HIGH_VALUE_KNOWN_PAYEE",
+   "title": "Very high-value transfer to a known beneficiary from the usual device",
+   "endpoint": "/api/transactions/score",
+   "expected": "HOLD"
+  },
+  {
+   "code": "S08",
+   "key": "SANCTIONED_BENEFICIARY",
+   "title": "Beneficiary name matches the sanctions list (fictional demo names)",
+   "endpoint": "/api/transactions/score",
+   "expected": "HOLD"
+  },
+  {
+   "code": "S09",
+   "key": "LOGIN_ATTACK",
+   "title": "Credential stuffing / brute force: logins from unknown devices abroad with many failures",
+   "endpoint": "/api/events/login",
+   "expected": "DENY"
+  },
+  {
+   "code": "S10",
+   "key": "SIM_SWAP_PROFILE_CHANGE",
+   "title": "SIM swap / phishing: phone or email changed from a new device abroad",
+   "endpoint": "/api/events/account-update",
+   "expected": "DENY"
+  }
+ ],
+ "customers": [
+  {
+   "id": "SCN-S01-C01",
+   "name": "Bambang Kusuma",
+   "age": 21,
+   "segment": "Freelancer",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2012-10-07",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-01",
+   "maskedAccount": "•••9604",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-01-1",
+    "ACC-KB-S01-01-2",
+    "ACC-KB-S01-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1023,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 170,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281386832986"
+  },
+  {
+   "id": "SCN-S02-C01",
+   "name": "Rina Gunawan",
+   "age": 62,
+   "segment": "Retiree",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2022-04-09",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-01",
+   "maskedAccount": "•••7403",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-01-1",
+    "ACC-KB-S02-01-2",
+    "ACC-KB-S02-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 690,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 125,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281310209063"
+  },
+  {
+   "id": "SCN-S03-C01",
+   "name": "Lestari Siregar",
+   "age": 29,
+   "segment": "Civil servant",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2013-05-02",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-01",
+   "maskedAccount": "•••1538",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-01-1",
+    "ACC-KB-S03-01-2",
+    "ACC-KB-S03-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 797,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 165,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281342181237"
+  },
+  {
+   "id": "SCN-S04-C01",
+   "name": "Agus Lestari",
+   "age": 51,
+   "segment": "Civil servant",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2020-07-09",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-01",
+   "maskedAccount": "•••5009",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1000000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-01-1",
+    "ACC-KB-S04-01-2",
+    "ACC-KB-S04-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 982,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 214,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281387269787"
+  },
+  {
+   "id": "SCN-S05-C01",
+   "name": "Putri Wijaya",
+   "age": 33,
+   "segment": "Employee",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2017-06-21",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-01",
+   "maskedAccount": "•••1779",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "Realme 11",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-01-1",
+    "ACC-KB-S05-01-2",
+    "ACC-KB-S05-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1081,
+    "typingCadenceDeviation": 0.04,
+    "sessionDurationSec": 193,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281322558279"
+  },
+  {
+   "id": "SCN-S06-C01",
+   "name": "Arif Wijaya",
+   "age": 57,
+   "segment": "Student",
+   "city": "Semarang",
+   "homeCountry": "ID",
+   "customerSince": "2018-10-27",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-01",
+   "maskedAccount": "•••6292",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-01-1",
+    "ACC-KB-S06-01-2",
+    "ACC-KB-S06-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 890,
+    "typingCadenceDeviation": 0.15,
+    "sessionDurationSec": 180,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281316769334"
+  },
+  {
+   "id": "SCN-S07-C01",
+   "name": "Rina Pratama",
+   "age": 30,
+   "segment": "Homemaker",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2014-09-14",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-01",
+   "maskedAccount": "•••5995",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 10000000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-01-1",
+    "ACC-KB-S07-01-2",
+    "ACC-KB-S07-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 782,
+    "typingCadenceDeviation": 0.05,
+    "sessionDurationSec": 222,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281386290918"
+  },
+  {
+   "id": "SCN-S08-C01",
+   "name": "Rina Setiadi",
+   "age": 54,
+   "segment": "Employee",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2022-10-03",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-01",
+   "maskedAccount": "•••7576",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-01-1",
+    "ACC-KB-S08-01-2",
+    "ACC-KB-S08-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 628,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 185,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281323823059"
+  },
+  {
+   "id": "SCN-S09-C01",
+   "name": "Hendra Wijaya",
+   "age": 58,
+   "segment": "Civil servant",
+   "city": "Palembang",
+   "homeCountry": "ID",
+   "customerSince": "2013-05-10",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-01",
+   "maskedAccount": "•••3139",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "Realme 11",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-01-1",
+    "ACC-KB-S09-01-2",
+    "ACC-KB-S09-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 627,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 183,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281385894681"
+  },
+  {
+   "id": "SCN-S10-C01",
+   "name": "Ayu Saputra",
+   "age": 24,
+   "segment": "Retiree",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2016-09-05",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-01",
+   "maskedAccount": "•••5252",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Realme 11",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-01-1",
+    "ACC-KB-S10-01-2",
+    "ACC-KB-S10-01-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 633,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 146,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281336155206"
+  },
+  {
+   "id": "SCN-S01-C02",
+   "name": "Indah Nugroho",
+   "age": 45,
+   "segment": "Employee",
+   "city": "Semarang",
+   "homeCountry": "ID",
+   "customerSince": "2021-07-20",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-02",
+   "maskedAccount": "•••6247",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-02-1",
+    "ACC-KB-S01-02-2",
+    "ACC-KB-S01-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 998,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 193,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281331632824"
+  },
+  {
+   "id": "SCN-S02-C02",
+   "name": "Lestari Harahap",
+   "age": 59,
+   "segment": "Retiree",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2015-11-06",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-02",
+   "maskedAccount": "•••8879",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-02-1",
+    "ACC-KB-S02-02-2",
+    "ACC-KB-S02-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 692,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 165,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281352018737"
+  },
+  {
+   "id": "SCN-S03-C02",
+   "name": "Ayu Wijaya",
+   "age": 34,
+   "segment": "Student",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2019-12-03",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-02",
+   "maskedAccount": "•••2014",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-02-1",
+    "ACC-KB-S03-02-2",
+    "ACC-KB-S03-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 999,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 206,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281361936366"
+  },
+  {
+   "id": "SCN-S04-C02",
+   "name": "Andi Harahap",
+   "age": 62,
+   "segment": "Entrepreneur",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2013-08-02",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-02",
+   "maskedAccount": "•••1266",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1000000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-02-1",
+    "ACC-KB-S04-02-2",
+    "ACC-KB-S04-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 902,
+    "typingCadenceDeviation": 0.14,
+    "sessionDurationSec": 187,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281312300197"
+  },
+  {
+   "id": "SCN-S05-C02",
+   "name": "Indah Purba",
+   "age": 30,
+   "segment": "Retiree",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2016-07-26",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-02",
+   "maskedAccount": "•••4171",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-02-1",
+    "ACC-KB-S05-02-2",
+    "ACC-KB-S05-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 977,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 166,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281367119009"
+  },
+  {
+   "id": "SCN-S06-C02",
+   "name": "Bambang Wibowo",
+   "age": 21,
+   "segment": "Retiree",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2020-06-20",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-02",
+   "maskedAccount": "•••3752",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-02-1",
+    "ACC-KB-S06-02-2",
+    "ACC-KB-S06-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 611,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 152,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281330552269"
+  },
+  {
+   "id": "SCN-S07-C02",
+   "name": "Putri Siregar",
+   "age": 22,
+   "segment": "Student",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2013-07-17",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-02",
+   "maskedAccount": "•••9918",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 10000000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-02-1",
+    "ACC-KB-S07-02-2",
+    "ACC-KB-S07-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 913,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 127,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281332571356"
+  },
+  {
+   "id": "SCN-S08-C02",
+   "name": "Indah Kusuma",
+   "age": 24,
+   "segment": "Entrepreneur",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2021-03-05",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-02",
+   "maskedAccount": "•••3558",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-02-1",
+    "ACC-KB-S08-02-2",
+    "ACC-KB-S08-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1015,
+    "typingCadenceDeviation": 0.14,
+    "sessionDurationSec": 139,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281331328891"
+  },
+  {
+   "id": "SCN-S09-C02",
+   "name": "Putri Nugroho",
+   "age": 22,
+   "segment": "Entrepreneur",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2017-09-08",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-02",
+   "maskedAccount": "•••9526",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-02-1",
+    "ACC-KB-S09-02-2",
+    "ACC-KB-S09-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 676,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 131,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281339277783"
+  },
+  {
+   "id": "SCN-S10-C02",
+   "name": "Nadia Pratama",
+   "age": 55,
+   "segment": "Student",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2016-11-26",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-02",
+   "maskedAccount": "•••8285",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-02-1",
+    "ACC-KB-S10-02-2",
+    "ACC-KB-S10-02-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 733,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 224,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281317275455"
+  },
+  {
+   "id": "SCN-S01-C03",
+   "name": "Sinta Kusuma",
+   "age": 41,
+   "segment": "Freelancer",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2019-12-11",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-03",
+   "maskedAccount": "•••9789",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-03-1",
+    "ACC-KB-S01-03-2",
+    "ACC-KB-S01-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 632,
+    "typingCadenceDeviation": 0.08,
+    "sessionDurationSec": 217,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281364157418"
+  },
+  {
+   "id": "SCN-S02-C03",
+   "name": "Rina Nugroho",
+   "age": 72,
+   "segment": "Retiree",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2023-04-25",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-03",
+   "maskedAccount": "•••3953",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-03-1",
+    "ACC-KB-S02-03-2",
+    "ACC-KB-S02-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1100,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 193,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281363568183"
+  },
+  {
+   "id": "SCN-S03-C03",
+   "name": "Fajar Nugroho",
+   "age": 57,
+   "segment": "Freelancer",
+   "city": "Medan",
+   "homeCountry": "ID",
+   "customerSince": "2017-08-01",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-03",
+   "maskedAccount": "•••9461",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-03-1",
+    "ACC-KB-S03-03-2",
+    "ACC-KB-S03-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 913,
+    "typingCadenceDeviation": 0.14,
+    "sessionDurationSec": 135,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281367852265"
+  },
+  {
+   "id": "SCN-S04-C03",
+   "name": "Andi Gunawan",
+   "age": 32,
+   "segment": "Civil servant",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2015-12-16",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-03",
+   "maskedAccount": "•••9318",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 700000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-03-1",
+    "ACC-KB-S04-03-2",
+    "ACC-KB-S04-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 739,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 185,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281395318653"
+  },
+  {
+   "id": "SCN-S05-C03",
+   "name": "Lestari Hidayat",
+   "age": 26,
+   "segment": "Freelancer",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2022-04-15",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-03",
+   "maskedAccount": "•••3891",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-03-1",
+    "ACC-KB-S05-03-2",
+    "ACC-KB-S05-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 672,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 221,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281345953043"
+  },
+  {
+   "id": "SCN-S06-C03",
+   "name": "Yusuf Halim",
+   "age": 40,
+   "segment": "Civil servant",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2014-03-27",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-03",
+   "maskedAccount": "•••1418",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-03-1",
+    "ACC-KB-S06-03-2",
+    "ACC-KB-S06-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 814,
+    "typingCadenceDeviation": 0.04,
+    "sessionDurationSec": 222,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281362156998"
+  },
+  {
+   "id": "SCN-S07-C03",
+   "name": "Arif Santoso",
+   "age": 44,
+   "segment": "Retiree",
+   "city": "Medan",
+   "homeCountry": "ID",
+   "customerSince": "2016-03-13",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-03",
+   "maskedAccount": "•••8712",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 5000000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-03-1",
+    "ACC-KB-S07-03-2",
+    "ACC-KB-S07-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 681,
+    "typingCadenceDeviation": 0.05,
+    "sessionDurationSec": 167,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281396073014"
+  },
+  {
+   "id": "SCN-S08-C03",
+   "name": "Fajar Kusuma",
+   "age": 53,
+   "segment": "Employee",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2023-10-06",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-03",
+   "maskedAccount": "•••6889",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-03-1",
+    "ACC-KB-S08-03-2",
+    "ACC-KB-S08-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1027,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 216,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281378216898"
+  },
+  {
+   "id": "SCN-S09-C03",
+   "name": "Bambang Santoso",
+   "age": 53,
+   "segment": "Employee",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2020-11-06",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-03",
+   "maskedAccount": "•••8808",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-03-1",
+    "ACC-KB-S09-03-2",
+    "ACC-KB-S09-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1024,
+    "typingCadenceDeviation": 0.05,
+    "sessionDurationSec": 203,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281358316901"
+  },
+  {
+   "id": "SCN-S10-C03",
+   "name": "Fajar Lestari",
+   "age": 64,
+   "segment": "Civil servant",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2014-06-18",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-03",
+   "maskedAccount": "•••1637",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-03-1",
+    "ACC-KB-S10-03-2",
+    "ACC-KB-S10-03-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 619,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 237,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281399532537"
+  },
+  {
+   "id": "SCN-S01-C04",
+   "name": "Maya Wijaya",
+   "age": 64,
+   "segment": "Civil servant",
+   "city": "Medan",
+   "homeCountry": "ID",
+   "customerSince": "2012-04-03",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-04",
+   "maskedAccount": "•••8757",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-04-1",
+    "ACC-KB-S01-04-2",
+    "ACC-KB-S01-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 732,
+    "typingCadenceDeviation": 0.05,
+    "sessionDurationSec": 228,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281353301560"
+  },
+  {
+   "id": "SCN-S02-C04",
+   "name": "Indah Siregar",
+   "age": 61,
+   "segment": "Retiree",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2020-08-27",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-04",
+   "maskedAccount": "•••7220",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-04-1",
+    "ACC-KB-S02-04-2",
+    "ACC-KB-S02-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 905,
+    "typingCadenceDeviation": 0.05,
+    "sessionDurationSec": 148,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281361333071"
+  },
+  {
+   "id": "SCN-S03-C04",
+   "name": "Rina Kusuma",
+   "age": 25,
+   "segment": "Entrepreneur",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2018-05-14",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-04",
+   "maskedAccount": "•••7116",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-04-1",
+    "ACC-KB-S03-04-2",
+    "ACC-KB-S03-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 831,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 200,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281371905828"
+  },
+  {
+   "id": "SCN-S04-C04",
+   "name": "Bambang Lestari",
+   "age": 37,
+   "segment": "Homemaker",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2018-02-26",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-04",
+   "maskedAccount": "•••5708",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 400000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-04-1",
+    "ACC-KB-S04-04-2",
+    "ACC-KB-S04-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 668,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 228,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281378564305"
+  },
+  {
+   "id": "SCN-S05-C04",
+   "name": "Putri Pratama",
+   "age": 35,
+   "segment": "Student",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2016-05-08",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-04",
+   "maskedAccount": "•••5894",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-04-1",
+    "ACC-KB-S05-04-2",
+    "ACC-KB-S05-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 677,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 226,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281353695007"
+  },
+  {
+   "id": "SCN-S06-C04",
+   "name": "Ayu Hidayat",
+   "age": 36,
+   "segment": "Retiree",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2017-10-11",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-04",
+   "maskedAccount": "•••3138",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-04-1",
+    "ACC-KB-S06-04-2",
+    "ACC-KB-S06-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 990,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 159,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281311546454"
+  },
+  {
+   "id": "SCN-S07-C04",
+   "name": "Bambang Purba",
+   "age": 56,
+   "segment": "Employee",
+   "city": "Semarang",
+   "homeCountry": "ID",
+   "customerSince": "2019-04-20",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-04",
+   "maskedAccount": "•••8527",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2500000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-04-1",
+    "ACC-KB-S07-04-2",
+    "ACC-KB-S07-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 676,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 196,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281396254539"
+  },
+  {
+   "id": "SCN-S08-C04",
+   "name": "Hendra Wibowo",
+   "age": 56,
+   "segment": "Homemaker",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2017-09-17",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-04",
+   "maskedAccount": "•••1331",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-04-1",
+    "ACC-KB-S08-04-2",
+    "ACC-KB-S08-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 675,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 155,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281374800596"
+  },
+  {
+   "id": "SCN-S09-C04",
+   "name": "Andi Nugroho",
+   "age": 50,
+   "segment": "Homemaker",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2013-02-20",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-04",
+   "maskedAccount": "•••7737",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-04-1",
+    "ACC-KB-S09-04-2",
+    "ACC-KB-S09-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1006,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 226,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281330648536"
+  },
+  {
+   "id": "SCN-S10-C04",
+   "name": "Arif Siregar",
+   "age": 35,
+   "segment": "Civil servant",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2020-08-07",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-04",
+   "maskedAccount": "•••7842",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-04-1",
+    "ACC-KB-S10-04-2",
+    "ACC-KB-S10-04-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 730,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 122,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281332469976"
+  },
+  {
+   "id": "SCN-S01-C05",
+   "name": "Rudi Halim",
+   "age": 47,
+   "segment": "Employee",
+   "city": "Palembang",
+   "homeCountry": "ID",
+   "customerSince": "2013-09-19",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-05",
+   "maskedAccount": "•••6959",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-05-1",
+    "ACC-KB-S01-05-2",
+    "ACC-KB-S01-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 637,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 184,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281340928290"
+  },
+  {
+   "id": "SCN-S02-C05",
+   "name": "Ayu Setiadi",
+   "age": 55,
+   "segment": "Retiree",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2022-10-13",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-05",
+   "maskedAccount": "•••1339",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-05-1",
+    "ACC-KB-S02-05-2",
+    "ACC-KB-S02-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1071,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 145,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281396216316"
+  },
+  {
+   "id": "SCN-S03-C05",
+   "name": "Agus Halim",
+   "age": 40,
+   "segment": "Student",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2015-03-26",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-05",
+   "maskedAccount": "•••1795",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-05-1",
+    "ACC-KB-S03-05-2",
+    "ACC-KB-S03-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 826,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 172,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281359252478"
+  },
+  {
+   "id": "SCN-S04-C05",
+   "name": "Ayu Purba",
+   "age": 63,
+   "segment": "Entrepreneur",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2018-05-16",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-05",
+   "maskedAccount": "•••9378",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 700000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-05-1",
+    "ACC-KB-S04-05-2",
+    "ACC-KB-S04-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 847,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 208,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281346542687"
+  },
+  {
+   "id": "SCN-S05-C05",
+   "name": "Eko Purba",
+   "age": 22,
+   "segment": "Student",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2018-11-08",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-05",
+   "maskedAccount": "•••6551",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-05-1",
+    "ACC-KB-S05-05-2",
+    "ACC-KB-S05-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 962,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 229,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281364981484"
+  },
+  {
+   "id": "SCN-S06-C05",
+   "name": "Hendra Halim",
+   "age": 44,
+   "segment": "Freelancer",
+   "city": "Palembang",
+   "homeCountry": "ID",
+   "customerSince": "2018-06-05",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-05",
+   "maskedAccount": "•••2353",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-05-1",
+    "ACC-KB-S06-05-2",
+    "ACC-KB-S06-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1021,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 198,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281322078146"
+  },
+  {
+   "id": "SCN-S07-C05",
+   "name": "Sinta Wijaya",
+   "age": 63,
+   "segment": "Employee",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2014-05-26",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-05",
+   "maskedAccount": "•••1135",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2500000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-05-1",
+    "ACC-KB-S07-05-2",
+    "ACC-KB-S07-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 615,
+    "typingCadenceDeviation": 0.08,
+    "sessionDurationSec": 170,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281391689125"
+  },
+  {
+   "id": "SCN-S08-C05",
+   "name": "Putri Hidayat",
+   "age": 40,
+   "segment": "Entrepreneur",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2018-03-17",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-05",
+   "maskedAccount": "•••3319",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-05-1",
+    "ACC-KB-S08-05-2",
+    "ACC-KB-S08-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 799,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 147,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281347001343"
+  },
+  {
+   "id": "SCN-S09-C05",
+   "name": "Putri Lestari",
+   "age": 45,
+   "segment": "Freelancer",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2019-03-23",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-05",
+   "maskedAccount": "•••1882",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Realme 11",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-05-1",
+    "ACC-KB-S09-05-2",
+    "ACC-KB-S09-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 762,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 187,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281338524127"
+  },
+  {
+   "id": "SCN-S10-C05",
+   "name": "Agus Santoso",
+   "age": 23,
+   "segment": "Retiree",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2019-02-13",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-05",
+   "maskedAccount": "•••3567",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-05-1",
+    "ACC-KB-S10-05-2",
+    "ACC-KB-S10-05-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 642,
+    "typingCadenceDeviation": 0.05,
+    "sessionDurationSec": 141,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281315065034"
+  },
+  {
+   "id": "SCN-S01-C06",
+   "name": "Eko Kusuma",
+   "age": 41,
+   "segment": "Entrepreneur",
+   "city": "Semarang",
+   "homeCountry": "ID",
+   "customerSince": "2022-08-16",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-06",
+   "maskedAccount": "•••7237",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-06-1",
+    "ACC-KB-S01-06-2",
+    "ACC-KB-S01-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 646,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 181,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281364074116"
+  },
+  {
+   "id": "SCN-S02-C06",
+   "name": "Agus Saputra",
+   "age": 72,
+   "segment": "Retiree",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2014-10-15",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-06",
+   "maskedAccount": "•••5326",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-06-1",
+    "ACC-KB-S02-06-2",
+    "ACC-KB-S02-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 842,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 166,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281343001993"
+  },
+  {
+   "id": "SCN-S03-C06",
+   "name": "Arif Saputra",
+   "age": 62,
+   "segment": "Freelancer",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2013-09-27",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-06",
+   "maskedAccount": "•••1278",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-06-1",
+    "ACC-KB-S03-06-2",
+    "ACC-KB-S03-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 910,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 181,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281394821244"
+  },
+  {
+   "id": "SCN-S04-C06",
+   "name": "Dedi Lestari",
+   "age": 26,
+   "segment": "Entrepreneur",
+   "city": "Medan",
+   "homeCountry": "ID",
+   "customerSince": "2016-09-28",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-06",
+   "maskedAccount": "•••9323",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 400000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-06-1",
+    "ACC-KB-S04-06-2",
+    "ACC-KB-S04-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 752,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 138,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281371056720"
+  },
+  {
+   "id": "SCN-S05-C06",
+   "name": "Indah Pratama",
+   "age": 43,
+   "segment": "Retiree",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2012-04-26",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-06",
+   "maskedAccount": "•••1815",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Realme 11",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-06-1",
+    "ACC-KB-S05-06-2",
+    "ACC-KB-S05-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 868,
+    "typingCadenceDeviation": 0.14,
+    "sessionDurationSec": 148,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281327844494"
+  },
+  {
+   "id": "SCN-S06-C06",
+   "name": "Sinta Saputra",
+   "age": 42,
+   "segment": "Homemaker",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2022-09-01",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-06",
+   "maskedAccount": "•••3425",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-06-1",
+    "ACC-KB-S06-06-2",
+    "ACC-KB-S06-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 685,
+    "typingCadenceDeviation": 0.14,
+    "sessionDurationSec": 209,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281315179312"
+  },
+  {
+   "id": "SCN-S07-C06",
+   "name": "Eko Setiadi",
+   "age": 32,
+   "segment": "Retiree",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2017-01-03",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-06",
+   "maskedAccount": "•••6220",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-06-1",
+    "ACC-KB-S07-06-2",
+    "ACC-KB-S07-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 673,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 236,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281361523475"
+  },
+  {
+   "id": "SCN-S08-C06",
+   "name": "Maya Nugroho",
+   "age": 46,
+   "segment": "Retiree",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2017-08-06",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-06",
+   "maskedAccount": "•••3281",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-06-1",
+    "ACC-KB-S08-06-2",
+    "ACC-KB-S08-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 909,
+    "typingCadenceDeviation": 0.15,
+    "sessionDurationSec": 207,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281349010055"
+  },
+  {
+   "id": "SCN-S09-C06",
+   "name": "Indah Santoso",
+   "age": 41,
+   "segment": "Civil servant",
+   "city": "Palembang",
+   "homeCountry": "ID",
+   "customerSince": "2013-11-26",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-06",
+   "maskedAccount": "•••6898",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-06-1",
+    "ACC-KB-S09-06-2",
+    "ACC-KB-S09-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 616,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 173,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281360476875"
+  },
+  {
+   "id": "SCN-S10-C06",
+   "name": "Lestari Saputra",
+   "age": 25,
+   "segment": "Freelancer",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2023-05-24",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-06",
+   "maskedAccount": "•••2422",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-06-1",
+    "ACC-KB-S10-06-2",
+    "ACC-KB-S10-06-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 752,
+    "typingCadenceDeviation": 0.15,
+    "sessionDurationSec": 206,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281337162328"
+  },
+  {
+   "id": "SCN-S01-C07",
+   "name": "Maya Wibowo",
+   "age": 57,
+   "segment": "Civil servant",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2012-01-19",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-07",
+   "maskedAccount": "•••1115",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-07-1",
+    "ACC-KB-S01-07-2",
+    "ACC-KB-S01-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 976,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 186,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281394450437"
+  },
+  {
+   "id": "SCN-S02-C07",
+   "name": "Arif Gunawan",
+   "age": 60,
+   "segment": "Retiree",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2021-03-28",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-07",
+   "maskedAccount": "•••4286",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-07-1",
+    "ACC-KB-S02-07-2",
+    "ACC-KB-S02-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 761,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 136,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281338393975"
+  },
+  {
+   "id": "SCN-S03-C07",
+   "name": "Maya Pratama",
+   "age": 52,
+   "segment": "Civil servant",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2020-02-10",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-07",
+   "maskedAccount": "•••3085",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-07-1",
+    "ACC-KB-S03-07-2",
+    "ACC-KB-S03-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 953,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 132,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281318588531"
+  },
+  {
+   "id": "SCN-S04-C07",
+   "name": "Agus Setiadi",
+   "age": 44,
+   "segment": "Entrepreneur",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2022-02-18",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-07",
+   "maskedAccount": "•••9902",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 400000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-07-1",
+    "ACC-KB-S04-07-2",
+    "ACC-KB-S04-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 876,
+    "typingCadenceDeviation": 0.15,
+    "sessionDurationSec": 151,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281335066014"
+  },
+  {
+   "id": "SCN-S05-C07",
+   "name": "Nadia Nugroho",
+   "age": 56,
+   "segment": "Entrepreneur",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2016-04-11",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-07",
+   "maskedAccount": "•••1735",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-07-1",
+    "ACC-KB-S05-07-2",
+    "ACC-KB-S05-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 851,
+    "typingCadenceDeviation": 0.05,
+    "sessionDurationSec": 196,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281372221497"
+  },
+  {
+   "id": "SCN-S06-C07",
+   "name": "Andi Hidayat",
+   "age": 51,
+   "segment": "Civil servant",
+   "city": "Medan",
+   "homeCountry": "ID",
+   "customerSince": "2016-12-14",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-07",
+   "maskedAccount": "•••6665",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-07-1",
+    "ACC-KB-S06-07-2",
+    "ACC-KB-S06-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 844,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 129,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281330433477"
+  },
+  {
+   "id": "SCN-S07-C07",
+   "name": "Rina Harahap",
+   "age": 48,
+   "segment": "Entrepreneur",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2021-09-04",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-07",
+   "maskedAccount": "•••2801",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 5000000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-07-1",
+    "ACC-KB-S07-07-2",
+    "ACC-KB-S07-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 725,
+    "typingCadenceDeviation": 0.15,
+    "sessionDurationSec": 156,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281379276983"
+  },
+  {
+   "id": "SCN-S08-C07",
+   "name": "Indah Setiadi",
+   "age": 58,
+   "segment": "Employee",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2015-04-23",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-07",
+   "maskedAccount": "•••2726",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-07-1",
+    "ACC-KB-S08-07-2",
+    "ACC-KB-S08-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 660,
+    "typingCadenceDeviation": 0.04,
+    "sessionDurationSec": 205,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281356042877"
+  },
+  {
+   "id": "SCN-S09-C07",
+   "name": "Wulan Siregar",
+   "age": 49,
+   "segment": "Entrepreneur",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2013-01-02",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-07",
+   "maskedAccount": "•••9660",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-07-1",
+    "ACC-KB-S09-07-2",
+    "ACC-KB-S09-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 870,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 135,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281331913925"
+  },
+  {
+   "id": "SCN-S10-C07",
+   "name": "Hendra Pratama",
+   "age": 23,
+   "segment": "Employee",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2018-01-06",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-07",
+   "maskedAccount": "•••7519",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-07-1",
+    "ACC-KB-S10-07-2",
+    "ACC-KB-S10-07-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1044,
+    "typingCadenceDeviation": 0.15,
+    "sessionDurationSec": 159,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281381428151"
+  },
+  {
+   "id": "SCN-S01-C08",
+   "name": "Indah Lestari",
+   "age": 35,
+   "segment": "Retiree",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2018-12-23",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-08",
+   "maskedAccount": "•••4657",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-08-1",
+    "ACC-KB-S01-08-2",
+    "ACC-KB-S01-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 837,
+    "typingCadenceDeviation": 0.15,
+    "sessionDurationSec": 172,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281337320651"
+  },
+  {
+   "id": "SCN-S02-C08",
+   "name": "Maya Hidayat",
+   "age": 62,
+   "segment": "Retiree",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2022-07-19",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-08",
+   "maskedAccount": "•••3584",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-08-1",
+    "ACC-KB-S02-08-2",
+    "ACC-KB-S02-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1072,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 187,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281369270747"
+  },
+  {
+   "id": "SCN-S03-C08",
+   "name": "Dewi Kusuma",
+   "age": 39,
+   "segment": "Civil servant",
+   "city": "Palembang",
+   "homeCountry": "ID",
+   "customerSince": "2013-05-26",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-08",
+   "maskedAccount": "•••6228",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-08-1",
+    "ACC-KB-S03-08-2",
+    "ACC-KB-S03-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 949,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 222,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281335176149"
+  },
+  {
+   "id": "SCN-S04-C08",
+   "name": "Rina Hidayat",
+   "age": 64,
+   "segment": "Freelancer",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2014-07-22",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-08",
+   "maskedAccount": "•••2460",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 400000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-08-1",
+    "ACC-KB-S04-08-2",
+    "ACC-KB-S04-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 978,
+    "typingCadenceDeviation": 0.14,
+    "sessionDurationSec": 139,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281343071877"
+  },
+  {
+   "id": "SCN-S05-C08",
+   "name": "Putri Purba",
+   "age": 60,
+   "segment": "Entrepreneur",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2020-07-07",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-08",
+   "maskedAccount": "•••2062",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-08-1",
+    "ACC-KB-S05-08-2",
+    "ACC-KB-S05-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 819,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 231,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281371046751"
+  },
+  {
+   "id": "SCN-S06-C08",
+   "name": "Wulan Wibowo",
+   "age": 34,
+   "segment": "Freelancer",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2018-09-10",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-08",
+   "maskedAccount": "•••2740",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-08-1",
+    "ACC-KB-S06-08-2",
+    "ACC-KB-S06-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 896,
+    "typingCadenceDeviation": 0.08,
+    "sessionDurationSec": 139,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281315910428"
+  },
+  {
+   "id": "SCN-S07-C08",
+   "name": "Arif Kusuma",
+   "age": 41,
+   "segment": "Homemaker",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2019-04-12",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-08",
+   "maskedAccount": "•••5393",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2500000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-08-1",
+    "ACC-KB-S07-08-2",
+    "ACC-KB-S07-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 798,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 235,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281327465603"
+  },
+  {
+   "id": "SCN-S08-C08",
+   "name": "Rudi Wibowo",
+   "age": 63,
+   "segment": "Employee",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2022-02-10",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-08",
+   "maskedAccount": "•••7895",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-08-1",
+    "ACC-KB-S08-08-2",
+    "ACC-KB-S08-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1099,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 175,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281350312641"
+  },
+  {
+   "id": "SCN-S09-C08",
+   "name": "Dewi Setiadi",
+   "age": 50,
+   "segment": "Homemaker",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2020-11-05",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-08",
+   "maskedAccount": "•••4151",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-08-1",
+    "ACC-KB-S09-08-2",
+    "ACC-KB-S09-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 965,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 183,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281316679875"
+  },
+  {
+   "id": "SCN-S10-C08",
+   "name": "Rudi Wijaya",
+   "age": 31,
+   "segment": "Employee",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2013-05-03",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-08",
+   "maskedAccount": "•••7680",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-08-1",
+    "ACC-KB-S10-08-2",
+    "ACC-KB-S10-08-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1046,
+    "typingCadenceDeviation": 0.15,
+    "sessionDurationSec": 214,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281319956889"
+  },
+  {
+   "id": "SCN-S01-C09",
+   "name": "Dewi Wijaya",
+   "age": 51,
+   "segment": "Student",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2017-05-27",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-09",
+   "maskedAccount": "•••9565",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-09-1",
+    "ACC-KB-S01-09-2",
+    "ACC-KB-S01-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 815,
+    "typingCadenceDeviation": 0.05,
+    "sessionDurationSec": 166,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281394236461"
+  },
+  {
+   "id": "SCN-S02-C09",
+   "name": "Dedi Saputra",
+   "age": 71,
+   "segment": "Retiree",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2019-06-02",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-09",
+   "maskedAccount": "•••1329",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-09-1",
+    "ACC-KB-S02-09-2",
+    "ACC-KB-S02-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 948,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 177,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281337340945"
+  },
+  {
+   "id": "SCN-S03-C09",
+   "name": "Eko Harahap",
+   "age": 37,
+   "segment": "Student",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2012-01-23",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-09",
+   "maskedAccount": "•••4783",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-09-1",
+    "ACC-KB-S03-09-2",
+    "ACC-KB-S03-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1046,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 157,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281362117378"
+  },
+  {
+   "id": "SCN-S04-C09",
+   "name": "Wulan Lestari",
+   "age": 27,
+   "segment": "Homemaker",
+   "city": "Semarang",
+   "homeCountry": "ID",
+   "customerSince": "2018-03-11",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-09",
+   "maskedAccount": "•••9411",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1000000,
+   "usualDevice": "OPPO Reno 10",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-09-1",
+    "ACC-KB-S04-09-2",
+    "ACC-KB-S04-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 730,
+    "typingCadenceDeviation": 0.14,
+    "sessionDurationSec": 138,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281365682523"
+  },
+  {
+   "id": "SCN-S05-C09",
+   "name": "Sinta Gunawan",
+   "age": 41,
+   "segment": "Homemaker",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2014-09-17",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-09",
+   "maskedAccount": "•••4675",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "Samsung Galaxy A54",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-09-1",
+    "ACC-KB-S05-09-2",
+    "ACC-KB-S05-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 778,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 155,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281374432099"
+  },
+  {
+   "id": "SCN-S06-C09",
+   "name": "Indah Halim",
+   "age": 50,
+   "segment": "Freelancer",
+   "city": "Makassar",
+   "homeCountry": "ID",
+   "customerSince": "2022-08-14",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-09",
+   "maskedAccount": "•••2058",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-09-1",
+    "ACC-KB-S06-09-2",
+    "ACC-KB-S06-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 938,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 147,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281322894154"
+  },
+  {
+   "id": "SCN-S07-C09",
+   "name": "Maya Setiadi",
+   "age": 59,
+   "segment": "Civil servant",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2022-02-08",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-09",
+   "maskedAccount": "•••1325",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 5000000,
+   "usualDevice": "Samsung Galaxy S23",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-09-1",
+    "ACC-KB-S07-09-2",
+    "ACC-KB-S07-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 602,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 128,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281394320919"
+  },
+  {
+   "id": "SCN-S08-C09",
+   "name": "Lestari Setiadi",
+   "age": 28,
+   "segment": "Employee",
+   "city": "Palembang",
+   "homeCountry": "ID",
+   "customerSince": "2015-08-25",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-09",
+   "maskedAccount": "•••2427",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "vivo V29",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-09-1",
+    "ACC-KB-S08-09-2",
+    "ACC-KB-S08-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 793,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 154,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281359311597"
+  },
+  {
+   "id": "SCN-S09-C09",
+   "name": "Hendra Kusuma",
+   "age": 35,
+   "segment": "Homemaker",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2015-08-22",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-09",
+   "maskedAccount": "•••5867",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-09-1",
+    "ACC-KB-S09-09-2",
+    "ACC-KB-S09-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 927,
+    "typingCadenceDeviation": 0.06,
+    "sessionDurationSec": 225,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281371462353"
+  },
+  {
+   "id": "SCN-S10-C09",
+   "name": "Putri Halim",
+   "age": 30,
+   "segment": "Civil servant",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2022-07-27",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-09",
+   "maskedAccount": "•••6190",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 3500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-09-1",
+    "ACC-KB-S10-09-2",
+    "ACC-KB-S10-09-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1001,
+    "typingCadenceDeviation": 0.11,
+    "sessionDurationSec": 171,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281346341347"
+  },
+  {
+   "id": "SCN-S01-C10",
+   "name": "Hendra Santoso",
+   "age": 59,
+   "segment": "Civil servant",
+   "city": "Bandung",
+   "homeCountry": "ID",
+   "customerSince": "2013-10-03",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S01-10",
+   "maskedAccount": "•••1268",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Realme 11",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S01-10-1",
+    "ACC-KB-S01-10-2",
+    "ACC-KB-S01-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1024,
+    "typingCadenceDeviation": 0.1,
+    "sessionDurationSec": 204,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281330479346"
+  },
+  {
+   "id": "SCN-S02-C10",
+   "name": "Agus Wibowo",
+   "age": 72,
+   "segment": "Retiree",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2020-05-01",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S02-10",
+   "maskedAccount": "•••6010",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S02-10-1",
+    "ACC-KB-S02-10-2",
+    "ACC-KB-S02-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 796,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 192,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281399492773"
+  },
+  {
+   "id": "SCN-S03-C10",
+   "name": "Hendra Nugroho",
+   "age": 53,
+   "segment": "Retiree",
+   "city": "Surabaya",
+   "homeCountry": "ID",
+   "customerSince": "2023-07-12",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S03-10",
+   "maskedAccount": "•••1894",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "iPhone 13",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S03-10-1",
+    "ACC-KB-S03-10-2",
+    "ACC-KB-S03-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1004,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 182,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281313766476"
+  },
+  {
+   "id": "SCN-S04-C10",
+   "name": "Wulan Kusuma",
+   "age": 41,
+   "segment": "Homemaker",
+   "city": "Balikpapan",
+   "homeCountry": "ID",
+   "customerSince": "2013-08-20",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S04-10",
+   "maskedAccount": "•••8610",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 700000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S04-10-1",
+    "ACC-KB-S04-10-2",
+    "ACC-KB-S04-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 788,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 182,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281370379897"
+  },
+  {
+   "id": "SCN-S05-C10",
+   "name": "Putri Santoso",
+   "age": 47,
+   "segment": "Homemaker",
+   "city": "Palembang",
+   "homeCountry": "ID",
+   "customerSince": "2014-04-09",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S05-10",
+   "maskedAccount": "•••8761",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S05-10-1",
+    "ACC-KB-S05-10-2",
+    "ACC-KB-S05-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 663,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 209,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281396460549"
+  },
+  {
+   "id": "SCN-S06-C10",
+   "name": "Eko Siregar",
+   "age": 62,
+   "segment": "Retiree",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2023-12-27",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S06-10",
+   "maskedAccount": "•••3734",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 800000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S06-10-1",
+    "ACC-KB-S06-10-2",
+    "ACC-KB-S06-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 1013,
+    "typingCadenceDeviation": 0.09,
+    "sessionDurationSec": 139,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281360309694"
+  },
+  {
+   "id": "SCN-S07-C10",
+   "name": "Hendra Purba",
+   "age": 34,
+   "segment": "Retiree",
+   "city": "Denpasar",
+   "homeCountry": "ID",
+   "customerSince": "2016-08-24",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S07-10",
+   "maskedAccount": "•••8367",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2500000,
+   "usualDevice": "iPhone 14",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S07-10-1",
+    "ACC-KB-S07-10-2",
+    "ACC-KB-S07-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 603,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 147,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281342415506"
+  },
+  {
+   "id": "SCN-S08-C10",
+   "name": "Dedi Santoso",
+   "age": 39,
+   "segment": "Student",
+   "city": "Jakarta",
+   "homeCountry": "ID",
+   "customerSince": "2022-06-17",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S08-10",
+   "maskedAccount": "•••2228",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 500000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S08-10-1",
+    "ACC-KB-S08-10-2",
+    "ACC-KB-S08-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 798,
+    "typingCadenceDeviation": 0.13,
+    "sessionDurationSec": 216,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281388429396"
+  },
+  {
+   "id": "SCN-S09-C10",
+   "name": "Andi Saputra",
+   "age": 41,
+   "segment": "Employee",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2018-01-09",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S09-10",
+   "maskedAccount": "•••9688",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 1200000,
+   "usualDevice": "Realme 11",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S09-10-1",
+    "ACC-KB-S09-10-2",
+    "ACC-KB-S09-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 866,
+    "typingCadenceDeviation": 0.07,
+    "sessionDurationSec": 126,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281365063923"
+  },
+  {
+   "id": "SCN-S10-C10",
+   "name": "Putri Kusuma",
+   "age": 36,
+   "segment": "Homemaker",
+   "city": "Yogyakarta",
+   "homeCountry": "ID",
+   "customerSince": "2014-06-06",
+   "riskProfile": "LOW",
+   "accountId": "ACC-S10-10",
+   "maskedAccount": "•••3522",
+   "accountStatus": "ACTIVE",
+   "avgDailySpend": 2000000,
+   "usualDevice": "Xiaomi Redmi Note 12",
+   "usualActiveHours": {
+    "from": "06:00",
+    "to": "23:00"
+   },
+   "knownBeneficiaries": [
+    "ACC-KB-S10-10-1",
+    "ACC-KB-S10-10-2",
+    "ACC-KB-S10-10-3"
+   ],
+   "sessionBaseline": {
+    "hesitationTimeMs": 783,
+    "typingCadenceDeviation": 0.12,
+    "sessionDurationSec": 155,
+    "navigationPattern": "browse-then-transfer"
+   },
+   "phone": "+6281362032608"
+  }
+ ],
+ "sessions": [
+  {
+   "id": "SCN-S01-S01",
+   "customerId": "SCN-S01-C01",
+   "minutesAgo": 21,
+   "deviceModel": "OPPO Reno 10",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1099,
+   "typingCadenceDeviation": 0.09,
+   "sessionDurationSec": 190,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S01",
+   "customerId": "SCN-S02-C01",
+   "minutesAgo": 29,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "AirDroid",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 3,
+   "hesitationTimeMs": 7483,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 152,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S01",
+   "customerId": "SCN-S03-C01",
+   "minutesAgo": 14,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 853,
+   "typingCadenceDeviation": 0.1,
+   "sessionDurationSec": 193,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S01",
+   "customerId": "SCN-S04-C01",
+   "minutesAgo": 29,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 3263,
+   "typingCadenceDeviation": 0.13,
+   "sessionDurationSec": 185,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S01",
+   "customerId": "SCN-S05-C01",
+   "minutesAgo": 19,
+   "deviceModel": "Samsung Galaxy J7 (rooted)",
+   "deviceRooted": false,
+   "isVpnDetected": true,
+   "ipCountry": "RU",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1109,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 185,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 2
+  },
+  {
+   "id": "SCN-S06-S01",
+   "customerId": "SCN-S06-C01",
+   "minutesAgo": 28,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 3,
+   "hesitationTimeMs": 3296,
+   "typingCadenceDeviation": 0.15,
+   "sessionDurationSec": 197,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S01",
+   "customerId": "SCN-S07-C01",
+   "minutesAgo": 6,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 726,
+   "typingCadenceDeviation": 0.05,
+   "sessionDurationSec": 251,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S01",
+   "customerId": "SCN-S08-C01",
+   "minutesAgo": 13,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 543,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 180,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S02",
+   "customerId": "SCN-S01-C02",
+   "minutesAgo": 24,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1116,
+   "typingCadenceDeviation": 0.09,
+   "sessionDurationSec": 207,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S02",
+   "customerId": "SCN-S02-C02",
+   "minutesAgo": 2,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "AnyDesk",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 3,
+   "hesitationTimeMs": 8766,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 186,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S02",
+   "customerId": "SCN-S03-C02",
+   "minutesAgo": 20,
+   "deviceModel": "OPPO Reno 10",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 948,
+   "typingCadenceDeviation": 0.06,
+   "sessionDurationSec": 236,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S02",
+   "customerId": "SCN-S04-C02",
+   "minutesAgo": 30,
+   "deviceModel": "Samsung Galaxy S23",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 3067,
+   "typingCadenceDeviation": 0.14,
+   "sessionDurationSec": 221,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S02",
+   "customerId": "SCN-S05-C02",
+   "minutesAgo": 24,
+   "deviceModel": "Xiaomi Redmi Note 8 (rooted)",
+   "deviceRooted": true,
+   "isVpnDetected": true,
+   "ipCountry": "CN",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 952,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 192,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 1
+  },
+  {
+   "id": "SCN-S06-S02",
+   "customerId": "SCN-S06-C02",
+   "minutesAgo": 9,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 5,
+   "hesitationTimeMs": 2786,
+   "typingCadenceDeviation": 0.13,
+   "sessionDurationSec": 133,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S02",
+   "customerId": "SCN-S07-C02",
+   "minutesAgo": 14,
+   "deviceModel": "OPPO Reno 10",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 894,
+   "typingCadenceDeviation": 0.1,
+   "sessionDurationSec": 158,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S02",
+   "customerId": "SCN-S08-C02",
+   "minutesAgo": 28,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1046,
+   "typingCadenceDeviation": 0.14,
+   "sessionDurationSec": 134,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S03",
+   "customerId": "SCN-S01-C03",
+   "minutesAgo": 2,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 560,
+   "typingCadenceDeviation": 0.08,
+   "sessionDurationSec": 224,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S03",
+   "customerId": "SCN-S02-C03",
+   "minutesAgo": 29,
+   "deviceModel": "OPPO Reno 10",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "TeamViewer",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 5,
+   "hesitationTimeMs": 4248,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 168,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S03",
+   "customerId": "SCN-S03-C03",
+   "minutesAgo": 27,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 948,
+   "typingCadenceDeviation": 0.14,
+   "sessionDurationSec": 119,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S03",
+   "customerId": "SCN-S04-C03",
+   "minutesAgo": 22,
+   "deviceModel": "OPPO Reno 10",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 4151,
+   "typingCadenceDeviation": 0.11,
+   "sessionDurationSec": 178,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S03",
+   "customerId": "SCN-S05-C03",
+   "minutesAgo": 17,
+   "deviceModel": "Generic Android 11",
+   "deviceRooted": true,
+   "isVpnDetected": true,
+   "ipCountry": "MY",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 778,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 200,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 4
+  },
+  {
+   "id": "SCN-S06-S03",
+   "customerId": "SCN-S06-C03",
+   "minutesAgo": 3,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 4,
+   "hesitationTimeMs": 2502,
+   "typingCadenceDeviation": 0.04,
+   "sessionDurationSec": 198,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S03",
+   "customerId": "SCN-S07-C03",
+   "minutesAgo": 17,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 756,
+   "typingCadenceDeviation": 0.05,
+   "sessionDurationSec": 173,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S03",
+   "customerId": "SCN-S08-C03",
+   "minutesAgo": 29,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 999,
+   "typingCadenceDeviation": 0.06,
+   "sessionDurationSec": 229,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S04",
+   "customerId": "SCN-S01-C04",
+   "minutesAgo": 16,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 814,
+   "typingCadenceDeviation": 0.05,
+   "sessionDurationSec": 219,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S04",
+   "customerId": "SCN-S02-C04",
+   "minutesAgo": 17,
+   "deviceModel": "Samsung Galaxy S23",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "RustDesk",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 4,
+   "hesitationTimeMs": 6761,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 165,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S04",
+   "customerId": "SCN-S03-C04",
+   "minutesAgo": 23,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 887,
+   "typingCadenceDeviation": 0.11,
+   "sessionDurationSec": 211,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S04",
+   "customerId": "SCN-S04-C04",
+   "minutesAgo": 24,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 2511,
+   "typingCadenceDeviation": 0.1,
+   "sessionDurationSec": 249,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S04",
+   "customerId": "SCN-S05-C04",
+   "minutesAgo": 25,
+   "deviceModel": "Samsung Galaxy J7 (rooted)",
+   "deviceRooted": true,
+   "isVpnDetected": true,
+   "ipCountry": "CN",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 817,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 239,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 2
+  },
+  {
+   "id": "SCN-S06-S04",
+   "customerId": "SCN-S06-C04",
+   "minutesAgo": 3,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 2,
+   "hesitationTimeMs": 2473,
+   "typingCadenceDeviation": 0.06,
+   "sessionDurationSec": 191,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S04",
+   "customerId": "SCN-S07-C04",
+   "minutesAgo": 6,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 814,
+   "typingCadenceDeviation": 0.11,
+   "sessionDurationSec": 171,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S04",
+   "customerId": "SCN-S08-C04",
+   "minutesAgo": 5,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 596,
+   "typingCadenceDeviation": 0.12,
+   "sessionDurationSec": 148,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S05",
+   "customerId": "SCN-S01-C05",
+   "minutesAgo": 27,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 573,
+   "typingCadenceDeviation": 0.09,
+   "sessionDurationSec": 164,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S05",
+   "customerId": "SCN-S02-C05",
+   "minutesAgo": 8,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "TeamViewer",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 3,
+   "hesitationTimeMs": 5783,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 176,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S05",
+   "customerId": "SCN-S03-C05",
+   "minutesAgo": 4,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 808,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 176,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S05",
+   "customerId": "SCN-S04-C05",
+   "minutesAgo": 27,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 4957,
+   "typingCadenceDeviation": 0.12,
+   "sessionDurationSec": 241,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S05",
+   "customerId": "SCN-S05-C05",
+   "minutesAgo": 24,
+   "deviceModel": "Generic Android 11",
+   "deviceRooted": false,
+   "isVpnDetected": true,
+   "ipCountry": "MY",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1084,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 265,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 1
+  },
+  {
+   "id": "SCN-S06-S05",
+   "customerId": "SCN-S06-C05",
+   "minutesAgo": 12,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 2,
+   "hesitationTimeMs": 3776,
+   "typingCadenceDeviation": 0.1,
+   "sessionDurationSec": 222,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S05",
+   "customerId": "SCN-S07-C05",
+   "minutesAgo": 9,
+   "deviceModel": "Samsung Galaxy S23",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 689,
+   "typingCadenceDeviation": 0.08,
+   "sessionDurationSec": 147,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S05",
+   "customerId": "SCN-S08-C05",
+   "minutesAgo": 8,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 934,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 156,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S06",
+   "customerId": "SCN-S01-C06",
+   "minutesAgo": 23,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 742,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 170,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S06",
+   "customerId": "SCN-S02-C06",
+   "minutesAgo": 15,
+   "deviceModel": "OPPO Reno 10",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "TeamViewer",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 6,
+   "hesitationTimeMs": 7725,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 183,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S06",
+   "customerId": "SCN-S03-C06",
+   "minutesAgo": 8,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 972,
+   "typingCadenceDeviation": 0.13,
+   "sessionDurationSec": 161,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S06",
+   "customerId": "SCN-S04-C06",
+   "minutesAgo": 9,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 4269,
+   "typingCadenceDeviation": 0.1,
+   "sessionDurationSec": 141,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S06",
+   "customerId": "SCN-S05-C06",
+   "minutesAgo": 16,
+   "deviceModel": "Xiaomi Redmi Note 8 (rooted)",
+   "deviceRooted": true,
+   "isVpnDetected": true,
+   "ipCountry": "MY",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 918,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 185,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 2
+  },
+  {
+   "id": "SCN-S06-S06",
+   "customerId": "SCN-S06-C06",
+   "minutesAgo": 6,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 2,
+   "hesitationTimeMs": 3685,
+   "typingCadenceDeviation": 0.14,
+   "sessionDurationSec": 225,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S06",
+   "customerId": "SCN-S07-C06",
+   "minutesAgo": 27,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 686,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 238,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S06",
+   "customerId": "SCN-S08-C06",
+   "minutesAgo": 4,
+   "deviceModel": "Samsung Galaxy S23",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 882,
+   "typingCadenceDeviation": 0.15,
+   "sessionDurationSec": 238,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S07",
+   "customerId": "SCN-S01-C07",
+   "minutesAgo": 6,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1031,
+   "typingCadenceDeviation": 0.11,
+   "sessionDurationSec": 194,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S07",
+   "customerId": "SCN-S02-C07",
+   "minutesAgo": 5,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "RustDesk",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 6,
+   "hesitationTimeMs": 8740,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 144,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S07",
+   "customerId": "SCN-S03-C07",
+   "minutesAgo": 5,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 955,
+   "typingCadenceDeviation": 0.09,
+   "sessionDurationSec": 169,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S07",
+   "customerId": "SCN-S04-C07",
+   "minutesAgo": 16,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 4153,
+   "typingCadenceDeviation": 0.15,
+   "sessionDurationSec": 151,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S07",
+   "customerId": "SCN-S05-C07",
+   "minutesAgo": 24,
+   "deviceModel": "Samsung Galaxy J7 (rooted)",
+   "deviceRooted": true,
+   "isVpnDetected": true,
+   "ipCountry": "RU",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 943,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 231,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 3
+  },
+  {
+   "id": "SCN-S06-S07",
+   "customerId": "SCN-S06-C07",
+   "minutesAgo": 25,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 5,
+   "hesitationTimeMs": 3582,
+   "typingCadenceDeviation": 0.13,
+   "sessionDurationSec": 155,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S07",
+   "customerId": "SCN-S07-C07",
+   "minutesAgo": 13,
+   "deviceModel": "OPPO Reno 10",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 659,
+   "typingCadenceDeviation": 0.15,
+   "sessionDurationSec": 165,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S07",
+   "customerId": "SCN-S08-C07",
+   "minutesAgo": 6,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 701,
+   "typingCadenceDeviation": 0.04,
+   "sessionDurationSec": 185,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S08",
+   "customerId": "SCN-S01-C08",
+   "minutesAgo": 25,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 953,
+   "typingCadenceDeviation": 0.15,
+   "sessionDurationSec": 158,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S08",
+   "customerId": "SCN-S02-C08",
+   "minutesAgo": 13,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "AirDroid",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 3,
+   "hesitationTimeMs": 6717,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 188,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S08",
+   "customerId": "SCN-S03-C08",
+   "minutesAgo": 2,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 882,
+   "typingCadenceDeviation": 0.12,
+   "sessionDurationSec": 207,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S08",
+   "customerId": "SCN-S04-C08",
+   "minutesAgo": 16,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 2988,
+   "typingCadenceDeviation": 0.14,
+   "sessionDurationSec": 144,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S08",
+   "customerId": "SCN-S05-C08",
+   "minutesAgo": 15,
+   "deviceModel": "Xiaomi Redmi Note 8 (rooted)",
+   "deviceRooted": true,
+   "isVpnDetected": true,
+   "ipCountry": "NG",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 727,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 229,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 1
+  },
+  {
+   "id": "SCN-S06-S08",
+   "customerId": "SCN-S06-C08",
+   "minutesAgo": 30,
+   "deviceModel": "Samsung Galaxy A54",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 2,
+   "hesitationTimeMs": 2710,
+   "typingCadenceDeviation": 0.08,
+   "sessionDurationSec": 143,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S08",
+   "customerId": "SCN-S07-C08",
+   "minutesAgo": 4,
+   "deviceModel": "Samsung Galaxy S23",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 749,
+   "typingCadenceDeviation": 0.11,
+   "sessionDurationSec": 213,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S08",
+   "customerId": "SCN-S08-C08",
+   "minutesAgo": 29,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1196,
+   "typingCadenceDeviation": 0.1,
+   "sessionDurationSec": 173,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S09",
+   "customerId": "SCN-S01-C09",
+   "minutesAgo": 27,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 869,
+   "typingCadenceDeviation": 0.05,
+   "sessionDurationSec": 144,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S09",
+   "customerId": "SCN-S02-C09",
+   "minutesAgo": 15,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "AnyDesk",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 2,
+   "hesitationTimeMs": 5433,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 181,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S09",
+   "customerId": "SCN-S03-C09",
+   "minutesAgo": 21,
+   "deviceModel": "Samsung Galaxy S23",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 957,
+   "typingCadenceDeviation": 0.06,
+   "sessionDurationSec": 153,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S09",
+   "customerId": "SCN-S04-C09",
+   "minutesAgo": 1,
+   "deviceModel": "OPPO Reno 10",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 4498,
+   "typingCadenceDeviation": 0.14,
+   "sessionDurationSec": 116,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S09",
+   "customerId": "SCN-S05-C09",
+   "minutesAgo": 10,
+   "deviceModel": "Xiaomi Redmi Note 8 (rooted)",
+   "deviceRooted": true,
+   "isVpnDetected": true,
+   "ipCountry": "CN",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 704,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 181,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 2
+  },
+  {
+   "id": "SCN-S06-S09",
+   "customerId": "SCN-S06-C09",
+   "minutesAgo": 2,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 5,
+   "hesitationTimeMs": 2768,
+   "typingCadenceDeviation": 0.11,
+   "sessionDurationSec": 146,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S09",
+   "customerId": "SCN-S07-C09",
+   "minutesAgo": 1,
+   "deviceModel": "Samsung Galaxy S23",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 566,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 113,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S09",
+   "customerId": "SCN-S08-C09",
+   "minutesAgo": 15,
+   "deviceModel": "vivo V29",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 804,
+   "typingCadenceDeviation": 0.11,
+   "sessionDurationSec": 163,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S01-S10",
+   "customerId": "SCN-S01-C10",
+   "minutesAgo": 4,
+   "deviceModel": "Realme 11",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1135,
+   "typingCadenceDeviation": 0.1,
+   "sessionDurationSec": 190,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S02-S10",
+   "customerId": "SCN-S02-C10",
+   "minutesAgo": 7,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": "TeamViewer",
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 2,
+   "hesitationTimeMs": 7798,
+   "typingCadenceDeviation": 0.6,
+   "sessionDurationSec": 162,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S03-S10",
+   "customerId": "SCN-S03-C10",
+   "minutesAgo": 12,
+   "deviceModel": "iPhone 13",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 1126,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 211,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S04-S10",
+   "customerId": "SCN-S04-C10",
+   "minutesAgo": 11,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 4392,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 195,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S05-S10",
+   "customerId": "SCN-S05-C10",
+   "minutesAgo": 7,
+   "deviceModel": "Xiaomi Redmi Note 8 (rooted)",
+   "deviceRooted": true,
+   "isVpnDetected": true,
+   "ipCountry": "CN",
+   "screenSharingAppDetected": null,
+   "isNewDevice": true,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 596,
+   "typingCadenceDeviation": 0.8,
+   "sessionDurationSec": 206,
+   "navigationPattern": "direct-to-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 2
+  },
+  {
+   "id": "SCN-S06-S10",
+   "customerId": "SCN-S06-C10",
+   "minutesAgo": 3,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 2,
+   "hesitationTimeMs": 3213,
+   "typingCadenceDeviation": 0.09,
+   "sessionDurationSec": 152,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S07-S10",
+   "customerId": "SCN-S07-C10",
+   "minutesAgo": 19,
+   "deviceModel": "iPhone 14",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 630,
+   "typingCadenceDeviation": 0.07,
+   "sessionDurationSec": 157,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  },
+  {
+   "id": "SCN-S08-S10",
+   "customerId": "SCN-S08-C10",
+   "minutesAgo": 5,
+   "deviceModel": "Xiaomi Redmi Note 12",
+   "deviceRooted": false,
+   "isVpnDetected": false,
+   "ipCountry": "ID",
+   "screenSharingAppDetected": null,
+   "isNewDevice": false,
+   "copyPasteEventsOnBeneficiaryField": 0,
+   "hesitationTimeMs": 847,
+   "typingCadenceDeviation": 0.13,
+   "sessionDurationSec": 213,
+   "navigationPattern": "browse-then-transfer",
+   "pinCorrect": true,
+   "failedPinAttempts": 0
+  }
+ ],
+ "network": {
+  "ACC-MULE-001": {
+   "centerAccountId": "ACC-MULE-001",
+   "linkedAccountsCount": 12,
+   "sharedDeviceWith": 4,
+   "nodes": [
+    {
+     "id": "ACC-MULE-001",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-001-L1",
+     "label": "•••1609",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-001-L2",
+     "label": "•••8224",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-001-L3",
+     "label": "•••4340",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-001-L4",
+     "label": "•••8755",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-001-L5",
+     "label": "•••1300",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-001-L6",
+     "label": "•••8678",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-001",
+     "target": "ACC-MULE-001-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-001",
+     "target": "ACC-MULE-001-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-001",
+     "target": "ACC-MULE-001-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-001",
+     "target": "ACC-MULE-001-L4",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-001-L5",
+     "target": "ACC-MULE-001",
+     "type": "TRANSFER",
+     "amount": 16300000
+    },
+    {
+     "source": "ACC-MULE-001-L6",
+     "target": "ACC-MULE-001",
+     "type": "TRANSFER",
+     "amount": 6700000
+    }
+   ]
+  },
+  "ACC-MULE-002": {
+   "centerAccountId": "ACC-MULE-002",
+   "linkedAccountsCount": 13,
+   "sharedDeviceWith": 6,
+   "nodes": [
+    {
+     "id": "ACC-MULE-002",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-002-L1",
+     "label": "•••4333",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-002-L2",
+     "label": "•••7242",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-002-L3",
+     "label": "•••3681",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-002-L4",
+     "label": "•••2343",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-002-L5",
+     "label": "•••8189",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-002-L6",
+     "label": "•••8555",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-002-L7",
+     "label": "•••8601",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-002-L8",
+     "label": "•••2799",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-002",
+     "target": "ACC-MULE-002-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-002",
+     "target": "ACC-MULE-002-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-002",
+     "target": "ACC-MULE-002-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-002",
+     "target": "ACC-MULE-002-L4",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-002",
+     "target": "ACC-MULE-002-L5",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-002",
+     "target": "ACC-MULE-002-L6",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-002-L7",
+     "target": "ACC-MULE-002",
+     "type": "TRANSFER",
+     "amount": 8100000
+    },
+    {
+     "source": "ACC-MULE-002-L8",
+     "target": "ACC-MULE-002",
+     "type": "TRANSFER",
+     "amount": 12200000
+    }
+   ]
+  },
+  "ACC-MULE-003": {
+   "centerAccountId": "ACC-MULE-003",
+   "linkedAccountsCount": 8,
+   "sharedDeviceWith": 3,
+   "nodes": [
+    {
+     "id": "ACC-MULE-003",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-003-L1",
+     "label": "•••7492",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-003-L2",
+     "label": "•••5965",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-003-L3",
+     "label": "•••6401",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-003-L4",
+     "label": "•••7963",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-003-L5",
+     "label": "•••3749",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-003",
+     "target": "ACC-MULE-003-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-003",
+     "target": "ACC-MULE-003-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-003",
+     "target": "ACC-MULE-003-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-003-L4",
+     "target": "ACC-MULE-003",
+     "type": "TRANSFER",
+     "amount": 11900000
+    },
+    {
+     "source": "ACC-MULE-003-L5",
+     "target": "ACC-MULE-003",
+     "type": "TRANSFER",
+     "amount": 16400000
+    }
+   ]
+  },
+  "ACC-MULE-004": {
+   "centerAccountId": "ACC-MULE-004",
+   "linkedAccountsCount": 9,
+   "sharedDeviceWith": 3,
+   "nodes": [
+    {
+     "id": "ACC-MULE-004",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-004-L1",
+     "label": "•••4141",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-004-L2",
+     "label": "•••9337",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-004-L3",
+     "label": "•••5312",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-004-L4",
+     "label": "•••2199",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-004-L5",
+     "label": "•••5523",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-004",
+     "target": "ACC-MULE-004-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-004",
+     "target": "ACC-MULE-004-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-004",
+     "target": "ACC-MULE-004-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-004-L4",
+     "target": "ACC-MULE-004",
+     "type": "TRANSFER",
+     "amount": 19700000
+    },
+    {
+     "source": "ACC-MULE-004-L5",
+     "target": "ACC-MULE-004",
+     "type": "TRANSFER",
+     "amount": 8700000
+    }
+   ]
+  },
+  "ACC-MULE-005": {
+   "centerAccountId": "ACC-MULE-005",
+   "linkedAccountsCount": 8,
+   "sharedDeviceWith": 3,
+   "nodes": [
+    {
+     "id": "ACC-MULE-005",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-005-L1",
+     "label": "•••7259",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-005-L2",
+     "label": "•••6321",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-005-L3",
+     "label": "•••5884",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-005-L4",
+     "label": "•••1424",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-005-L5",
+     "label": "•••6366",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-005",
+     "target": "ACC-MULE-005-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-005",
+     "target": "ACC-MULE-005-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-005",
+     "target": "ACC-MULE-005-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-005-L4",
+     "target": "ACC-MULE-005",
+     "type": "TRANSFER",
+     "amount": 19100000
+    },
+    {
+     "source": "ACC-MULE-005-L5",
+     "target": "ACC-MULE-005",
+     "type": "TRANSFER",
+     "amount": 14500000
+    }
+   ]
+  },
+  "ACC-MULE-006": {
+   "centerAccountId": "ACC-MULE-006",
+   "linkedAccountsCount": 12,
+   "sharedDeviceWith": 6,
+   "nodes": [
+    {
+     "id": "ACC-MULE-006",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-006-L1",
+     "label": "•••4908",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-006-L2",
+     "label": "•••4171",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-006-L3",
+     "label": "•••1933",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-006-L4",
+     "label": "•••1756",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-006-L5",
+     "label": "•••9134",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-006-L6",
+     "label": "•••6891",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-006-L7",
+     "label": "•••2265",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-006-L8",
+     "label": "•••5091",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-006",
+     "target": "ACC-MULE-006-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-006",
+     "target": "ACC-MULE-006-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-006",
+     "target": "ACC-MULE-006-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-006",
+     "target": "ACC-MULE-006-L4",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-006",
+     "target": "ACC-MULE-006-L5",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-006",
+     "target": "ACC-MULE-006-L6",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-006-L7",
+     "target": "ACC-MULE-006",
+     "type": "TRANSFER",
+     "amount": 18200000
+    },
+    {
+     "source": "ACC-MULE-006-L8",
+     "target": "ACC-MULE-006",
+     "type": "TRANSFER",
+     "amount": 7800000
+    }
+   ]
+  },
+  "ACC-MULE-007": {
+   "centerAccountId": "ACC-MULE-007",
+   "linkedAccountsCount": 12,
+   "sharedDeviceWith": 6,
+   "nodes": [
+    {
+     "id": "ACC-MULE-007",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-007-L1",
+     "label": "•••6993",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-007-L2",
+     "label": "•••3341",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-007-L3",
+     "label": "•••3128",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-007-L4",
+     "label": "•••6473",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-007-L5",
+     "label": "•••9412",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-007-L6",
+     "label": "•••6356",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-007-L7",
+     "label": "•••4376",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-007-L8",
+     "label": "•••5175",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-007",
+     "target": "ACC-MULE-007-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-007",
+     "target": "ACC-MULE-007-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-007",
+     "target": "ACC-MULE-007-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-007",
+     "target": "ACC-MULE-007-L4",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-007",
+     "target": "ACC-MULE-007-L5",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-007",
+     "target": "ACC-MULE-007-L6",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-007-L7",
+     "target": "ACC-MULE-007",
+     "type": "TRANSFER",
+     "amount": 7600000
+    },
+    {
+     "source": "ACC-MULE-007-L8",
+     "target": "ACC-MULE-007",
+     "type": "TRANSFER",
+     "amount": 14100000
+    }
+   ]
+  },
+  "ACC-MULE-008": {
+   "centerAccountId": "ACC-MULE-008",
+   "linkedAccountsCount": 10,
+   "sharedDeviceWith": 6,
+   "nodes": [
+    {
+     "id": "ACC-MULE-008",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-008-L1",
+     "label": "•••7804",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-008-L2",
+     "label": "•••5572",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-008-L3",
+     "label": "•••2140",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-008-L4",
+     "label": "•••2484",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-008-L5",
+     "label": "•••4585",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-008-L6",
+     "label": "•••9057",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-008-L7",
+     "label": "•••1427",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-008-L8",
+     "label": "•••6064",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-008",
+     "target": "ACC-MULE-008-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-008",
+     "target": "ACC-MULE-008-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-008",
+     "target": "ACC-MULE-008-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-008",
+     "target": "ACC-MULE-008-L4",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-008",
+     "target": "ACC-MULE-008-L5",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-008",
+     "target": "ACC-MULE-008-L6",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-008-L7",
+     "target": "ACC-MULE-008",
+     "type": "TRANSFER",
+     "amount": 19400000
+    },
+    {
+     "source": "ACC-MULE-008-L8",
+     "target": "ACC-MULE-008",
+     "type": "TRANSFER",
+     "amount": 2500000
+    }
+   ]
+  },
+  "ACC-MULE-009": {
+   "centerAccountId": "ACC-MULE-009",
+   "linkedAccountsCount": 10,
+   "sharedDeviceWith": 4,
+   "nodes": [
+    {
+     "id": "ACC-MULE-009",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-009-L1",
+     "label": "•••2315",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-009-L2",
+     "label": "•••8487",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-009-L3",
+     "label": "•••2022",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-009-L4",
+     "label": "•••7876",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-009-L5",
+     "label": "•••9083",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-009-L6",
+     "label": "•••3988",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-009",
+     "target": "ACC-MULE-009-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-009",
+     "target": "ACC-MULE-009-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-009",
+     "target": "ACC-MULE-009-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-009",
+     "target": "ACC-MULE-009-L4",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-009-L5",
+     "target": "ACC-MULE-009",
+     "type": "TRANSFER",
+     "amount": 6400000
+    },
+    {
+     "source": "ACC-MULE-009-L6",
+     "target": "ACC-MULE-009",
+     "type": "TRANSFER",
+     "amount": 12800000
+    }
+   ]
+  },
+  "ACC-MULE-010": {
+   "centerAccountId": "ACC-MULE-010",
+   "linkedAccountsCount": 12,
+   "sharedDeviceWith": 5,
+   "nodes": [
+    {
+     "id": "ACC-MULE-010",
+     "label": "Beneficiary Account",
+     "type": "beneficiary",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-010-L1",
+     "label": "•••6727",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-010-L2",
+     "label": "•••8818",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-010-L3",
+     "label": "•••3026",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-010-L4",
+     "label": "•••3852",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-010-L5",
+     "label": "•••9020",
+     "type": "account",
+     "flagged": true
+    },
+    {
+     "id": "ACC-MULE-010-L6",
+     "label": "•••6276",
+     "type": "account",
+     "flagged": false
+    },
+    {
+     "id": "ACC-MULE-010-L7",
+     "label": "•••4028",
+     "type": "account",
+     "flagged": false
+    }
+   ],
+   "edges": [
+    {
+     "source": "ACC-MULE-010",
+     "target": "ACC-MULE-010-L1",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-010",
+     "target": "ACC-MULE-010-L2",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-010",
+     "target": "ACC-MULE-010-L3",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-010",
+     "target": "ACC-MULE-010-L4",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-010",
+     "target": "ACC-MULE-010-L5",
+     "type": "SHARED_DEVICE"
+    },
+    {
+     "source": "ACC-MULE-010-L6",
+     "target": "ACC-MULE-010",
+     "type": "TRANSFER",
+     "amount": 17200000
+    },
+    {
+     "source": "ACC-MULE-010-L7",
+     "target": "ACC-MULE-010",
+     "type": "TRANSFER",
+     "amount": 7600000
+    }
+   ]
+  }
+ },
+ "aml": [
+  {
+   "id": "AML-SCN-01",
+   "name": "Dmitri Volkov Sergeyevich",
+   "type": "SANCTION",
+   "country": "RU",
+   "source": "Demo sanctions list (fictional)",
+   "notes": "Fictional name for the SANCTIONED_BENEFICIARY scenario",
+   "createdBy": "system"
+  },
+  {
+   "id": "AML-SCN-02",
+   "name": "Kim Song Chol",
+   "type": "SANCTION",
+   "country": "KP",
+   "source": "Demo sanctions list (fictional)",
+   "notes": "Fictional name for the SANCTIONED_BENEFICIARY scenario",
+   "createdBy": "system"
+  },
+  {
+   "id": "AML-SCN-03",
+   "name": "Ahmad Reza Tehrani",
+   "type": "SANCTION",
+   "country": "IR",
+   "source": "Demo sanctions list (fictional)",
+   "notes": "Fictional name for the SANCTIONED_BENEFICIARY scenario",
+   "createdBy": "system"
+  },
+  {
+   "id": "AML-SCN-04",
+   "name": "Hassan Al-Qadiri",
+   "type": "SANCTION",
+   "country": "SY",
+   "source": "Demo sanctions list (fictional)",
+   "notes": "Fictional name for the SANCTIONED_BENEFICIARY scenario",
+   "createdBy": "system"
+  }
+ ]
+}

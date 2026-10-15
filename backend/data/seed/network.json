@@ -1,0 +1,726 @@
+{
+  "ACC-BEN-7781": {
+    "centerAccountId": "ACC-BEN-7781",
+    "linkedAccountsCount": 15,
+    "sharedDeviceWith": 3,
+    "nodes": [
+      {
+        "id": "ACC-BEN-7781",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-01",
+        "label": "•••4412",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-02",
+        "label": "•••9087",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-03",
+        "label": "•••1563",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-04",
+        "label": "•••7720",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-05",
+        "label": "•••3358",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-06",
+        "label": "•••6049",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-07",
+        "label": "•••2815",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0001",
+        "label": "Budi (•••2231)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-BEN-7781",
+        "target": "ACC-M-01",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-BEN-7781",
+        "target": "ACC-M-02",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-BEN-7781",
+        "target": "ACC-M-03",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-M-04",
+        "target": "ACC-BEN-7781",
+        "type": "TRANSFER",
+        "amount": 4800000
+      },
+      {
+        "source": "ACC-M-05",
+        "target": "ACC-BEN-7781",
+        "type": "TRANSFER",
+        "amount": 6200000
+      },
+      {
+        "source": "ACC-M-06",
+        "target": "ACC-BEN-7781",
+        "type": "TRANSFER",
+        "amount": 3500000
+      },
+      {
+        "source": "ACC-M-07",
+        "target": "ACC-BEN-7781",
+        "type": "TRANSFER",
+        "amount": 7100000
+      },
+      {
+        "source": "ACC-0001",
+        "target": "ACC-BEN-7781",
+        "type": "TRANSFER",
+        "amount": 50000000
+      }
+    ]
+  },
+  "ACC-NB-0001": {
+    "centerAccountId": "ACC-NB-0001",
+    "linkedAccountsCount": 5,
+    "sharedDeviceWith": 2,
+    "nodes": [
+      {
+        "id": "ACC-NB-0001",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0001-D1",
+        "label": "•••2010",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-0001-D2",
+        "label": "•••7518",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-0001-S1",
+        "label": "•••8697",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0001-S2",
+        "label": "•••9149",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0001-S3",
+        "label": "•••6773",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0005",
+        "label": "Citra Hartono (•••1866)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-NB-0001",
+        "target": "ACC-M-0001-D1",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-NB-0001",
+        "target": "ACC-M-0001-D2",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-M-0001-S1",
+        "target": "ACC-NB-0001",
+        "type": "TRANSFER",
+        "amount": 3800000
+      },
+      {
+        "source": "ACC-M-0001-S2",
+        "target": "ACC-NB-0001",
+        "type": "TRANSFER",
+        "amount": 5500000
+      },
+      {
+        "source": "ACC-M-0001-S3",
+        "target": "ACC-NB-0001",
+        "type": "TRANSFER",
+        "amount": 3500000
+      },
+      {
+        "source": "ACC-0005",
+        "target": "ACC-NB-0001",
+        "type": "TRANSFER",
+        "amount": 43200000
+      }
+    ]
+  },
+  "ACC-NB-0007": {
+    "centerAccountId": "ACC-NB-0007",
+    "linkedAccountsCount": 7,
+    "sharedDeviceWith": 2,
+    "nodes": [
+      {
+        "id": "ACC-NB-0007",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0007-D1",
+        "label": "•••8567",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-0007-D2",
+        "label": "•••7527",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-0007-S1",
+        "label": "•••8599",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0007-S2",
+        "label": "•••2787",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0007-S3",
+        "label": "•••6521",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0007-S4",
+        "label": "•••8078",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0007-S5",
+        "label": "•••9462",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0023",
+        "label": "Sinta Pangestu (•••3624)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-NB-0007",
+        "target": "ACC-M-0007-D1",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-NB-0007",
+        "target": "ACC-M-0007-D2",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-M-0007-S1",
+        "target": "ACC-NB-0007",
+        "type": "TRANSFER",
+        "amount": 5100000
+      },
+      {
+        "source": "ACC-M-0007-S2",
+        "target": "ACC-NB-0007",
+        "type": "TRANSFER",
+        "amount": 3000000
+      },
+      {
+        "source": "ACC-M-0007-S3",
+        "target": "ACC-NB-0007",
+        "type": "TRANSFER",
+        "amount": 4500000
+      },
+      {
+        "source": "ACC-M-0007-S4",
+        "target": "ACC-NB-0007",
+        "type": "TRANSFER",
+        "amount": 7100000
+      },
+      {
+        "source": "ACC-M-0007-S5",
+        "target": "ACC-NB-0007",
+        "type": "TRANSFER",
+        "amount": 6500000
+      },
+      {
+        "source": "ACC-0023",
+        "target": "ACC-NB-0007",
+        "type": "TRANSFER",
+        "amount": 8300000
+      }
+    ]
+  },
+  "ACC-NB-0011": {
+    "centerAccountId": "ACC-NB-0011",
+    "linkedAccountsCount": 6,
+    "sharedDeviceWith": 2,
+    "nodes": [
+      {
+        "id": "ACC-NB-0011",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0011-D1",
+        "label": "•••6968",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-0011-D2",
+        "label": "•••4502",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-0011-S1",
+        "label": "•••8467",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0011-S2",
+        "label": "•••6277",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0011-S3",
+        "label": "•••1096",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0011-S4",
+        "label": "•••2830",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0035",
+        "label": "Maya Pangestu (•••4144)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-NB-0011",
+        "target": "ACC-M-0011-D1",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-NB-0011",
+        "target": "ACC-M-0011-D2",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-M-0011-S1",
+        "target": "ACC-NB-0011",
+        "type": "TRANSFER",
+        "amount": 3100000
+      },
+      {
+        "source": "ACC-M-0011-S2",
+        "target": "ACC-NB-0011",
+        "type": "TRANSFER",
+        "amount": 5500000
+      },
+      {
+        "source": "ACC-M-0011-S3",
+        "target": "ACC-NB-0011",
+        "type": "TRANSFER",
+        "amount": 2500000
+      },
+      {
+        "source": "ACC-M-0011-S4",
+        "target": "ACC-NB-0011",
+        "type": "TRANSFER",
+        "amount": 5700000
+      },
+      {
+        "source": "ACC-0035",
+        "target": "ACC-NB-0011",
+        "type": "TRANSFER",
+        "amount": 16500000
+      }
+    ]
+  },
+  "ACC-NB-0019": {
+    "centerAccountId": "ACC-NB-0019",
+    "linkedAccountsCount": 7,
+    "sharedDeviceWith": 2,
+    "nodes": [
+      {
+        "id": "ACC-NB-0019",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0019-D1",
+        "label": "•••8741",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-0019-D2",
+        "label": "•••1381",
+        "type": "account",
+        "flagged": true
+      },
+      {
+        "id": "ACC-M-0019-S1",
+        "label": "•••1449",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0019-S2",
+        "label": "•••3302",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0019-S3",
+        "label": "•••9348",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0019-S4",
+        "label": "•••2228",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0019-S5",
+        "label": "•••4869",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0019",
+        "label": "Wulan Maharani (•••2414)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-NB-0019",
+        "target": "ACC-M-0019-D1",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-NB-0019",
+        "target": "ACC-M-0019-D2",
+        "type": "SHARED_DEVICE"
+      },
+      {
+        "source": "ACC-M-0019-S1",
+        "target": "ACC-NB-0019",
+        "type": "TRANSFER",
+        "amount": 8900000
+      },
+      {
+        "source": "ACC-M-0019-S2",
+        "target": "ACC-NB-0019",
+        "type": "TRANSFER",
+        "amount": 7600000
+      },
+      {
+        "source": "ACC-M-0019-S3",
+        "target": "ACC-NB-0019",
+        "type": "TRANSFER",
+        "amount": 5000000
+      },
+      {
+        "source": "ACC-M-0019-S4",
+        "target": "ACC-NB-0019",
+        "type": "TRANSFER",
+        "amount": 6100000
+      },
+      {
+        "source": "ACC-M-0019-S5",
+        "target": "ACC-NB-0019",
+        "type": "TRANSFER",
+        "amount": 7100000
+      },
+      {
+        "source": "ACC-0019",
+        "target": "ACC-NB-0019",
+        "type": "TRANSFER",
+        "amount": 25900000
+      }
+    ]
+  },
+  "ACC-NB-0003": {
+    "centerAccountId": "ACC-NB-0003",
+    "linkedAccountsCount": 2,
+    "sharedDeviceWith": 0,
+    "nodes": [
+      {
+        "id": "ACC-NB-0003",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0003-S1",
+        "label": "•••9335",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0003-S2",
+        "label": "•••6021",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0011",
+        "label": "Nadia Pangestu (•••8121)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-M-0003-S1",
+        "target": "ACC-NB-0003",
+        "type": "TRANSFER",
+        "amount": 3500000
+      },
+      {
+        "source": "ACC-M-0003-S2",
+        "target": "ACC-NB-0003",
+        "type": "TRANSFER",
+        "amount": 4100000
+      },
+      {
+        "source": "ACC-0011",
+        "target": "ACC-NB-0003",
+        "type": "TRANSFER",
+        "amount": 30100000
+      }
+    ]
+  },
+  "ACC-NB-0010": {
+    "centerAccountId": "ACC-NB-0010",
+    "linkedAccountsCount": 3,
+    "sharedDeviceWith": 0,
+    "nodes": [
+      {
+        "id": "ACC-NB-0010",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0010-S1",
+        "label": "•••5669",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0010-S2",
+        "label": "•••7011",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0010-S3",
+        "label": "•••4249",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0032",
+        "label": "Agus Lubis (•••4880)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-M-0010-S1",
+        "target": "ACC-NB-0010",
+        "type": "TRANSFER",
+        "amount": 3900000
+      },
+      {
+        "source": "ACC-M-0010-S2",
+        "target": "ACC-NB-0010",
+        "type": "TRANSFER",
+        "amount": 3200000
+      },
+      {
+        "source": "ACC-M-0010-S3",
+        "target": "ACC-NB-0010",
+        "type": "TRANSFER",
+        "amount": 3000000
+      },
+      {
+        "source": "ACC-0032",
+        "target": "ACC-NB-0010",
+        "type": "TRANSFER",
+        "amount": 18900000
+      }
+    ]
+  },
+  "ACC-NB-0015": {
+    "centerAccountId": "ACC-NB-0015",
+    "linkedAccountsCount": 2,
+    "sharedDeviceWith": 0,
+    "nodes": [
+      {
+        "id": "ACC-NB-0015",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0015-S1",
+        "label": "•••8491",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0015-S2",
+        "label": "•••1358",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0007",
+        "label": "Putri Maharani (•••8010)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-M-0015-S1",
+        "target": "ACC-NB-0015",
+        "type": "TRANSFER",
+        "amount": 5200000
+      },
+      {
+        "source": "ACC-M-0015-S2",
+        "target": "ACC-NB-0015",
+        "type": "TRANSFER",
+        "amount": 6400000
+      },
+      {
+        "source": "ACC-0007",
+        "target": "ACC-NB-0015",
+        "type": "TRANSFER",
+        "amount": 45000000
+      }
+    ]
+  },
+  "ACC-NB-0020": {
+    "centerAccountId": "ACC-NB-0020",
+    "linkedAccountsCount": 2,
+    "sharedDeviceWith": 0,
+    "nodes": [
+      {
+        "id": "ACC-NB-0020",
+        "label": "Beneficiary Account",
+        "type": "beneficiary",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0020-S1",
+        "label": "•••4610",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-M-0020-S2",
+        "label": "•••3649",
+        "type": "account",
+        "flagged": false
+      },
+      {
+        "id": "ACC-0022",
+        "label": "Bayu Nugroho (•••5368)",
+        "type": "customer",
+        "flagged": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ACC-M-0020-S1",
+        "target": "ACC-NB-0020",
+        "type": "TRANSFER",
+        "amount": 7600000
+      },
+      {
+        "source": "ACC-M-0020-S2",
+        "target": "ACC-NB-0020",
+        "type": "TRANSFER",
+        "amount": 4700000
+      },
+      {
+        "source": "ACC-0022",
+        "target": "ACC-NB-0020",
+        "type": "TRANSFER",
+        "amount": 16800000
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "ACC-BEN-7781": {
+    "centerAccountId": "ACC-BEN-7781",
+    "linkedAccountsCount": 15,
+    "sharedDeviceWith": 3,
+    "nodes": [
+      { "id": "ACC-BEN-7781", "label": "Rekening Tujuan", "type": "beneficiary", "flagged": false },
+      { "id": "ACC-M-01", "label": "•••4412", "type": "account", "flagged": true },
+      { "id": "ACC-M-02", "label": "•••9087", "type": "account", "flagged": true },
+      { "id": "ACC-M-03", "label": "•••1563", "type": "account", "flagged": true },
+      { "id": "ACC-M-04", "label": "•••7720", "type": "account", "flagged": false },
+      { "id": "ACC-M-05", "label": "•••3358", "type": "account", "flagged": false },
+      { "id": "ACC-M-06", "label": "•••6049", "type": "account", "flagged": false },
+      { "id": "ACC-M-07", "label": "•••2815", "type": "account", "flagged": false },
+      { "id": "ACC-0001", "label": "Budi (•••2231)", "type": "customer", "flagged": false }
+    ],
+    "edges": [
+      { "source": "ACC-BEN-7781", "target": "ACC-M-01", "type": "SHARED_DEVICE" },
+      { "source": "ACC-BEN-7781", "target": "ACC-M-02", "type": "SHARED_DEVICE" },
+      { "source": "ACC-BEN-7781", "target": "ACC-M-03", "type": "SHARED_DEVICE" },
+      { "source": "ACC-M-04", "target": "ACC-BEN-7781", "type": "TRANSFER", "amount": 4800000 },
+      { "source": "ACC-M-05", "target": "ACC-BEN-7781", "type": "TRANSFER", "amount": 6200000 },
+      { "source": "ACC-M-06", "target": "ACC-BEN-7781", "type": "TRANSFER", "amount": 3500000 },
+      { "source": "ACC-M-07", "target": "ACC-BEN-7781", "type": "TRANSFER", "amount": 7100000 },
+      { "source": "ACC-0001", "target": "ACC-BEN-7781", "type": "TRANSFER", "amount": 50000000 }
+    ]
+  }
+}

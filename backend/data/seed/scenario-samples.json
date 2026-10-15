@@ -1,0 +1,1132 @@
+{
+ "S01": [
+  {
+   "customerId": "SCN-S01-C01",
+   "sessionId": "SCN-S01-S01",
+   "amount": 1500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-01-1",
+    "bankName": "BNI",
+    "name": "Wulan Gunawan",
+    "accountAgeDays": 637
+   }
+  },
+  {
+   "customerId": "SCN-S01-C02",
+   "sessionId": "SCN-S01-S02",
+   "amount": 4550000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-02-1",
+    "bankName": "Mandiri",
+    "name": "Maya Siregar",
+    "accountAgeDays": 1371
+   }
+  },
+  {
+   "customerId": "SCN-S01-C03",
+   "sessionId": "SCN-S01-S03",
+   "amount": 6600000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-03-1",
+    "bankName": "BRI",
+    "name": "Rina Wibowo",
+    "accountAgeDays": 1511
+   }
+  },
+  {
+   "customerId": "SCN-S01-C04",
+   "sessionId": "SCN-S01-S04",
+   "amount": 1200000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-04-1",
+    "bankName": "Danamon",
+    "name": "Rudi Siregar",
+    "accountAgeDays": 1337
+   }
+  },
+  {
+   "customerId": "SCN-S01-C05",
+   "sessionId": "SCN-S01-S05",
+   "amount": 500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-05-1",
+    "bankName": "BCA",
+    "name": "Dewi Nugroho",
+    "accountAgeDays": 1391
+   }
+  },
+  {
+   "customerId": "SCN-S01-C06",
+   "sessionId": "SCN-S01-S06",
+   "amount": 650000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-06-1",
+    "bankName": "BRI",
+    "name": "Eko Gunawan",
+    "accountAgeDays": 1928
+   }
+  },
+  {
+   "customerId": "SCN-S01-C07",
+   "sessionId": "SCN-S01-S07",
+   "amount": 2200000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-07-1",
+    "bankName": "BRI",
+    "name": "Rudi Harahap",
+    "accountAgeDays": 1844
+   }
+  },
+  {
+   "customerId": "SCN-S01-C08",
+   "sessionId": "SCN-S01-S08",
+   "amount": 200000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-08-1",
+    "bankName": "BRI",
+    "name": "Maya Saputra",
+    "accountAgeDays": 2549
+   }
+  },
+  {
+   "customerId": "SCN-S01-C09",
+   "sessionId": "SCN-S01-S09",
+   "amount": 850000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-09-1",
+    "bankName": "BSI",
+    "name": "Andi Wijaya",
+    "accountAgeDays": 841
+   }
+  },
+  {
+   "customerId": "SCN-S01-C10",
+   "sessionId": "SCN-S01-S10",
+   "amount": 1300000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-KB-S01-10-1",
+    "bankName": "BSI",
+    "name": "Yusuf Nugroho",
+    "accountAgeDays": 1315
+   }
+  }
+ ],
+ "S02": [
+  {
+   "customerId": "SCN-S02-C01",
+   "sessionId": "SCN-S02-S01",
+   "amount": 78000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-001",
+    "bankName": "BCA",
+    "name": "Sinta Purba",
+    "accountAgeDays": 5
+   }
+  },
+  {
+   "customerId": "SCN-S02-C02",
+   "sessionId": "SCN-S02-S02",
+   "amount": 26000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-002",
+    "bankName": "BCA",
+    "name": "Indah Harahap",
+    "accountAgeDays": 22
+   }
+  },
+  {
+   "customerId": "SCN-S02-C03",
+   "sessionId": "SCN-S02-S03",
+   "amount": 91000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-003",
+    "bankName": "BSI",
+    "name": "Nadia Setiadi",
+    "accountAgeDays": 12
+   }
+  },
+  {
+   "customerId": "SCN-S02-C04",
+   "sessionId": "SCN-S02-S04",
+   "amount": 80000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-004",
+    "bankName": "Permata",
+    "name": "Putri Saputra",
+    "accountAgeDays": 11
+   }
+  },
+  {
+   "customerId": "SCN-S02-C05",
+   "sessionId": "SCN-S02-S05",
+   "amount": 58000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-005",
+    "bankName": "Mandiri",
+    "name": "Rina Santoso",
+    "accountAgeDays": 10
+   }
+  },
+  {
+   "customerId": "SCN-S02-C06",
+   "sessionId": "SCN-S02-S06",
+   "amount": 64000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-006",
+    "bankName": "CIMB Niaga",
+    "name": "Ayu Harahap",
+    "accountAgeDays": 6
+   }
+  },
+  {
+   "customerId": "SCN-S02-C07",
+   "sessionId": "SCN-S02-S07",
+   "amount": 41000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-007",
+    "bankName": "CIMB Niaga",
+    "name": "Dedi Kusuma",
+    "accountAgeDays": 9
+   }
+  },
+  {
+   "customerId": "SCN-S02-C08",
+   "sessionId": "SCN-S02-S08",
+   "amount": 38000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-008",
+    "bankName": "BNI",
+    "name": "Bambang Pratama",
+    "accountAgeDays": 25
+   }
+  },
+  {
+   "customerId": "SCN-S02-C09",
+   "sessionId": "SCN-S02-S09",
+   "amount": 85000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-009",
+    "bankName": "Permata",
+    "name": "Putri Gunawan",
+    "accountAgeDays": 5
+   }
+  },
+  {
+   "customerId": "SCN-S02-C10",
+   "sessionId": "SCN-S02-S10",
+   "amount": 76000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SCAM-010",
+    "bankName": "BCA",
+    "name": "Eko Halim",
+    "accountAgeDays": 13
+   }
+  }
+ ],
+ "S03": [
+  {
+   "customerId": "SCN-S03-C01",
+   "sessionId": "SCN-S03-S01",
+   "amount": 17500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-001",
+    "bankName": "BCA",
+    "name": "Ayu Lestari",
+    "accountAgeDays": 7
+   }
+  },
+  {
+   "customerId": "SCN-S03-C02",
+   "sessionId": "SCN-S03-S02",
+   "amount": 20500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-002",
+    "bankName": "BNI",
+    "name": "Eko Santoso",
+    "accountAgeDays": 18
+   }
+  },
+  {
+   "customerId": "SCN-S03-C03",
+   "sessionId": "SCN-S03-S03",
+   "amount": 4500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-003",
+    "bankName": "BRI",
+    "name": "Maya Kusuma",
+    "accountAgeDays": 39
+   }
+  },
+  {
+   "customerId": "SCN-S03-C04",
+   "sessionId": "SCN-S03-S04",
+   "amount": 14000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-004",
+    "bankName": "Mandiri",
+    "name": "Maya Harahap",
+    "accountAgeDays": 8
+   }
+  },
+  {
+   "customerId": "SCN-S03-C05",
+   "sessionId": "SCN-S03-S05",
+   "amount": 13000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-005",
+    "bankName": "BCA",
+    "name": "Fajar Halim",
+    "accountAgeDays": 11
+   }
+  },
+  {
+   "customerId": "SCN-S03-C06",
+   "sessionId": "SCN-S03-S06",
+   "amount": 16000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-006",
+    "bankName": "Permata",
+    "name": "Dewi Lestari",
+    "accountAgeDays": 40
+   }
+  },
+  {
+   "customerId": "SCN-S03-C07",
+   "sessionId": "SCN-S03-S07",
+   "amount": 7500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-007",
+    "bankName": "Mandiri",
+    "name": "Yusuf Wijaya",
+    "accountAgeDays": 15
+   }
+  },
+  {
+   "customerId": "SCN-S03-C08",
+   "sessionId": "SCN-S03-S08",
+   "amount": 8500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-008",
+    "bankName": "BNI",
+    "name": "Yusuf Siregar",
+    "accountAgeDays": 50
+   }
+  },
+  {
+   "customerId": "SCN-S03-C09",
+   "sessionId": "SCN-S03-S09",
+   "amount": 19000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-009",
+    "bankName": "Danamon",
+    "name": "Nadia Lestari",
+    "accountAgeDays": 16
+   }
+  },
+  {
+   "customerId": "SCN-S03-C10",
+   "sessionId": "SCN-S03-S10",
+   "amount": 5000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-MULE-010",
+    "bankName": "BSI",
+    "name": "Agus Harahap",
+    "accountAgeDays": 16
+   }
+  }
+ ],
+ "S04": [
+  {
+   "customerId": "SCN-S04-C01",
+   "sessionId": "SCN-S04-S01",
+   "amount": 120500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-001",
+    "bankName": "Danamon",
+    "name": "Investasi Emas Digital",
+    "accountAgeDays": 4
+   }
+  },
+  {
+   "customerId": "SCN-S04-C02",
+   "sessionId": "SCN-S04-S02",
+   "amount": 108500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-002",
+    "bankName": "BSI",
+    "name": "CV Profit Kilat",
+    "accountAgeDays": 15
+   }
+  },
+  {
+   "customerId": "SCN-S04-C03",
+   "sessionId": "SCN-S04-S03",
+   "amount": 30500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-003",
+    "bankName": "BCA",
+    "name": "Koperasi Untung Bersama",
+    "accountAgeDays": 15
+   }
+  },
+  {
+   "customerId": "SCN-S04-C04",
+   "sessionId": "SCN-S04-S04",
+   "amount": 39000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-004",
+    "bankName": "Mandiri",
+    "name": "CV Profit Kilat",
+    "accountAgeDays": 8
+   }
+  },
+  {
+   "customerId": "SCN-S04-C05",
+   "sessionId": "SCN-S04-S05",
+   "amount": 93500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-005",
+    "bankName": "BCA",
+    "name": "Investasi Emas Digital",
+    "accountAgeDays": 18
+   }
+  },
+  {
+   "customerId": "SCN-S04-C06",
+   "sessionId": "SCN-S04-S06",
+   "amount": 46000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-006",
+    "bankName": "Mandiri",
+    "name": "PT Cuan Sejahtera Abadi",
+    "accountAgeDays": 8
+   }
+  },
+  {
+   "customerId": "SCN-S04-C07",
+   "sessionId": "SCN-S04-S07",
+   "amount": 22000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-007",
+    "bankName": "BSI",
+    "name": "PT Robot Trading Nusantara",
+    "accountAgeDays": 7
+   }
+  },
+  {
+   "customerId": "SCN-S04-C08",
+   "sessionId": "SCN-S04-S08",
+   "amount": 26000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-008",
+    "bankName": "BRI",
+    "name": "Koperasi Untung Bersama",
+    "accountAgeDays": 15
+   }
+  },
+  {
+   "customerId": "SCN-S04-C09",
+   "sessionId": "SCN-S04-S09",
+   "amount": 33000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-009",
+    "bankName": "Permata",
+    "name": "Koperasi Untung Bersama",
+    "accountAgeDays": 15
+   }
+  },
+  {
+   "customerId": "SCN-S04-C10",
+   "sessionId": "SCN-S04-S10",
+   "amount": 92000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-INV-010",
+    "bankName": "BNI",
+    "name": "Koperasi Untung Bersama",
+    "accountAgeDays": 12
+   }
+  }
+ ],
+ "S05": [
+  {
+   "customerId": "SCN-S05-C01",
+   "sessionId": "SCN-S05-S01",
+   "amount": 24000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-001",
+    "bankName": "Permata",
+    "name": "Fajar Wijaya",
+    "accountAgeDays": 7
+   }
+  },
+  {
+   "customerId": "SCN-S05-C02",
+   "sessionId": "SCN-S05-S02",
+   "amount": 15000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-002",
+    "bankName": "Permata",
+    "name": "Sinta Santoso",
+    "accountAgeDays": 29
+   }
+  },
+  {
+   "customerId": "SCN-S05-C03",
+   "sessionId": "SCN-S05-S03",
+   "amount": 5000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-003",
+    "bankName": "BRI",
+    "name": "Yusuf Gunawan",
+    "accountAgeDays": 6
+   }
+  },
+  {
+   "customerId": "SCN-S05-C04",
+   "sessionId": "SCN-S05-S04",
+   "amount": 5500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-004",
+    "bankName": "BNI",
+    "name": "Arif Purba",
+    "accountAgeDays": 4
+   }
+  },
+  {
+   "customerId": "SCN-S05-C05",
+   "sessionId": "SCN-S05-S05",
+   "amount": 33500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-005",
+    "bankName": "Mandiri",
+    "name": "Sinta Siregar",
+    "accountAgeDays": 16
+   }
+  },
+  {
+   "customerId": "SCN-S05-C06",
+   "sessionId": "SCN-S05-S06",
+   "amount": 6000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-006",
+    "bankName": "BSI",
+    "name": "Eko Wibowo",
+    "accountAgeDays": 36
+   }
+  },
+  {
+   "customerId": "SCN-S05-C07",
+   "sessionId": "SCN-S05-S07",
+   "amount": 27000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-007",
+    "bankName": "BCA",
+    "name": "Rudi Saputra",
+    "accountAgeDays": 9
+   }
+  },
+  {
+   "customerId": "SCN-S05-C08",
+   "sessionId": "SCN-S05-S08",
+   "amount": 16500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-008",
+    "bankName": "Permata",
+    "name": "Yusuf Santoso",
+    "accountAgeDays": 38
+   }
+  },
+  {
+   "customerId": "SCN-S05-C09",
+   "sessionId": "SCN-S05-S09",
+   "amount": 38500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-009",
+    "bankName": "Permata",
+    "name": "Agus Nugroho",
+    "accountAgeDays": 7
+   }
+  },
+  {
+   "customerId": "SCN-S05-C10",
+   "sessionId": "SCN-S05-S10",
+   "amount": 8500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-ATO-010",
+    "bankName": "BRI",
+    "name": "Dewi Saputra",
+    "accountAgeDays": 31
+   }
+  }
+ ],
+ "S06": [
+  {
+   "customerId": "SCN-S06-C01",
+   "sessionId": "SCN-S06-S01",
+   "amount": 8250000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-001",
+    "bankName": "Permata",
+    "name": "Dedi Pratama",
+    "accountAgeDays": 205
+   }
+  },
+  {
+   "customerId": "SCN-S06-C02",
+   "sessionId": "SCN-S06-S02",
+   "amount": 2750000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-002",
+    "bankName": "Mandiri",
+    "name": "Yusuf Purba",
+    "accountAgeDays": 61
+   }
+  },
+  {
+   "customerId": "SCN-S06-C03",
+   "sessionId": "SCN-S06-S03",
+   "amount": 6500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-003",
+    "bankName": "BSI",
+    "name": "Nadia Wijaya",
+    "accountAgeDays": 665
+   }
+  },
+  {
+   "customerId": "SCN-S06-C04",
+   "sessionId": "SCN-S06-S04",
+   "amount": 4250000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-004",
+    "bankName": "CIMB Niaga",
+    "name": "Fajar Hidayat",
+    "accountAgeDays": 567
+   }
+  },
+  {
+   "customerId": "SCN-S06-C05",
+   "sessionId": "SCN-S06-S05",
+   "amount": 2500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-005",
+    "bankName": "BNI",
+    "name": "Nadia Santoso",
+    "accountAgeDays": 644
+   }
+  },
+  {
+   "customerId": "SCN-S06-C06",
+   "sessionId": "SCN-S06-S06",
+   "amount": 8500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-006",
+    "bankName": "BNI",
+    "name": "Wulan Saputra",
+    "accountAgeDays": 65
+   }
+  },
+  {
+   "customerId": "SCN-S06-C07",
+   "sessionId": "SCN-S06-S07",
+   "amount": 3500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-007",
+    "bankName": "BRI",
+    "name": "Indah Saputra",
+    "accountAgeDays": 566
+   }
+  },
+  {
+   "customerId": "SCN-S06-C08",
+   "sessionId": "SCN-S06-S08",
+   "amount": 3250000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-008",
+    "bankName": "Mandiri",
+    "name": "Indah Gunawan",
+    "accountAgeDays": 666
+   }
+  },
+  {
+   "customerId": "SCN-S06-C09",
+   "sessionId": "SCN-S06-S09",
+   "amount": 4500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-009",
+    "bankName": "BCA",
+    "name": "Hendra Gunawan",
+    "accountAgeDays": 209
+   }
+  },
+  {
+   "customerId": "SCN-S06-C10",
+   "sessionId": "SCN-S06-S10",
+   "amount": 8750000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-CP-010",
+    "bankName": "CIMB Niaga",
+    "name": "Dedi Hidayat",
+    "accountAgeDays": 494
+   }
+  }
+ ],
+ "S07": [
+  {
+   "customerId": "SCN-S07-C01",
+   "sessionId": "SCN-S07-S01",
+   "amount": 500000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-01-2",
+    "bankName": "BRI",
+    "name": "Yusuf Wibowo",
+    "accountAgeDays": 2515
+   }
+  },
+  {
+   "customerId": "SCN-S07-C02",
+   "sessionId": "SCN-S07-S02",
+   "amount": 150000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-02-2",
+    "bankName": "Danamon",
+    "name": "Sinta Halim",
+    "accountAgeDays": 1671
+   }
+  },
+  {
+   "customerId": "SCN-S07-C03",
+   "sessionId": "SCN-S07-S03",
+   "amount": 1000000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-03-2",
+    "bankName": "Danamon",
+    "name": "Andi Wibowo",
+    "accountAgeDays": 2682
+   }
+  },
+  {
+   "customerId": "SCN-S07-C04",
+   "sessionId": "SCN-S07-S04",
+   "amount": 2500000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-04-2",
+    "bankName": "BSI",
+    "name": "Bambang Halim",
+    "accountAgeDays": 3089
+   }
+  },
+  {
+   "customerId": "SCN-S07-C05",
+   "sessionId": "SCN-S07-S05",
+   "amount": 250000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-05-2",
+    "bankName": "BSI",
+    "name": "Dedi Setiadi",
+    "accountAgeDays": 2080
+   }
+  },
+  {
+   "customerId": "SCN-S07-C06",
+   "sessionId": "SCN-S07-S06",
+   "amount": 1000000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-06-2",
+    "bankName": "BNI",
+    "name": "Indah Wijaya",
+    "accountAgeDays": 2405
+   }
+  },
+  {
+   "customerId": "SCN-S07-C07",
+   "sessionId": "SCN-S07-S07",
+   "amount": 250000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-07-2",
+    "bankName": "CIMB Niaga",
+    "name": "Andi Santoso",
+    "accountAgeDays": 3159
+   }
+  },
+  {
+   "customerId": "SCN-S07-C08",
+   "sessionId": "SCN-S07-S08",
+   "amount": 500000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-08-2",
+    "bankName": "BCA",
+    "name": "Eko Wijaya",
+    "accountAgeDays": 3186
+   }
+  },
+  {
+   "customerId": "SCN-S07-C09",
+   "sessionId": "SCN-S07-S09",
+   "amount": 2500000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-09-2",
+    "bankName": "CIMB Niaga",
+    "name": "Agus Kusuma",
+    "accountAgeDays": 3468
+   }
+  },
+  {
+   "customerId": "SCN-S07-C10",
+   "sessionId": "SCN-S07-S10",
+   "amount": 150000000,
+   "channel": "INTERNET_BANKING",
+   "beneficiary": {
+    "accountId": "ACC-KB-S07-10-2",
+    "bankName": "Danamon",
+    "name": "Nadia Kusuma",
+    "accountAgeDays": 3471
+   }
+  }
+ ],
+ "S08": [
+  {
+   "customerId": "SCN-S08-C01",
+   "sessionId": "SCN-S08-S01",
+   "amount": 2750000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-001",
+    "bankName": "Bank Asing Internasional",
+    "name": "KIM SONG CHOL",
+    "accountAgeDays": 62
+   }
+  },
+  {
+   "customerId": "SCN-S08-C02",
+   "sessionId": "SCN-S08-S02",
+   "amount": 8750000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-002",
+    "bankName": "Bank Asing Internasional",
+    "name": "Tehrani Reza Ahmad",
+    "accountAgeDays": 89
+   }
+  },
+  {
+   "customerId": "SCN-S08-C03",
+   "sessionId": "SCN-S08-S03",
+   "amount": 4750000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-003",
+    "bankName": "Bank Asing Internasional",
+    "name": "Hassan Al-Qadyri",
+    "accountAgeDays": 80
+   }
+  },
+  {
+   "customerId": "SCN-S08-C04",
+   "sessionId": "SCN-S08-S04",
+   "amount": 12500000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-004",
+    "bankName": "Global Remit Bank",
+    "name": "Mr. Viktor Petrov Antonov",
+    "accountAgeDays": 343
+   }
+  },
+  {
+   "customerId": "SCN-S08-C05",
+   "sessionId": "SCN-S08-S05",
+   "amount": 14750000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-005",
+    "bankName": "Global Remit Bank",
+    "name": "Dmitri Volkov Sergeyevich",
+    "accountAgeDays": 188
+   }
+  },
+  {
+   "customerId": "SCN-S08-C06",
+   "sessionId": "SCN-S08-S06",
+   "amount": 4750000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-006",
+    "bankName": "Global Remit Bank",
+    "name": "KIM SONG CHOL",
+    "accountAgeDays": 390
+   }
+  },
+  {
+   "customerId": "SCN-S08-C07",
+   "sessionId": "SCN-S08-S07",
+   "amount": 12250000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-007",
+    "bankName": "Offshore Trust Bank",
+    "name": "Tehrani Reza Ahmad",
+    "accountAgeDays": 62
+   }
+  },
+  {
+   "customerId": "SCN-S08-C08",
+   "sessionId": "SCN-S08-S08",
+   "amount": 9250000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-008",
+    "bankName": "Bank Asing Internasional",
+    "name": "Hassan Al-Qadyri",
+    "accountAgeDays": 310
+   }
+  },
+  {
+   "customerId": "SCN-S08-C09",
+   "sessionId": "SCN-S08-S09",
+   "amount": 11000000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-009",
+    "bankName": "Offshore Trust Bank",
+    "name": "Mr. Viktor Petrov Antonov",
+    "accountAgeDays": 236
+   }
+  },
+  {
+   "customerId": "SCN-S08-C10",
+   "sessionId": "SCN-S08-S10",
+   "amount": 2750000,
+   "channel": "MOBILE_APP",
+   "beneficiary": {
+    "accountId": "ACC-SANC-010",
+    "bankName": "Global Remit Bank",
+    "name": "Dmitri Volkov Sergeyevich",
+    "accountAgeDays": 41
+   }
+  }
+ ],
+ "S09": [
+  {
+   "customerId": "SCN-S09-C01",
+   "deviceId": "Python-requests/2.31",
+   "ip": "45.53.186.190",
+   "ipCountry": "RU",
+   "success": true,
+   "failedAttempts": 6
+  },
+  {
+   "customerId": "SCN-S09-C02",
+   "deviceId": "Python-requests/2.31",
+   "ip": "185.220.101.44",
+   "ipCountry": "NG",
+   "success": false,
+   "failedAttempts": 2
+  },
+  {
+   "customerId": "SCN-S09-C03",
+   "deviceId": "Generic Android 10",
+   "ip": "45.237.158.23",
+   "ipCountry": "NG",
+   "success": false,
+   "failedAttempts": 2
+  },
+  {
+   "customerId": "SCN-S09-C04",
+   "deviceId": "iPhone 15 Pro",
+   "ip": "185.220.101.44",
+   "ipCountry": "CN",
+   "success": true,
+   "failedAttempts": 5
+  },
+  {
+   "customerId": "SCN-S09-C05",
+   "deviceId": "Python-requests/2.31",
+   "ip": "45.238.220.65",
+   "ipCountry": "MY",
+   "success": false,
+   "failedAttempts": 7
+  },
+  {
+   "customerId": "SCN-S09-C06",
+   "deviceId": "Headless Chrome 118",
+   "ip": "45.76.85.112",
+   "ipCountry": "RU",
+   "success": false,
+   "failedAttempts": 8
+  },
+  {
+   "customerId": "SCN-S09-C07",
+   "deviceId": "Python-requests/2.31",
+   "ip": "185.220.101.7",
+   "ipCountry": "KH",
+   "success": false,
+   "failedAttempts": 3
+  },
+  {
+   "customerId": "SCN-S09-C08",
+   "deviceId": "Generic Android 10",
+   "ip": "185.220.101.44",
+   "ipCountry": "MY",
+   "success": false,
+   "failedAttempts": 4
+  },
+  {
+   "customerId": "SCN-S09-C09",
+   "deviceId": "Generic Android 10",
+   "ip": "185.220.101.7",
+   "ipCountry": "RU",
+   "success": false,
+   "failedAttempts": 4
+  },
+  {
+   "customerId": "SCN-S09-C10",
+   "deviceId": "Headless Chrome 118",
+   "ip": "185.220.101.7",
+   "ipCountry": "RU",
+   "success": false,
+   "failedAttempts": 4
+  }
+ ],
+ "S10": [
+  {
+   "customerId": "SCN-S10-C01",
+   "deviceId": "Xiaomi Redmi Note 8 (rooted)",
+   "ip": "103.130.123.220",
+   "ipCountry": "KH",
+   "change": "phone"
+  },
+  {
+   "customerId": "SCN-S10-C02",
+   "deviceId": "iPhone 15 Pro",
+   "ip": "103.233.109.68",
+   "ipCountry": "KH",
+   "change": "phone"
+  },
+  {
+   "customerId": "SCN-S10-C03",
+   "deviceId": "iPhone 15 Pro",
+   "ip": "103.177.164.23",
+   "ipCountry": "RU",
+   "change": "pin"
+  },
+  {
+   "customerId": "SCN-S10-C04",
+   "deviceId": "iPhone 15 Pro",
+   "ip": "103.155.214.99",
+   "ipCountry": "RU",
+   "change": "phone"
+  },
+  {
+   "customerId": "SCN-S10-C05",
+   "deviceId": "iPhone 15 Pro",
+   "ip": "103.67.150.71",
+   "ipCountry": "NG",
+   "change": "phone"
+  },
+  {
+   "customerId": "SCN-S10-C06",
+   "deviceId": "Generic Android 11",
+   "ip": "103.58.226.126",
+   "ipCountry": "SG",
+   "change": "phone"
+  },
+  {
+   "customerId": "SCN-S10-C07",
+   "deviceId": "Xiaomi Redmi Note 8 (rooted)",
+   "ip": "103.175.230.227",
+   "ipCountry": "MY",
+   "change": "pin"
+  },
+  {
+   "customerId": "SCN-S10-C08",
+   "deviceId": "iPhone 15 Pro",
+   "ip": "103.194.140.99",
+   "ipCountry": "KH",
+   "change": "email"
+  },
+  {
+   "customerId": "SCN-S10-C09",
+   "deviceId": "Xiaomi Redmi Note 8 (rooted)",
+   "ip": "103.248.230.10",
+   "ipCountry": "SG",
+   "change": "pin"
+  },
+  {
+   "customerId": "SCN-S10-C10",
+   "deviceId": "iPhone 15 Pro",
+   "ip": "103.32.116.145",
+   "ipCountry": "KH",
+   "change": "pin"
+  }
+ ]
+}

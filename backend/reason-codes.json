@@ -1,0 +1,14 @@
+[
+  { "code": "RC_AMOUNT_SPIKE", "title": "Lonjakan nominal", "description": "Nominal transfer jauh di atas rata-rata pengeluaran harian nasabah (> 10×).", "defaultSeverity": "HIGH" },
+  { "code": "RC_NEW_BENEFICIARY", "title": "Penerima baru", "description": "Rekening tujuan belum pernah menerima transfer dari nasabah.", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_YOUNG_BENEFICIARY_ACCOUNT", "title": "Rekening tujuan baru dibuka", "description": "Usia rekening tujuan kurang dari 30 hari.", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_SCREEN_SHARING", "title": "Aplikasi screen sharing aktif", "description": "Aplikasi akses jarak jauh (mis. AnyDesk) terdeteksi saat transaksi.", "defaultSeverity": "CRITICAL" },
+  { "code": "RC_COPY_PASTE_BENEFICIARY", "title": "Salin-tempel pada kolom penerima", "description": "Nomor rekening tujuan ditempel berulang kali, indikasi dikendalikan pihak lain.", "defaultSeverity": "HIGH" },
+  { "code": "RC_VPN_FOREIGN_IP", "title": "VPN / IP luar negeri", "description": "Sesi memakai VPN atau IP dari negara selain negara asal nasabah.", "defaultSeverity": "HIGH" },
+  { "code": "RC_HESITATION", "title": "Keraguan tidak wajar", "description": "Jeda sebelum konfirmasi jauh di atas kebiasaan nasabah (> 3000 ms).", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_TYPING_ANOMALY", "title": "Pola pengetikan menyimpang", "description": "Deviasi ritme pengetikan dari baseline nasabah > 0.5.", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_LONG_SESSION", "title": "Durasi sesi terlalu panjang", "description": "Durasi sesi lebih dari 5× baseline nasabah.", "defaultSeverity": "MEDIUM" },
+  { "code": "RC_DEVICE_ROOTED", "title": "Perangkat root/jailbreak", "description": "Perangkat terdeteksi di-root atau jailbreak.", "defaultSeverity": "HIGH" },
+  { "code": "RC_UNUSUAL_HOUR", "title": "Jam transaksi tidak biasa", "description": "Transaksi di luar jam aktif biasa nasabah.", "defaultSeverity": "LOW" },
+  { "code": "RC_MULE_NETWORK", "title": "Terhubung jaringan rekening mule", "description": "Rekening tujuan berbagi perangkat dengan rekening yang baru ditandai fraud.", "defaultSeverity": "CRITICAL" }
+]

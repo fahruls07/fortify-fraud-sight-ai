@@ -1,0 +1,29 @@
+{
+  "name": "fortify-backend",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node --experimental-strip-types --no-warnings scripts/gen-seed.mjs",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^2.29.1",
+    "@xyflow/react": "^12.12.0",
+    "chart.js": "^4.4.7",
+    "graphql": "^16.9.0",
+    "graphql-yoga": "^5.24.5",
+    "lucide-react": "^1.57.0",
+    "next": "^16.4.0",
+    "nodemailer": "^10.1.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/nodemailer": "^6.4.24",
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

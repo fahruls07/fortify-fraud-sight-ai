@@ -1,0 +1,20 @@
+{
+  "name": "Block screen sharing + large transfer",
+  "description": "Block transfers > Rp 10 million while a screen sharing app is active",
+  "condition": {
+    "all": [
+      {
+        "field": "screenSharingAppDetected",
+        "op": "isNotNull"
+      },
+      {
+        "field": "amount",
+        "op": ">",
+        "value": 10000000
+      }
+    ]
+  },
+  "expression": "screenSharingAppDetected != null && amount > 10000000",
+  "action": "DECLINE",
+  "severity": "CRITICAL"
+}
