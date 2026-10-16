@@ -1,6 +1,6 @@
 import LoginForm from "@/components/LoginForm";
 
-export const metadata = { title: "Sign in — Fortify Console" };
+export const metadata = { title: "Sign in — FraudSight AI" };
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   const n = (await searchParams).next;
@@ -8,7 +8,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ n
   return (
     <div className="auth">
       <section className="auth-side">
-        <div className="brand"><img className="logo" src="/logo-app.png" alt="Fortify" width={686} height={176} /></div>
+        <div className="brand"><img className="logo" src="/logo-app.png" alt="FraudSight AI" width={686} height={176} /></div>
         <div>
           <p className="auth-lead">Suspicious transaction investigation console for the Anti-Fraud team.</p>
           <ul className="auth-facts">

@@ -48,7 +48,7 @@ export function consoleSpec() {
   }
   return {
     openapi: "3.0.3",
-    info: { title: "Fortify Console API", version: "1.0.0", description: "Every API used by the Fortify console, generated from the route files. Calls need a console session (sign in first; the browser sends the cookie). Each operation lists the permission it needs under x-permission. The internet-banking endpoints are in the other spec." },
+    info: { title: "FraudSight AI Console API", version: "1.0.0", description: "Every API used by the FraudSight AI console, generated from the route files. Calls need a console session (sign in first; the browser sends the cookie). Each operation lists the permission it needs under x-permission. The internet-banking endpoints are in the other spec." },
     servers: [{ url: "/" }],
     security: [{ session: [] }],
     components: { securitySchemes: { session: { type: "apiKey", in: "cookie", name: "fortify_session" } } },

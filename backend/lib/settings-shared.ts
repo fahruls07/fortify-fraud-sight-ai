@@ -15,5 +15,5 @@ export const IB_ENDPOINTS = [
   { method: "POST", path: "/api/events/account-update", auth: "X-API-Key", desc: "Score a sensitive account change (phone, email, password, pin, device, beneficiary_add, limit, address) before applying it.",
     example: `{ "customerId": "CUST-0001", "deviceId": "iPhone 15", "ipCountry": "ID", "change": "phone" }` },
   { method: "GET", path: "/api/openapi", auth: "Public", desc: "OpenAPI 3 contract for the two endpoints above (YAML). Import it into Postman / Swagger." },
-  { method: "POST", path: "{your webhook URL}", auth: "HMAC X-Fortify-Signature", desc: "Outbound: Fortify calls your system on alert created / resolved (configure below)." },
+  { method: "POST", path: "{your webhook URL}", auth: "HMAC X-Fortify-Signature", desc: "Outbound: FraudSight AI calls your system on alert created / resolved (configure below)." },
 ] as const;

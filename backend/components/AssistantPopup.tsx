@@ -26,7 +26,7 @@ export default function AssistantPopup() {
       {!open && <button className="ai-fab" onClick={() => setOpen(true)} aria-label="Open AI assistant"><Sparkles size={20} /><span>Ask AI</span></button>}
       {open && (
         <div className="ai-pop card" role="dialog" aria-label="AI assistant">
-          <div className="ai-pop-head"><span className="wf-ico"><Bot size={16} /></span><div><b>Fortify AI</b><div className="mute">{src === "gemini" ? "Gemini · live console data" : src === "offline" ? "Offline answers (Gemini not configured)" : "Ask about alerts, fraud, rules, workflows"}</div></div>
+          <div className="ai-pop-head"><span className="wf-ico"><Bot size={16} /></span><div><b>FraudSight AI</b><div className="mute">{src === "gemini" ? "Gemini · live console data" : src === "offline" ? "Offline answers (Gemini not configured)" : "Ask about alerts, fraud, rules, workflows"}</div></div>
             <button className="icon" style={{ marginLeft: "auto" }} onClick={() => setOpen(false)} aria-label="Close"><X size={18} /></button></div>
           <div className="cp-log ai-log">
             {!msgs.length && <div className="mute cp-hello">Hi! I can answer questions about today&apos;s fraud activity using the live data on this console.<div className="wf-ex" style={{ marginTop: 8 }}>{SUGGEST.map((s) => <button key={s} onClick={() => send(s)}>{s}</button>)}</div></div>}

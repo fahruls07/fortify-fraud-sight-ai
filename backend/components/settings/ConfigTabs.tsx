@@ -313,7 +313,7 @@ export function CustomerMsgSection({ pub, setPub, canEdit }: { pub: Pub | null; 
   return (
     <div className="card cfg">
       <h3>Customer messages (SMS · push · OTP)</h3>
-      <p className="mute" style={{ marginTop: -6 }}>Sent when an analyst challenges (OTP), declines, freezes or releases a transfer. Any HTTP gateway works: Fortify POSTs your body template with <code>{"{{phone}}"}</code>, <code>{"{{text}}"}</code>, <code>{"{{customerId}}"}</code>, <code>{"{{bank}}"}</code>. With nothing enabled, messages go to Risk Intelligence → Customer messages (outbox).</p>
+      <p className="mute" style={{ marginTop: -6 }}>Sent when an analyst challenges (OTP), declines, freezes or releases a transfer. Any HTTP gateway works: FraudSight AI POSTs your body template with <code>{"{{phone}}"}</code>, <code>{"{{text}}"}</code>, <code>{"{{customerId}}"}</code>, <code>{"{{bank}}"}</code>. With nothing enabled, messages go to Risk Intelligence → Customer messages (outbox).</p>
       {(["sms", "push"] as const).map((k) => (
         <div key={k} className="cfg" style={{ gap: 8 }}>
           <label className="toggle"><input type="checkbox" checked={d[k].enabled} disabled={!canEdit} onChange={(e) => ch(k, { enabled: e.target.checked })} /> {k === "sms" ? "SMS gateway" : "Push gateway"}</label>

@@ -24,7 +24,7 @@ export async function sendMail(m: { to: string[]; subject: string; text: string;
   const t = smtp
     ? nodemailer.createTransport({ host: s.host, port: s.port, secure: s.secure, auth: s.user ? { user: s.user, pass: s.pass } : undefined, connectionTimeout: 8000 })
     : nodemailer.createTransport({ streamTransport: true, buffer: true, newline: "unix" });
-  const info = await t.sendMail({ from: s.from || "Fortify <reports@fortify.local>", to: m.to, subject: m.subject, text: m.text, attachments: [m.attachment] });
+  const info = await t.sendMail({ from: s.from || "FraudSight AI <reports@fraudsight.local>", to: m.to, subject: m.subject, text: m.text, attachments: [m.attachment] });
   if (smtp) return { mode: "smtp" as const, id: info.messageId };
   mkdirSync(OUTBOX, { recursive: true });
   const file = join(OUTBOX, `${new Date().toISOString().replace(/[:.]/g, "-")}-${Math.random().toString(36).slice(2, 6)}.eml`);

@@ -35,7 +35,7 @@ export async function telegram(text: string) {
   return "Message sent to Telegram.";
 }
 export async function email(to: string, text: string) {
-  const r = await sendMail({ to: [to], subject: "Fortify test notification", text, attachment: { filename: "test.txt", content: text, contentType: "text/plain" } });
+  const r = await sendMail({ to: [to], subject: "FraudSight AI test notification", text, attachment: { filename: "test.txt", content: text, contentType: "text/plain" } });
   return r.mode === "smtp" ? `Email sent to ${to}.` : `SMTP not configured: saved to ${r.id}.`;
 }
 
@@ -80,7 +80,7 @@ export async function endpoint(i: number) {
 }
 
 export const runTest = (target: string, arg: string): Promise<TestResult> => timed(async () => {
-  const msg = `Fortify test notification at ${new Date().toISOString()}`;
+  const msg = `FraudSight AI test notification at ${new Date().toISOString()}`;
   switch (target) {
     case "smtp": if (!arg) throw new Error("Enter an email address to send the test to."); return email(arg, msg);
     case "slack": return slack(msg);

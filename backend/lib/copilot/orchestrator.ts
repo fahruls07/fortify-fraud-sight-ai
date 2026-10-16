@@ -40,7 +40,7 @@ function fail(inv: Investigation, error: string) {
 
 async function run(s: State, inv: Investigation) {
   const alert = s.alerts.find((a) => a.id === inv.alertId)!;
-  step(inv, { step: "plan", detail: "Fortify Assistant is planning: transaction, profile, session signals, network, playbooks." });
+  step(inv, { step: "plan", detail: "FraudSight Copilot is planning: transaction, profile, session signals, network, playbooks." });
 
   // Deterministic orchestration (03 §5 fallback mode): the backend calls every tool; Gemini only synthesizes.
   const tx = await call(inv, "get_transaction", () => tools.get_transaction(s, alert.transactionId));
@@ -61,7 +61,7 @@ async function run(s: State, inv: Investigation) {
   });
   const ctx = { codes: new Set(s.reasonCodes.map((r) => r.code)), toolOutputs, docIds: new Set(s.kb.map((d) => d.docId)) };
 
-  step(inv, { step: "synthesize", detail: "Fortify Assistant is analysing 40+ behavioural signals…" });
+  step(inv, { step: "synthesize", detail: "FraudSight Copilot is analysing 40+ behavioural signals…" });
   const started = Date.now();
   let report: InvestigationReport | undefined;
   let reason = "";

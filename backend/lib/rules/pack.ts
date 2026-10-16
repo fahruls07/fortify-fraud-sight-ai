@@ -6,7 +6,7 @@ export const FORMAT = "fortify.rules/v1";
 
 export function exportPack(rules: Rule[], by: string) {
   const files = rules.map((r) => ({ name: `rules/${r.id}.json`, data: Buffer.from(JSON.stringify({ id: r.id, name: r.name, description: r.description, severity: r.severity, condition: r.condition, action: r.action, status: r.status }, null, 2)) }));
-  const pkg = { name: "fortify-rules", version: "1.0.0", format: FORMAT, description: "Fortify fraud rule package", exportedAt: new Date().toISOString(), exportedBy: by, count: rules.length, rules: files.map((f) => f.name) };
+  const pkg = { name: "fortify-rules", version: "1.0.0", format: FORMAT, description: "FraudSight AI fraud rule package", exportedAt: new Date().toISOString(), exportedBy: by, count: rules.length, rules: files.map((f) => f.name) };
   return makeZip([{ name: "package.json", data: Buffer.from(JSON.stringify(pkg, null, 2)) }, ...files]);
 }
 
