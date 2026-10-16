@@ -4,7 +4,7 @@ import { COOKIE, verifySession } from "@/lib/auth";
 import { config as settings, verifyKey } from "@/lib/settings";
 
 // The banking app (/api/transactions) and demo controls are called without a console session.
-const PUBLIC = ["/login", "/api/auth/", "/api/transactions/", "/api/events/", "/api/flows/", "/api/demo/", "/api/openapi"];
+const PUBLIC = ["/login", "/favicon.ico", "/api/auth/", "/api/transactions/", "/api/events/", "/api/flows/", "/api/demo/", "/api/openapi"];
 
 export function proxy(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
@@ -26,4 +26,8 @@ export function proxy(req: NextRequest) {
   return NextResponse.redirect(to);
 }
 
-export const config = { matcher: ["/((?!_next/|favicon.ico).*)"] };
+// Skip framework internals, metadata routes, and static assets. Without the asset extension this
+// middleware also ran for public/ files and redirected them to /login, so images never loaded.
+export const config = {
+  matcher: ["/((?!_next/|favicon\\.ico|[^/]+\\.(?:png|jpe?g|gif|svg|webp|avif|ico|txt|xml|webmanifest|woff2?|ttf|otf|json|map)$).*)"],
+};

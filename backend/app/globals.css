@@ -23,14 +23,21 @@ code { font:12px ui-monospace, SFMono-Regular, Menlo, monospace; }
 @media (max-width:800px) { .app { --sbw:68px; } }
 .sidebar { position:sticky; top:0; height:100vh; background:var(--side); border-right:1px solid var(--line); padding:16px 12px; overflow:hidden; }
 .brand { display:flex; align-items:center; gap:10px; padding:4px 6px 20px; font-size:18px; white-space:nowrap; }
-.logo { flex:none; display:grid; place-items:center; width:32px; height:32px; border-radius:10px; background:var(--primary); color:#fff; }
+.logo { flex:none; display:block; border-radius:10px; }
+img.logo { object-fit:contain; background:none; }
+/* Logo only, no wordmark: size by width and let the 3.9:1 artwork scale. */
+.brand img.logo { width:100%; max-width:100%; height:auto; border-radius:0; }
+/* Sidebar open: wordmark fills the sidebar width. Collapsed: square icon only. */
+.brand .logo-mark { display:none; }
+.app.collapsed .brand .logo-full { display:none; }
+.app.collapsed .brand .logo-mark { display:block; width:30px; margin:0 auto; }
 .sidebar nav { display:grid; gap:4px; }
 .sidebar nav a { display:flex; align-items:center; gap:12px; padding:9px 12px; border-radius:8px; color:var(--mute); text-decoration:none; font-weight:500; white-space:nowrap; transition:background .15s, color .15s; }
 .sidebar nav a svg { flex:none; }
 .sidebar nav a:hover { background:var(--bg); color:var(--ink); }
 .sidebar nav a.on { background:var(--primary-light); color:var(--primary); }
-.app.collapsed .sidebar span, .app.collapsed .brand b { display:none; }
-@media (max-width:800px) { .sidebar span, .brand b { display:none; } }
+.app.collapsed .sidebar span { display:none; }
+@media (max-width:800px) { .sidebar span { display:none; } }
 .content { min-width:0; }
 .topbar { position:sticky; top:0; z-index:4; display:flex; align-items:center; gap:12px; height:60px; padding:0 24px; background:color-mix(in srgb, var(--card) 85%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
 button.icon { display:grid; place-items:center; width:36px; height:36px; padding:0; border:none; background:transparent; color:var(--mute); }
@@ -111,7 +118,7 @@ dialog::backdrop { background:rgb(15 17 23 / .5); backdrop-filter:blur(2px); }
 .auth { display:grid; grid-template-columns:minmax(320px, 5fr) 7fr; min-height:100vh; }
 @media (max-width:860px) { .auth { grid-template-columns:1fr; } .auth-side { display:none !important; } }
 .auth-side { display:flex; flex-direction:column; justify-content:space-between; gap:32px; padding:40px 48px; background:#1a1a2e; color:#d4d4de; }
-.auth-side .brand { color:#fff; padding:0; } .auth-side .logo { font-weight:700; }
+.auth-side .brand img.logo { width:220px; max-width:100%; height:auto; }
 .auth-side small { color:#8b8ba3; }
 .auth-lead { font-size:24px; line-height:1.35; font-weight:600; color:#fff; max-width:22ch; margin:0 0 24px; letter-spacing:-.01em; }
 .auth-facts { list-style:none; padding:0; margin:0; display:grid; gap:14px; max-width:40ch; }
