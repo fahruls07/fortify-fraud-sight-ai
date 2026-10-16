@@ -5,10 +5,15 @@ import { createHmac, randomBytes, scryptSync, timingSafeEqual } from "node:crypt
 export const COOKIE = "fortify_session";
 const TTL = 8 * 3600; // one analyst shift, seconds
 
-if (process.env.NODE_ENV === "production" && !process.env.AUTH_SECRET) throw new Error("AUTH_SECRET must be set in production");
-const SECRET = process.env.AUTH_SECRET ?? "fortify-dev-secret"; // dev-only fallback; production refuses to start without AUTH_SECRET
+// Helper fungsi untuk mengambil secret secara dynamic saat runtime
+function getSecret(): string {
+  if (process.env.NODE_ENV === "production" && !process.env.AUTH_SECRET) {
+    throw new Error("AUTH_SECRET must be set in production");
+  }
+  return process.env.AUTH_SECRET ?? "fortify-dev-secret";
+}
 
-const sig = (v: string) => createHmac("sha256", SECRET).update(v).digest("base64url");
+const sig = (v: string) => createHmac("sha256", getSecret()).update(v).digest("base64url");
 
 // Cookie value: `<username>.<expiry-epoch-s>.<hmac>`. Stateless, so it survives dev reloads and needs no session table.
 export function signSession(username: string, now = Date.now()) {
