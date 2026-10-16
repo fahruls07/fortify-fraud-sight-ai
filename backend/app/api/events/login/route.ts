@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://fortify-japac.cloud.run/"
+  "https://fortify-japac.cloud.run"
 ];
 
 function corsHeaders(req: Request): Headers {
