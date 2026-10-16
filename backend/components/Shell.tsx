@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import NotificationBell from "./NotificationBell";
 import Toaster from "./Toaster";
 import { useEffect, useState } from "react";
-import { Bell, Briefcase, ClipboardCheck, FileSpreadsheet, MessageSquareReply, Radar, Search, Share2, Smartphone, Users, Workflow, LayoutDashboard, Settings, LogOut, Moon, PanelLeftClose, PanelLeftOpen, ShieldCheck, SlidersHorizontal, Sun } from "lucide-react";
+import { Bell, Briefcase, ClipboardCheck, FileSpreadsheet, MessageSquareReply, Radar, Search, Share2, Smartphone, Users, Workflow, LayoutDashboard, Settings, LogOut, Moon, PanelLeftClose, PanelLeftOpen, SlidersHorizontal, Sun } from "lucide-react";
 
 const m = (p: string) => (x: string) => x === p || x.startsWith(p + "/") || x.startsWith(p + "?");
 // Grouped like an investigation console: tools to investigate, queues and reports, rules & automation, administration.
@@ -52,7 +52,11 @@ export default function Shell({ user, lastLogin, perms, appName, children }: { u
   return (
     <div className={`app${collapsed ? " collapsed" : ""}`}>
       <aside className="sidebar">
-        <div className="brand"><span className="logo"><ShieldCheck size={18} /></span><b>{appName}</b></div>
+        <div className="brand">
+          {/* Two files: wordmark when open, square icon when collapsed (CSS swaps them). */}
+          <img className="logo logo-full" src="/logo-app.png" alt={appName} width={686} height={176} />
+          <img className="logo logo-mark" src="/logo-app-icon.png" alt={appName} width={165} height={176} />
+        </div>
         <nav>
           {GROUPS.map((g) => { const items = g.items.filter((x) => perms.includes(x.perm)); return items.length ? (
             <div key={g.title} className="navgroup"><div className="navtitle">{g.title}</div>

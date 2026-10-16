@@ -8,7 +8,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ n
   return (
     <div className="auth">
       <section className="auth-side">
-        <div className="brand"><span className="logo">F</span><b>Fortify</b></div>
+        <div className="brand"><img className="logo" src="/logo-app.png" alt="Fortify" width={686} height={176} /></div>
         <div>
           <p className="auth-lead">Suspicious transaction investigation console for the Anti-Fraud team.</p>
           <ul className="auth-facts">
