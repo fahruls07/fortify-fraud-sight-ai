@@ -13,7 +13,7 @@ async function timed(fn: () => Promise<string>): Promise<TestResult> {
   try { return { ok: true, message: await fn(), ms: Date.now() - t0 }; }
   catch (e) {
     const err = e as Error & { cause?: { code?: string; message?: string } };
-    const why = err.name === "TimeoutError" ? `Timed out after ${TIMEOUT / 1000}s` : err.cause ? `Cannot connect (${err.cause.code ?? err.cause.message})` : err.message;
+    const why = err.name === "TimeoutError" || err.name === "AbortError" ? "Timed out (no answer in time; try again or a lighter model)" : err.cause ? `Cannot connect (${err.cause.code ?? err.cause.message})` : err.message;
     return { ok: false, message: why, ms: Date.now() - t0 };
   }
 }
@@ -99,7 +99,7 @@ export const runTest = (target: string, arg: string): Promise<TestResult> => tim
     }
     case "gemini": {
       if (!geminiConfigured()) throw new Error("No API key or project set.");
-      const r = await generate("Reply with the single word OK.", AbortSignal.timeout(TIMEOUT), { systemInstruction: "You are a connectivity check.", text: true });
+      const r = await generate("Reply with the single word OK.", AbortSignal.timeout(20000), { systemInstruction: "You are a connectivity check.", text: true });
       return `Gemini answered "${r.text.trim().slice(0, 40)}" (model ${geminiInfo().model}, via ${geminiInfo().via === "api_key" ? "API key" : "Vertex AI"}).`;
     }
     default: throw new Error("Unknown integration.");
