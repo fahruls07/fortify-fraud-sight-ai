@@ -36,9 +36,9 @@ export interface ApiKey { id: string; name: string; prefix: string; last4: strin
 const SECRETS = [["customer", "sms", "authHeader"], ["customer", "push", "authHeader"], ["ai", "apiKey"], ["api", "webhookSecret"], ["notification", "smtp", "pass"], ["notification", "slack", "webhookUrl"], ["notification", "telegram", "botToken"], ["integration", "firestore", "serviceAccountJson"], ["integration", "grafana", "apiKey"]] as const;
 
 export const DEFAULTS = (): Config => ({
-  general: { appName: "Fortify", timezone: "Asia/Jakarta", language: "en", minAmount: 10_000_000, maxVelocity: 5, geoRadiusKm: 500, autoResolveHours: 0, highValueAmount: 100_000_000 },
+  general: { appName: "FraudSight AI", timezone: "Asia/Jakarta", language: "en", minAmount: 10_000_000, maxVelocity: 5, geoRadiusKm: 500, autoResolveHours: 0, highValueAmount: 100_000_000 },
   api: { webhookUrl: "", webhookSecret: "", webhookEvents: { alertCreated: true, alertResolved: false }, requireApiKey: false },
-  notification: { smtp: { host: "", port: 587, secure: false, user: "", pass: "", from: "Fortify Alerts <alerts@fortify.local>" }, slack: { webhookUrl: "", enabled: false }, telegram: { botToken: "", chatId: "", enabled: false }, minSeverity: "HIGH" },
+  notification: { smtp: { host: "", port: 587, secure: false, user: "", pass: "", from: "FraudSight AI Alerts <alerts@fraudsight.local>" }, slack: { webhookUrl: "", enabled: false }, telegram: { botToken: "", chatId: "", enabled: false }, minSeverity: "HIGH" },
   customer: {
     sms: { enabled: false, url: "", authHeader: "", body: '{ "to": "{{phone}}", "text": "{{text}}" }' },
     push: { enabled: false, url: "", authHeader: "", body: '{ "customerId": "{{customerId}}", "title": "{{bank}}", "body": "{{text}}" }' },

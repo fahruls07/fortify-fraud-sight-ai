@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
 import { useChart } from "./useChart";
 import AssistantPopup from "./AssistantPopup";
+import { onDataRefreshed } from "./DemoRefresh";
 import { Activity, Gauge, ShieldAlert, ThumbsDown } from "lucide-react";
 import type { Overview } from "@/lib/overview";
 import { ago, idr } from "@/lib/format";
@@ -35,6 +36,7 @@ export default function CommandCenter() {
     }).catch(() => setApi({ level: "down", ms: 0 }));
   };
   useEffect(() => { setO(null); load.current(); const t = setInterval(() => load.current(), 60000); return () => clearInterval(t); }, [qs]);
+  useEffect(() => onDataRefreshed(() => load.current()), []); // admin "refresh demo data" re-anchors time: refetch the numbers
 
   // Live: every new or updated alert refreshes the numbers (debounced) and flashes the new row.
   useEffect(() => {

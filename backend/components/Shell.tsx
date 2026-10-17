@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import NotificationBell from "./NotificationBell";
+import DemoRefresh from "./DemoRefresh";
 import Toaster from "./Toaster";
 import { useEffect, useState } from "react";
 import { Bell, Briefcase, ClipboardCheck, FileSpreadsheet, MessageSquareReply, Radar, Search, Share2, Smartphone, Users, Workflow, LayoutDashboard, Settings, LogOut, Moon, PanelLeftClose, PanelLeftOpen, SlidersHorizontal, Sun } from "lucide-react";
@@ -10,7 +11,7 @@ const m = (p: string) => (x: string) => x === p || x.startsWith(p + "/") || x.st
 // Grouped like an investigation console: tools to investigate, queues and reports, rules & automation, administration.
 const GROUPS = [
   { title: "Investigation tools", items: [
-    { href: "/", perm: "dashboard.view", label: "Home", icon: LayoutDashboard, match: (p: string) => p === "/" },
+    { href: "/", perm: "dashboard.view", label: "Command Center", icon: LayoutDashboard, match: (p: string) => p === "/" },
     { href: "/investigator", perm: "alerts.view", label: "Investigator", icon: Search, match: m("/investigator") },
     { href: "/customers", perm: "alerts.view", label: "Customer Profiles", icon: Users, match: (p: string) => m("/customers")(p) || m("/sessions")(p) },
     { href: "/devices", perm: "alerts.view", label: "Device Intelligence", icon: Smartphone, match: m("/devices") },
@@ -75,6 +76,7 @@ export default function Shell({ user, lastLogin, perms, appName, children }: { u
           </button>
           <b>{active?.label ?? appName}</b>
           <span style={{ flex: 1 }} />
+          {perms.includes("settings.config") && <DemoRefresh />}
           <NotificationBell alerts={perms.includes("alerts.view")} approvals={perms.includes("settings.view")} />
           <button className="icon" onClick={toggleTheme} aria-label={dark ? "Light mode" : "Dark mode"}>{dark ? <Sun size={18} /> : <Moon size={18} />}</button>
           <details className="account">

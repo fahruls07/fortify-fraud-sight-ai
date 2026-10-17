@@ -43,7 +43,7 @@ export interface Network {
 export interface ReasonCode { code: string; title: string; description: string; defaultSeverity: "LOW" | "MEDIUM" | "HIGH" | "CRITICAL" }
 
 export interface Seed {
-  meta: { anchor: string };
+  meta: { anchor: string; refreshedAt?: string }; // refreshedAt: last demo-refresh marker, kept so refresh() stays idempotent
   customers: Customer[]; transactions: Transaction[]; alerts: Alert[]; sessions: Session[];
   network: Record<string, Network>; reasonCodes: ReasonCode[];
   kb: { docId: string; title: string; tags: string[]; body: string }[];

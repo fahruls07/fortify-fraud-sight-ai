@@ -60,6 +60,7 @@ export function requiredPerm(method: string, path: string, search = ""): Perm | 
   if (p("/api/settings/config") || p("/api/settings/apikeys")) return write ? "settings.config" : "settings.view";
   if (p("/api/settings") && write) return "settings.maker";
   if (p("/settings") || p("/approvals") || p("/api/settings") || p("/api/audit")) return "settings.view";
+  if (p("/api/demo")) return "settings.config"; // demo controls are admin-only: refresh / reset / fallback / simulate
   if (path === "/" || p("/api/dashboard")) return "dashboard.view";
   return null;
 }

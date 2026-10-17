@@ -1,4 +1,5 @@
 import type { State } from "./store";
+import type { Decision } from "./types";
 import { createCase, saveAttachment, slaDue, type Case } from "./cases.ts";
 import { scoreEvent, type ListEntry, type RiskEvent } from "./intel.ts";
 
@@ -62,4 +63,44 @@ export function seedDemo(s: State & { demoSeeded?: boolean }) {
     [7, { type: "account_update", customerId: cs[5].id, sessionId: null, deviceId: "Pixel 8", ip: "110.137.2.1", ipCountry: "SG", success: null, failedAttempts: 0, change: "password" }],
   ];
   for (const [h, e] of ev.reverse()) s.events.unshift({ id: `EVT-${String(s.nextIntelSeq++).padStart(6, "0")}`, at: ago(h), ...e, ...scoreEvent(s, e) });
+}
+
+// Seeded analyst decisions. The Command Center's "Fraud detected" and "False positive rate" are derived from
+// state.decisions, but the seed had none, so both read 0 / empty on a fresh demo. This back-fills a realistic,
+// deterministic history.
+//
+// The outcome leans on the alert's risk score (a flagged transfer that scores HIGH is usually real fraud, a
+// borderline one usually clears), which keeps the false-positive rate believable instead of "everything is a
+// false alarm". It is tuned so the demo shows a strong detector: roughly 1 in 4 cleared alerts is a false
+// positive. The HIGH alerts are deliberately left open so "open high-risk" still shows work in progress.
+export function seedDecisions(s: State & { decisionsSeeded?: boolean }) {
+  if (s.decisionsSeeded) return;
+  s.decisionsSeeded = true;
+  const closedCases = new Set(s.cases.filter((c) => c.status === "CLOSED").map((c) => c.id));
+  const users = ["sari", "supervisor", "admin"];
+  const txById = new Map(s.transactions.map((t) => [t.id, t]));
+  // Deterministic pseudo-random in [0,1) from the alert number, so the same demo always looks the same.
+  const rnd = (n: number) => ((Math.imul(n, 2654435761) >>> 0) % 1000) / 1000;
+  let n = 0;
+  for (const a of [...s.alerts].sort((x, y) => x.id.localeCompare(y.id))) {
+    const num = Number(a.id.slice(4));
+    if (!Number.isFinite(num)) continue;
+    if ((a.aiLevel ?? a.baselineLevel) === "HIGH") continue;           // keep severe alerts open for the demo
+    if (a.caseId && !closedCases.has(a.caseId)) continue;             // a live case still owns its alerts
+    if (num % 5 === 0) continue;                                      // ~20% still awaiting a decision
+    const score = a.baselineScore;
+    // Chance the alert is confirmed fraud: rises with the risk score.
+    const pFraud = score >= 60 ? 0.9 : score >= 30 ? 0.8 : 0.5;
+    const label: Decision["label"] = rnd(num) < pFraud ? "FRAUD" : "NOT_FRAUD";
+    const action: Decision["action"] = label === "FRAUD" ? "DECLINE" : "APPROVE";
+    const tx = txById.get(a.transactionId);
+    const decidedAt = new Date(Math.min(Date.parse(a.createdAt) + 40 * 60e3, Date.now())).toISOString();
+    s.decisions.push({
+      alertId: a.id, action, label, followedAi: rnd(num + 7) > 0.2,
+      reason: label === "FRAUD" ? "Confirmed fraud after analyst review." : "Legitimate activity confirmed with the customer.",
+      decidedBy: users[n++ % users.length], decidedAt, amount: tx?.amount ?? 0,
+    });
+    a.status = "Decided";
+    if (tx) tx.status = action === "APPROVE" ? "RELEASED" : "DECLINED";
+  }
 }

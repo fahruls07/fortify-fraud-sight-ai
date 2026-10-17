@@ -29,8 +29,8 @@ export async function emailReport(to: string[], type: ReportType, f: ReportFilte
   const file = reportFile(type, f, format);
   const period = `${f.from ?? "start"} to ${f.to ?? "today"}`;
   return sendMail({
-    to, subject: `Fortify fraud report: ${REPORTS[type]} (${period})`,
-    text: `${note ? `${note}\n\n` : ""}Attached: ${REPORTS[type]} for ${period}${f.severity ? `, severity ${f.severity}` : ""}${f.rule ? `, rule "${f.rule}"` : ""}.\n\nSent by Fortify Console.`,
+    to, subject: `FraudSight AI fraud report: ${REPORTS[type]} (${period})`,
+    text: `${note ? `${note}\n\n` : ""}Attached: ${REPORTS[type]} for ${period}${f.severity ? `, severity ${f.severity}` : ""}${f.rule ? `, rule "${f.rule}"` : ""}.\n\nSent by FraudSight AI Console.`,
     attachment: { filename: file.name, content: file.body, contentType: file.mime },
   });
 }

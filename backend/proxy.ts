@@ -3,8 +3,10 @@ import { can, requiredPerm } from "@/lib/acm";
 import { COOKIE, verifySession } from "@/lib/auth";
 import { config as settings, verifyKey } from "@/lib/settings";
 
-// The banking app (/api/transactions) and demo controls are called without a console session.
-const PUBLIC = ["/login", "/favicon.ico", "/api/auth/", "/api/transactions/", "/api/events/", "/api/flows/", "/api/demo/", "/api/openapi"];
+// The banking app (/api/transactions) is called by the external simulator without a console session.
+// NOTE: /api/demo/ is deliberately NOT public — the demo controls mutate or delete state and must be
+// gated by the ACM permission in requiredPerm() (see "demo" branch there).
+const PUBLIC = ["/login", "/favicon.ico", "/api/auth/", "/api/transactions/", "/api/events/", "/api/flows/", "/api/openapi"];
 
 export function proxy(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
