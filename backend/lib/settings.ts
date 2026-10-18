@@ -50,7 +50,7 @@ export const DEFAULTS = (): Config => ({
       released: "{{bank}}: your Rp {{amount}} transfer to {{beneficiary}} has been processed.",
     },
   },
-  ai: { mode: "api_key", baseUrl: "", apiKey: "", project: "", location: "global", model: "gemini-2.5-flash" },
+  ai: { mode: "api_key", baseUrl: "", apiKey: "", project: "", location: "global", model: "gemini-3.5-flash-lite" },
   integration: { firestore: { projectId: "", databaseId: "(default)", serviceAccountJson: "" }, endpoints: [], grafana: { lokiUrl: "", user: "", apiKey: "", enabled: false } },
 });
 
