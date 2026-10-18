@@ -37,9 +37,16 @@ Rules:
 // Connection comes from Settings → AI (falls back to env: GEMINI_API_KEY, or GOOGLE_CLOUD_PROJECT for Vertex AI).
 function conn() {
   const a = config().ai, env = process.env;
-  const apiKey = a.mode === "api_key" ? a.apiKey || env.GEMINI_API_KEY || "" : "";
+  // Credentials: in production the environment wins, so an empty or stale Settings value can never
+  // shadow the deployed GEMINI_API_KEY. In development the Settings form wins (useful locally).
+  const envKey = env.GEMINI_API_KEY || env.GOOGLE_API_KEY || env.GOOGLE_GENAI_API_KEY || "";
+  const prod = env.NODE_ENV === "production";
+  const settingsKey = a.apiKey || "";
+  const rawKey = prod ? envKey || settingsKey : settingsKey || envKey;
+  const apiKey = a.mode === "api_key" ? rawKey : "";
   const project = a.mode === "vertex" ? a.project || env.GOOGLE_CLOUD_PROJECT || "" : !apiKey ? env.GOOGLE_CLOUD_PROJECT || "" : "";
-  return { apiKey, project, location: a.location || env.GOOGLE_CLOUD_LOCATION || "global", baseUrl: a.baseUrl, model: a.model || env.GEMINI_MODEL || "gemini-2.5-flash" };
+  // Model: the Settings dropdown is the source of truth. GEMINI_MODEL is only an explicit override.
+  return { apiKey, project, location: a.location || env.GOOGLE_CLOUD_LOCATION || "global", baseUrl: a.baseUrl, model: a.model || env.GEMINI_MODEL || "gemini-3.5-flash-lite" };
 }
 export const geminiConfigured = () => { const c = conn(); return !!(c.apiKey || c.project); };
 export const geminiInfo = () => { const c = conn(); return { configured: !!(c.apiKey || c.project), via: c.apiKey ? "api_key" : c.project ? "vertex" : "none", model: c.model, baseUrl: c.baseUrl || null }; };

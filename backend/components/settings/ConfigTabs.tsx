@@ -294,7 +294,7 @@ export function AiTab({ pub, setPub, canEdit }: { pub: Pub | null; setPub: (p: P
             <label className="field"><span>Location</span><input value={d.location} disabled={!canEdit} onChange={(e) => set({ location: e.target.value })} placeholder="global" /></label>
           </>}
         <label className="field"><span>Model</span><input list="gemini-models" value={d.model} disabled={!canEdit} onChange={(e) => set({ model: e.target.value })} />
-          <datalist id="gemini-models"><option value="gemini-2.5-flash" /><option value="gemini-2.5-pro" /><option value="gemini-2.5-flash-lite" /></datalist></label>
+          <datalist id="gemini-models"><option value="gemini-3.8-flash" /><option value="gemini-3.5-flash-lite" /></datalist></label>
         <label className="field"><span>Base URL <span className="mute">(optional)</span></span><input value={d.baseUrl} disabled={!canEdit} onChange={(e) => set({ baseUrl: e.target.value })} placeholder="https://generativelanguage.googleapis.com" />
           <small className="mute">Only for a proxy / private endpoint. Leave empty for Google&apos;s default.</small></label>
       </div>
